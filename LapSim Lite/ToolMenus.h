@@ -2,7 +2,8 @@
 #include "Enums.h"
 #include "icon_data.h"
 
-void draw_tool_menu(SpriteHandler& sh, InstrumentSide side, int sel_idx)
+template<int NR, int NC>
+void draw_tool_menu(SpriteHandler<NR, NC>& sh, InstrumentSide side, int sel_idx)
 {
   auto draw_icon = [&](ToolType tool_type, int r, int c, bool selected)
   {

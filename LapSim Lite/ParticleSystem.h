@@ -41,7 +41,8 @@ struct Particle
     return time - time_stamp < life_time;
   }
   
-  void draw(SpriteHandler& sh, const std::string& str, Text::Color fg_color, Text::Color bg_color, float time) const
+  template<int NR, int NC>
+  void draw(SpriteHandler<NR, NC>& sh, const std::string& str, Text::Color fg_color, Text::Color bg_color, float time) const
   {
     if (alive(time))
       sh.write_buffer(str, std::round(pos_y), std::round(pos_x), fg_color, bg_color);
@@ -97,7 +98,8 @@ struct ParticleHandler
     }
   }
   
-  void draw(SpriteHandler& sh, const std::string& str, Text::Color fg_color, Text::Color bg_color, float time) const
+  template<int NR, int NC>
+  void draw(SpriteHandler<NR, NC>& sh, const std::string& str, Text::Color fg_color, Text::Color bg_color, float time) const
   {
     for (const auto& particle : particle_stream)
       if (!particle.dead)

@@ -144,7 +144,8 @@
 //28//                                                                                |
 //29//                                                                 (c) 2022       |
 //30//--------------------------------------------------------------------------------+
-void draw_title(SpriteHandler& sh)
+template<int NR, int NC>
+void draw_title(SpriteHandler<NR, NC>& sh)
 {
   const auto wht = Text::Color::White;
   const auto lgry = Text::Color::LightGray;

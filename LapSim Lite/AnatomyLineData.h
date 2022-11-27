@@ -152,14 +152,16 @@ void create_texture_row_tube(std::vector<AnatomyLineData>& texture,
   texture.emplace_back(line);
 }
 
-void draw_opaque_anatomy(SpriteHandler& sh, const std::vector<AnatomyLineData>& texture)
+template<int NR, int NC>
+void draw_opaque_anatomy(SpriteHandler<NR, NC>& sh, const std::vector<AnatomyLineData>& texture)
 {
   for (const auto& line : texture)
     for (const auto& pixel : line.get_pixels())
       sh.write_buffer(pixel.str, pixel.r, pixel.c, pixel.fg_color, pixel.bg_color);
 }
 
-void draw_anatomy(SpriteHandler& sh, const std::vector<AnatomyLineData>& texture)
+template<int NR, int NC>
+void draw_anatomy(SpriteHandler<NR, NC>& sh, const std::vector<AnatomyLineData>& texture)
 {
   for (const auto& line : texture)
     for (const auto& pixel : line.get_pixels())

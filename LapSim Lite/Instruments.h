@@ -101,7 +101,8 @@ void update_instruments(Key key,
 // ##
 
 
-void draw_instruments(SpriteHandler& sh, InstrumentSide side,
+template<int NR, int NC>
+void draw_instruments(SpriteHandler<NR, NC>& sh, InstrumentSide side,
                       float ang_rad, float shaft_z,
                       ToolType tool_type, int anim_idx,
                       const InstrumentData& instr_data,

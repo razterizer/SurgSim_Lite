@@ -43,7 +43,8 @@ public:
     std::sort(messages.begin(), messages.end(), [](const auto& msgA, const auto& msgB) { return msgA.second < msgB.second;} );
   }
   
-  void update(SpriteHandler& sh, float time)
+  template<int NR, int NC>
+  void update(SpriteHandler<NR, NC>& sh, float time)
   {
     if (message_empty && !messages.empty())
     {

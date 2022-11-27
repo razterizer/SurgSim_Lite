@@ -199,7 +199,8 @@ void update_burn(float dt, Key curr_key,
     cut_pixels(textures, pixel_cluster_right, 4.f, 2.f, 1.f, dt, true);
 }
 
-void generate_sparks(SpriteHandler& sh, Key curr_key,
+template<int NR, int NC>
+void generate_sparks(SpriteHandler<NR, NC>& sh, Key curr_key,
                      const RC& tcp_rc_left, const RC& tcp_rc_right,
                      ToolType tool_type_left, ToolType tool_type_right,
                      int anim_ctr)
@@ -224,7 +225,8 @@ void generate_sparks(SpriteHandler& sh, Key curr_key,
     sh.write_buffer(" ", tcp_rc_right.r, tcp_rc_right.c, Text::Color::Default, bg_color);
 }
 
-void generate_smoke(SpriteHandler& sh, Key curr_key,
+template<int NR, int NC>
+void generate_smoke(SpriteHandler<NR, NC>& sh, Key curr_key,
                     const RC& tcp_rc_left, const RC& tcp_rc_right,
                     ToolType tool_type_left, ToolType tool_type_right,
                     float dt, float time)

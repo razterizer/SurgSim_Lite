@@ -8,7 +8,8 @@
 // | |_/\| |-|||  __/\___ || || |  ||  | |_/\| | | | |  /_
 // \____/\_/ \|\_/   \____/\_/\_/  \|  \____/\_/ \_/ \____\
 
-void draw_instructions(SpriteHandler& sh, int max_health)
+template<int NR, int NC>
+void draw_instructions(SpriteHandler<NR, NC>& sh, int max_health)
 {
   sh.write_buffer("_     ____  ____  ____  _  _        _     _ _____ _____", 1, 11, Text::Color::White);
 

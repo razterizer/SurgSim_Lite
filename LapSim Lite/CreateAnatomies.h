@@ -275,7 +275,8 @@ void create_hepatoduodenal_ligament(std::vector<AnatomyLineData>& hd_ligament_te
   create_texture_row_uniform(hd_ligament_texture, '\\', '_', '/', 24, 33, 57, fg_color, fg_cut_color, bg_color_gradient);
 }
 
-void draw_ground(SpriteHandler& sh)
+template<int NR, int NC>
+void draw_ground(SpriteHandler<NR, NC>& sh)
 {
   auto fg_color = Text::Color::DarkYellow;
   auto bg_color = Text::Color::Magenta;
