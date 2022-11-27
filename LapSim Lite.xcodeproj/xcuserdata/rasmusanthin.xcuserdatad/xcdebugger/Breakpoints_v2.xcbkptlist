@@ -287,8 +287,8 @@
             filePath = "LapSim Lite/Dissection.h"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "272"
-            endingLineNumber = "272"
+            startingLineNumber = "274"
+            endingLineNumber = "274"
             landmarkName = "handle_clip_applying(curr_key, tcp_rc_left, tcp_rc_right, tool_type_left, tool_type_right, trg_tool_left, trg_tool_right, textures, health_states)"
             landmarkType = "9">
          </BreakpointContent>
@@ -303,8 +303,8 @@
             filePath = "LapSim Lite/Dissection.h"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "278"
-            endingLineNumber = "278"
+            startingLineNumber = "280"
+            endingLineNumber = "280"
             landmarkName = "handle_clip_applying(curr_key, tcp_rc_left, tcp_rc_right, tool_type_left, tool_type_right, trg_tool_left, trg_tool_right, textures, health_states)"
             landmarkType = "9">
          </BreakpointContent>
@@ -400,8 +400,8 @@
             filePath = "LapSim Lite/AnatomyLineData.h"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "190"
-            endingLineNumber = "190"
+            startingLineNumber = "192"
+            endingLineNumber = "192"
             landmarkName = "unknown"
             landmarkType = "0">
          </BreakpointContent>
