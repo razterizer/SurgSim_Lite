@@ -12,6 +12,7 @@
 #include "Grasping.h"
 
 #include "../../lib/Terminal Text Lib/Screen.h"
+#include "../../lib/Terminal Text Lib/Delay.h"
 
 #include <iostream>
 
@@ -361,7 +362,7 @@ int main(int argc, char** argv)
 ///
 
     //refresh();
-    usleep(delay);
+    Delay::sleep(delay);
 
     anim_ctr++;
     
