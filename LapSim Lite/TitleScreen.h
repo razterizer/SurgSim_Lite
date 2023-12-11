@@ -157,7 +157,7 @@ void draw_title(SpriteHandler<NR, NC>& sh)
   const auto trp = Text::Color::Transparent;
   
   // Simplifies typing.
-  auto print = [&sh](const std::string& str, int r, int c, Text::Color fg_color, Text::Color bg_color = trp)
+  auto print = [&sh](const std::string& str, int r, int c, Text::Color fg_color, Text::Color bg_color = Text::Color::Transparent)
   {
     sh.write_buffer(str, r, c, fg_color, bg_color);
   };

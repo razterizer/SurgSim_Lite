@@ -20,7 +20,7 @@ void update_instruments(Key key,
                         InstrumentData& instr_data_left, InstrumentData& instr_data_right,
                         float curr_time, const float pix_ar)
 {
-  const float ang_step_rad = M_PI / 180.f * 1.f;
+  const float ang_step_rad = math::deg2rad(1.f);
   const float z_step = 1.f;
   const float min_close_time = 0.2f;
   curr_trg_left = false;

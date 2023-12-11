@@ -18,8 +18,8 @@ class InstrumentData
   
   void clamp_angle()
   {
-    float ang_min_rad = instr_side == InstrumentSide::Left ? 0.f : -M_PI/2.f;
-    float ang_max_rad = instr_side == InstrumentSide::Left ? M_PI/2.f : 0.f;
+    float ang_min_rad = instr_side == InstrumentSide::Left ? 0.f : math::deg2rad(-90.f);
+    float ang_max_rad = instr_side == InstrumentSide::Left ? math::deg2rad(90.f) : 0.f;
     ang_rad = math::clamp<float>(ang_rad, ang_min_rad, ang_max_rad);
   }
   
@@ -39,13 +39,13 @@ public:
   {
     clamp_angle();
     clamp_insertion();
-    pivot_x = instr_side == InstrumentSide::Left ? 0 : 80;
+    pivot_x = instr_side == InstrumentSide::Left ? 0.f : 80.f;
     pivot_y = 30;
-    float sgn = instr_side == InstrumentSide::Left ? +1 : -1;
+    float sgn = instr_side == InstrumentSide::Left ? +1.f : -1.f;
     end_x = pivot_x + sgn * std::round(shaft_z * std::cos(ang_rad));
     end_y = pivot_y - sgn * std::round(shaft_z * std::sin(ang_rad) / pix_ar);
-    int r = end_y - sgn * std::round(std::sin(ang_rad));
-    int c = end_x + sgn * std::round(std::cos(ang_rad));
+    int r = static_cast<int>(end_y - sgn * std::round(std::sin(ang_rad)));
+    int c = static_cast<int>(end_x + sgn * std::round(std::cos(ang_rad)));
     tcp_rc = { r, c };
   }
   
@@ -54,9 +54,9 @@ public:
     float dir_x = 0.f;
     float dir_y = 0.f;
     
-    pivot_x = side == InstrumentSide::Left ? 0 : 80;
+    pivot_x = side == InstrumentSide::Left ? 0.f : 80.f;
     pivot_y = 30;
-    float sgn = side == InstrumentSide::Left ? +1 : -1;
+    float sgn = side == InstrumentSide::Left ? +1.f : -1.f;
     tcp_rc = rc;
     
     // Calculate approximate shaft insertion from tcp.

@@ -24,8 +24,8 @@ struct Particle
     vel_x = vx + spread * (rnd::rand() - 0.5f);
     vel_y = vy + spread * (rnd::rand() - 0.5f);
     g = gravity_acc;
-    pos_x = pos0.c;
-    pos_y = pos0.r;
+    pos_x = static_cast<float>(pos0.c);
+    pos_y = static_cast<float>(pos0.r);
     life_time = life_t;
   }
   
