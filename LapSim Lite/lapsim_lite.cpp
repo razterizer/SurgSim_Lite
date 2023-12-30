@@ -13,6 +13,7 @@
 
 #include "../../lib/Terminal Text Lib/Screen.h"
 #include "../../lib/Terminal Text Lib/Delay.h"
+#include "../../lib/Terminal Text Lib/GameEngine.h"
 
 #include <iostream>
 
@@ -78,100 +79,44 @@ bool show_instructions = false;
 
 ///////////////////////////////
 
-int main(int argc, char** argv)
+class Game : public GameEngine<>
 {
-  //initscr();
-  //noecho();
-  //cbreak();
-  //keypad(stdscr, true);
-
-  if (argc >= 2 && !strcmp(argv[1], "--help"))
+public:
+  Game(int argc, char** argv)
+    : instr_data_left(InstrumentSide::Left, shaft_len, shaft_z_left, ang_left_rad, pix_ar)
+    , instr_data_right(InstrumentSide::Right, shaft_len, shaft_z_right, ang_right_rad, pix_ar)
   {
-    std::cout << "lapsim_lite (\"--help\" | [<frame-delay-us> [<nåt-här>]])" << std::endl;
-    return EXIT_SUCCESS;
+    delay = 200'000;
+    if (argc >= 2)
+      delay = atoi(argv[1]);
+    dt = static_cast<float>(delay) / 1e6f;
+
+    if (argc >= 3)
+    {
+      //int alt_km = atoi(argv[2]);
+      //y_pos = -alt_km*1e3/pix_to_m + ground_level + 13*pix_ar;
+    }
+
+    game_over_timer = 40;
   }
 
-  enableRawMode();
-
-  Text t;
-  SpriteHandler sh;
-  
-  game_over_timer = 40;
-
-  int delay = 60'000;
-  if (argc >= 2)
-    delay = atoi(argv[1]);
-  float dt = static_cast<float>(delay) / 1e6f;
-  float time = 0.f;
-
-  clear_screen(); return_cursor();
-
-  int key_ctr = 0;
-  bool paused = false;
-
-  Text::Color bg_color = Text::Color::Default;
-
-  if (argc >= 3)
+  virtual void generate_data() override
   {
-    //int alt_km = atoi(argv[2]);
-    //y_pos = -alt_km*1e3/pix_to_m + ground_level + 13*pix_ar;
+    all_textures.resize(static_cast<size_t>(TextureType::NUM_ITEMS));
+    create_liver(all_textures[static_cast<size_t>(TextureType::LIVER)]);
+    create_gallbladder(all_textures[static_cast<size_t>(TextureType::GALLBLADDER)]);
+    create_duct_tree(all_textures[static_cast<size_t>(TextureType::DUCT_TREE)]);
+    create_artery_tree(all_textures[static_cast<size_t>(TextureType::ARTERY_TREE)]);
+    create_hepatoduodenal_ligament(all_textures[static_cast<size_t>(TextureType::HD_LIG)]); // #HACK
+
+    tube_topology::create_topologies();
+
+    health_states.set_critical_blood_vol(12 * 80);
   }
 
-  int anim_ctr = 0;
-
-  //nodelay(stdscr, TRUE);
-
-  std::array<Key, 3> arrow_key_buffer;
-  int arrow_key_ctr = 0;
-
-  rnd::srand_time();
-  
-  // Instruments
-  float ang_left_rad = 0.7854 - 0.1f;
-  float ang_right_rad = -0.7854f + 0.12f;
-  const float shaft_len = 80.f;
-  float shaft_z_left = 35.f;
-  float shaft_z_right = 35.f;
-  // Tool Menus
-  ToolType tool_type_left = ToolType::Grasper; //ToolType::Hook; // #HACK
-  ToolType tool_type_right = ToolType::Grasper;
-  int anim_idx_curr_left = 0;
-  int anim_idx_curr_right = 0;
-  int anim_idx_prev_left = 0;
-  int anim_idx_prev_right = 0;
-  bool trg_tool_left = false;
-  bool trg_tool_right = false;
-  InstrumentData instr_data_left(InstrumentSide::Left, shaft_len, shaft_z_left, ang_left_rad, pix_ar);
-  InstrumentData instr_data_right(InstrumentSide::Right, shaft_len, shaft_z_right, ang_right_rad, pix_ar);
-  
-  bool show_menus = false;
-  
-  std::vector<std::vector<AnatomyLineData>> all_textures(static_cast<size_t>(TextureType::NUM_ITEMS));
-  create_liver(all_textures[static_cast<size_t>(TextureType::LIVER)]);
-  create_gallbladder(all_textures[static_cast<size_t>(TextureType::GALLBLADDER)]);
-  create_duct_tree(all_textures[static_cast<size_t>(TextureType::DUCT_TREE)]);
-  create_artery_tree(all_textures[static_cast<size_t>(TextureType::ARTERY_TREE)]);
-  create_hepatoduodenal_ligament(all_textures[static_cast<size_t>(TextureType::HD_LIG)]); // #HACK
-  
-  tube_topology::create_topologies();
-  
-  // States for messages and health penalty.
-  HealthStates health_states;
-  health_states.set_critical_blood_vol(12*80);
-  
-  MessageHandler msg_handler;
-  
-  liquids::LiquidVolumes liquid_volumes;
-  liquids::LiquidFlow liquid_flow;
-  
-
-// RT-Loop
-  do
+private:
+  virtual bool update() override
   {
-    clear_screen();
-    return_cursor();
-    sh.clear();
-
     if (show_title)
       bg_color = Text::Color::LightGray;
     else if (show_instructions)
@@ -180,9 +125,9 @@ int main(int argc, char** argv)
       bg_color = Text::Color::DarkMagenta;
 
     Key curr_key = Key::None;
-    
+
     if (!register_keypresses(curr_key, key_ctr, arrow_key_ctr, arrow_key_buffer, paused))
-      break;
+      return false;
 
     if (show_title)
     {
@@ -207,13 +152,13 @@ int main(int argc, char** argv)
       trg_tool_right = anim_idx_curr_right == 1 && anim_idx_prev_right == 0;
       anim_idx_prev_left = anim_idx_curr_left;
       anim_idx_prev_right = anim_idx_curr_right;
-      
+
       RC tcp_rc_left, tcp_rc_right;
-      
+
       draw_hud(sh, health, max_health, blood, max_blood, score);
 
       draw_frame(sh, Text::Color::Black);
-      
+
       if (health <= 0 || blood >= max_blood)
       {
         if (game_over_timer == 0)
@@ -228,10 +173,10 @@ int main(int argc, char** argv)
         else
           you_won_timer--;
       }
-      
+
       handle_injuries(sh, msg_handler, health_states,
-                      health, blood, max_blood, score,
-                      time);
+        health, blood, max_blood, score,
+        time);
       if (score < 0)
         score = 0;
 
@@ -239,24 +184,24 @@ int main(int argc, char** argv)
       health_states.check_correct_artery_division(all_textures, score);
       health_states.check_correct_duct_division(all_textures, score);
       health_states.check_liquid_pool_empty(score);
-      
+
       if (curr_key == Key::Menu)
         show_menus = !show_menus;
       if (show_menus)
       {
         draw_tool_menu(sh, InstrumentSide::Left, static_cast<int>(tool_type_left));
         draw_tool_menu(sh, InstrumentSide::Right, static_cast<int>(tool_type_right));
-        
+
         auto step_tool = [](ToolType& tool_type, int step)
-        {
-          int idx = static_cast<int>(tool_type);
-          idx += step;
-          if (step > 0 && idx == icon_data::num_tool_types)
-            idx = 0;
-          else if (step < 0 && idx == -1)
-            idx = icon_data::num_tool_types - 1;
-          tool_type = static_cast<ToolType>(idx);
-        };
+          {
+            int idx = static_cast<int>(tool_type);
+            idx += step;
+            if (step > 0 && idx == icon_data::num_tool_types)
+              idx = 0;
+            else if (step < 0 && idx == -1)
+              idx = icon_data::num_tool_types - 1;
+            tool_type = static_cast<ToolType>(idx);
+          };
         switch (curr_key)
         {
           case Key::LI_Up:   step_tool(tool_type_left, -1); break;
@@ -265,7 +210,7 @@ int main(int argc, char** argv)
           case Key::RI_Down: step_tool(tool_type_right, +1); break;
           default: break;
         }
-        
+
         anim_idx_curr_left = 0;
         anim_idx_curr_right = 0;
       }
@@ -278,97 +223,142 @@ int main(int argc, char** argv)
         //  curr_key = Key::None;
         //curr_key = Key::Coag; // #HACK
         update_instruments(curr_key,
-                           tool_type_left, tool_type_right,
-                           anim_idx_curr_left, anim_idx_curr_right,
-                           instr_data_left, instr_data_right,
-                           time, pix_ar);
+          tool_type_left, tool_type_right,
+          anim_idx_curr_left, anim_idx_curr_right,
+          instr_data_left, instr_data_right,
+          time, pix_ar);
       }
-      
+
       //tcp_rc_left = { 20, 43 }; // (cystic artery) #HACK
       //tcp_rc_left = { 12, 45 }; // (gallbladder) #HACK
       //instr_data_left.set(InstrumentSide::Left, tcp_rc_left); // #HACK
       grasp::handle_grasping(instr_data_left, instr_data_right,
-                             tool_type_left, tool_type_right,
-                             trg_tool_left, trg_tool_right,
-                             anim_idx_curr_left, anim_idx_curr_right,
-                             all_textures);
+        tool_type_left, tool_type_right,
+        trg_tool_left, trg_tool_right,
+        anim_idx_curr_left, anim_idx_curr_right,
+        all_textures);
       tcp_rc_left = instr_data_left.get_tcp();
       tcp_rc_right = instr_data_right.get_tcp();
-      
+
       draw_instruments(sh, InstrumentSide::Left,
-                       ang_left_rad,
-                       shaft_z_left,
-                       tool_type_left,
-                       anim_idx_curr_left,
-                       instr_data_left,
-                       pix_ar);
+        ang_left_rad,
+        shaft_z_left,
+        tool_type_left,
+        anim_idx_curr_left,
+        instr_data_left,
+        pix_ar);
       draw_instruments(sh, InstrumentSide::Right,
-                       ang_right_rad,
-                       shaft_z_right,
-                       tool_type_right,
-                       anim_idx_curr_right,
-                       instr_data_right,
-                       pix_ar);
-      
+        ang_right_rad,
+        shaft_z_right,
+        tool_type_right,
+        anim_idx_curr_right,
+        instr_data_right,
+        pix_ar);
+
       generate_sparks(sh, curr_key,
-                      tcp_rc_left, tcp_rc_right,
-                      tool_type_left, tool_type_right,
-                      anim_ctr);
+        tcp_rc_left, tcp_rc_right,
+        tool_type_left, tool_type_right,
+        anim_ctr);
       generate_smoke(sh, curr_key,
-                     tcp_rc_left, tcp_rc_right,
-                     tool_type_left, tool_type_right,
-                     dt, time);
-      
+        tcp_rc_left, tcp_rc_right,
+        tool_type_left, tool_type_right,
+        dt, time);
+
       std::vector<RC> fluid_sources;
       liquids::update_profuse_liquids(sh,
-                                      curr_key,
-                                      tcp_rc_left, tcp_rc_right,
-                                      tool_type_left, tool_type_right,
-                                      all_textures,
-                                      liquid_volumes, liquid_flow, fluid_sources,
-                                      time, dt);
+        curr_key,
+        tcp_rc_left, tcp_rc_right,
+        tool_type_left, tool_type_right,
+        all_textures,
+        liquid_volumes, liquid_flow, fluid_sources,
+        time, dt);
       health_states.register_fluids(liquid_volumes, liquid_flow, fluid_sources);
-      
+
       draw_anatomy(sh, all_textures[static_cast<size_t>(TextureType::HD_LIG)]);
       draw_anatomy(sh, all_textures[static_cast<size_t>(TextureType::ARTERY_TREE)]);
       draw_anatomy(sh, all_textures[static_cast<size_t>(TextureType::DUCT_TREE)]);
       draw_opaque_anatomy(sh, all_textures[static_cast<size_t>(TextureType::GALLBLADDER)]);
       draw_opaque_anatomy(sh, all_textures[static_cast<size_t>(TextureType::LIVER)]);
       draw_ground(sh);
-      
+
       update_burn(dt, curr_key,
-                  tcp_rc_left, tcp_rc_right,
-                  tool_type_left, tool_type_right,
-                  trg_tool_left, trg_tool_right,
-                  all_textures,
-                  health_states);
-      
+        tcp_rc_left, tcp_rc_right,
+        tool_type_left, tool_type_right,
+        trg_tool_left, trg_tool_right,
+        all_textures,
+        health_states);
+
       handle_clip_applying(curr_key,
-                           tcp_rc_left, tcp_rc_right,
-                           tool_type_left, tool_type_right,
-                           trg_tool_left, trg_tool_right,
-                           all_textures,
-                           health_states);
+        tcp_rc_left, tcp_rc_right,
+        tool_type_left, tool_type_right,
+        trg_tool_left, trg_tool_right,
+        all_textures,
+        health_states);
     }
-///
+    ///
 
     //sh.replace_bg_color(Text::Color::Transparent, Text::Color::DarkBlue, { 1, 1, 77, h_offs });
-
-    sh.print_screen_buffer(t, bg_color);
-    //sh.print_screen_buffer_chars();
-    //sh.print_screen_buffer_fg_colors();
-    //sh.print_screen_buffer_bg_colors();
-
-///
-
-    //refresh();
-    Delay::sleep(delay);
-
-    anim_ctr++;
     
-    time += dt;
+    return true;
+  }
 
-  } while (true);
+  //////////////////////////////////////////////////////////////////////////
+
+  std::array<Key, 3> arrow_key_buffer;
+  int arrow_key_ctr = 0;
+
+  // Instruments
+  float ang_left_rad = 0.7854 - 0.1f;
+  float ang_right_rad = -0.7854f + 0.12f;
+  const float shaft_len = 80.f;
+  float shaft_z_left = 35.f;
+  float shaft_z_right = 35.f;
+  // Tool Menus
+  ToolType tool_type_left = ToolType::Grasper; //ToolType::Hook; // #HACK
+  ToolType tool_type_right = ToolType::Grasper;
+  int anim_idx_curr_left = 0;
+  int anim_idx_curr_right = 0;
+  int anim_idx_prev_left = 0;
+  int anim_idx_prev_right = 0;
+  bool trg_tool_left = false;
+  bool trg_tool_right = false;
+
+  bool show_menus = false;
+
+  InstrumentData instr_data_left, instr_data_right;
+
+  std::vector<std::vector<AnatomyLineData>> all_textures;
+
+  // States for messages and health penalty.
+  HealthStates health_states;
+
+  MessageHandler msg_handler;
+
+  liquids::LiquidVolumes liquid_volumes;
+  liquids::LiquidFlow liquid_flow;
+};
+
+//////////////////////////////////////////////////////////////////////////
+
+int main(int argc, char** argv)
+{
+  //initscr();
+  //noecho();
+  //cbreak();
+  //keypad(stdscr, true);
+
+  if (argc >= 2 && !strcmp(argv[1], "--help"))
+  {
+    std::cout << "lapsim_lite (\"--help\" | [<frame-delay-us> [<nåt-här>]])" << std::endl;
+    return EXIT_SUCCESS;
+  }
+
+  //nodelay(stdscr, TRUE);
+  
+  Game game(argc, argv);
+  game.init();
+  game.generate_data();
+  game.run();
 
   return EXIT_SUCCESS;
 }
