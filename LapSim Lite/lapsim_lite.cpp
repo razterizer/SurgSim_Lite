@@ -14,6 +14,7 @@
 #include "../../lib/Terminal Text Lib/Screen.h"
 #include "../../lib/Terminal Text Lib/Delay.h"
 #include "../../lib/Terminal Text Lib/GameEngine.h"
+#include "../../lib/Terminal Text Lib/ASCII_Fonts.h"
 
 #include <iostream>
 
@@ -112,6 +113,24 @@ public:
     tube_topology::create_topologies();
 
     health_states.set_critical_blood_vol(12 * 80);
+    
+    std::string font_data_path;
+    const char* xcode_env = std::getenv("RUNNING_FROM_XCODE");
+    if (xcode_env != nullptr)
+      font_data_path = "../../../../../../../../Documents/xcode/lib/Terminal Text Lib";
+    else
+      font_data_path = "../../lib/Terminal Text Lib";
+    std::cout << font_data_path << std::endl;
+    
+    color_schemes.emplace_back();
+    auto& cs = color_schemes.emplace_back();
+    cs.bg_internal = Text::Color::Red;
+    cs.bg_side_h = Text::Color::DarkRed;
+    cs.bg_dot_internal = Text::Color::DarkGray;
+    cs.bg_dot_side_h = Text::Color::Black;
+    
+    for (auto& cs : color_schemes)
+      font_data.emplace_back(ASCII_Fonts::load_font_data(cs, font_data_path));
   }
 
 private:
@@ -131,7 +150,7 @@ private:
 
     if (show_title)
     {
-      draw_title(sh);
+      draw_title(sh, font_data);
       if (curr_key == Key::Skip)
       {
         show_title = false;
@@ -336,6 +355,9 @@ private:
 
   liquids::LiquidVolumes liquid_volumes;
   liquids::LiquidFlow liquid_flow;
+  
+  std::vector<ASCII_Fonts::ColorScheme> color_schemes;
+  std::vector<ASCII_Fonts::FontDataColl> font_data;
 };
 
 //////////////////////////////////////////////////////////////////////////
