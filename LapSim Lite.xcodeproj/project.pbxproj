@@ -25,7 +25,7 @@
 /* Begin PBXFileReference section */
 		0712496B28FFEBDE002B6247 /* LapSim Lite */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "LapSim Lite"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0712497528FFEC73002B6247 /* lapsim_lite.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = lapsim_lite.cpp; sourceTree = "<group>"; };
-		0712497628FFEC73002B6247 /* lapsim_lite.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = lapsim_lite.sh; sourceTree = "<group>"; };
+		0712497628FFEC73002B6247 /* build.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = build.sh; sourceTree = "<group>"; };
 		071CC3DE290487BA007B4B98 /* AnatomyLineData.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AnatomyLineData.h; sourceTree = "<group>"; };
 		071CC3E029048B3D007B4B98 /* InstructionsScreen.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = InstructionsScreen.h; sourceTree = "<group>"; };
 		071CC3E129048B45007B4B98 /* TitleScreen.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TitleScreen.h; sourceTree = "<group>"; };
@@ -99,7 +99,7 @@
 				071CC3E029048B3D007B4B98 /* InstructionsScreen.h */,
 				071CC3E129048B45007B4B98 /* TitleScreen.h */,
 				071CC3DE290487BA007B4B98 /* AnatomyLineData.h */,
-				0712497628FFEC73002B6247 /* lapsim_lite.sh */,
+				0712497628FFEC73002B6247 /* build.sh */,
 			);
 			path = "LapSim Lite";
 			sourceTree = "<group>";
