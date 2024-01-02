@@ -114,12 +114,7 @@ public:
 
     health_states.set_critical_blood_vol(12 * 80);
     
-    std::string font_data_path;
-    const char* xcode_env = std::getenv("RUNNING_FROM_XCODE");
-    if (xcode_env != nullptr)
-      font_data_path = "../../../../../../../../Documents/xcode/lib/Terminal Text Lib";
-    else
-      font_data_path = "../../lib/Terminal Text Lib";
+    std::string font_data_path = ASCII_Fonts::get_path_to_font_data();
     std::cout << font_data_path << std::endl;
     
     color_schemes.emplace_back();
