@@ -1,3 +1,3 @@
 #!/bin/bash
 
-../../lib/Core\ Lib/build.sh lapsim_lite
+../../lib/Core\ Lib/build.sh lapsim_lite $1
