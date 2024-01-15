@@ -63,8 +63,8 @@ namespace liquids
   };
 
 
-  ParticleHandler rinsing_droplets_left(500), rinsing_droplets_right(500);
-  ParticleHandler artery_droplets(500), duct_droplets(500);
+  ParticleFluidHandler rinsing_droplets_left(500), rinsing_droplets_right(500);
+  ParticleFluidHandler artery_droplets(500), duct_droplets(500);
 
 
   ColorGradient fluid_pool_mixing_gradient_blood_bile_fg // blood to bile
@@ -256,7 +256,7 @@ namespace liquids
     
     auto update_dripping = [&liquid_volumes, &liquid_flow, dt, time, &sh]
                            (std::vector<RC>& registered_leakage_pts,
-                            ParticleHandler& droplets,
+                            ParticleFluidHandler& droplets,
                             float speed, float gravity_acc,
                             float spread, float life_time, int cluster_size,
                             LiquidType liquid_type, float droplet_vol, Reservoir& reservoir_vol)
@@ -326,7 +326,7 @@ namespace liquids
     auto update_rinsing = [&liquid_volumes, &liquid_flow, screen_width, dt, time, &all_textures]
                           (const RC& tcp, InstrumentSide side,
                            bool rinsing,
-                           ParticleHandler& droplets,
+                           ParticleFluidHandler& droplets,
                            float speed, float gravity_acc,
                            float spread, float life_time, int cluster_size,
                            float droplet_vol, float cleaning_rate)
