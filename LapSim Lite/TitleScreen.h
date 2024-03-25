@@ -1,6 +1,6 @@
 #pragma once
-#include "../../lib/Terminal Text Lib/SpriteHandler.h"
-#include "../../lib/Terminal Text Lib/ASCII_Fonts.h"
+#include "../../lib/Termin8or/SpriteHandler.h"
+#include "../../lib/Termin8or/ASCII_Fonts.h"
 
 
 

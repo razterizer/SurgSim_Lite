@@ -1,5 +1,5 @@
 #pragma once
-#include "../../lib/Terminal Text Lib/LineData.h"
+#include "../../lib/Termin8or/LineData.h"
 
 namespace icon_data
 {

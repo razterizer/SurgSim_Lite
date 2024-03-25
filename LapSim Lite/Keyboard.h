@@ -1,5 +1,5 @@
 #pragma once
-#include "../../lib/Terminal Text Lib/Keyboard.h"
+#include "../../lib/Termin8or/Keyboard.h"
 
 bool register_keypresses(Key& curr_key, int& key_ctr, int& arrow_key_ctr, std::array<Key, 3>& arrow_key_buffer, bool& paused)
 {
