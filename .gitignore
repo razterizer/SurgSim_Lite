@@ -10,6 +10,7 @@ xcshareddata/
 xcdebugger/
 
 # Ignore bin-folders
+bin/
 bin_linux/
 bin_windows/
 
