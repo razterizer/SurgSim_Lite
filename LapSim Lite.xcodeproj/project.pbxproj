@@ -46,6 +46,7 @@
 		0722BF04290BE338006AB12C /* ParticleSystem.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ParticleSystem.h; sourceTree = "<group>"; };
 		0722BF05290BE382006AB12C /* LiquidVolumes.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LiquidVolumes.h; sourceTree = "<group>"; };
 		0735B7A2290F4BC5002D12B9 /* InstrumentData.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = InstrumentData.h; sourceTree = "<group>"; };
+		078F2B662C01239D00FF60F8 /* title.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = title.txt; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +100,7 @@
 				071CC3E029048B3D007B4B98 /* InstructionsScreen.h */,
 				071CC3E129048B45007B4B98 /* TitleScreen.h */,
 				071CC3DE290487BA007B4B98 /* AnatomyLineData.h */,
+				078F2B662C01239D00FF60F8 /* title.txt */,
 				0712497628FFEC73002B6247 /* build.sh */,
 			);
 			path = "LapSim Lite";
