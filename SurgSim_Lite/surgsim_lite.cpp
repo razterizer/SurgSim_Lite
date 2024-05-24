@@ -366,7 +366,7 @@ int main(int argc, char** argv)
 
   if (argc >= 2 && !strcmp(argv[1], "--help"))
   {
-    std::cout << "lapsim_lite (\"--help\" | [<frame-delay-us> [<nåt-här>]])" << std::endl;
+    std::cout << "surgsim_lite (\"--help\" | [<frame-delay-us> [<nåt-här>]])" << std::endl;
     return EXIT_SUCCESS;
   }
 
