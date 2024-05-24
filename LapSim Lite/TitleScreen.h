@@ -1,6 +1,7 @@
 #pragma once
 #include "../../lib/Termin8or/SpriteHandler.h"
 #include "../../lib/Termin8or/ASCII_Fonts.h"
+#include "../../lib/Core/TextIO.h"
 
 
 
@@ -166,7 +167,11 @@ void draw_title(SpriteHandler<NR, NC>& sh, const std::vector<ASCII_Fonts::FontDa
   print("Rasmus Anthin", 0, 55, red, trp);
   print("Presents:", 1, 57, red, trp);
   
-  ASCII_Fonts::draw_text(sh, font_data[0], "LapSim", 1, 8, ASCII_Fonts::Font::Larry3D);
+  std::vector<std::string> lines;
+  if (TextIO::read_file("title.txt", lines) && !lines.empty())
+    ASCII_Fonts::draw_text(sh, font_data[0], lines.back(), 1, 8, ASCII_Fonts::Font::Larry3D);
+  else
+    ASCII_Fonts::draw_text(sh, font_data[0], "SurgSim", 1, 8, ASCII_Fonts::Font::Larry3D);
   ASCII_Fonts::draw_text(sh, font_data[1], "Lite", 11, 31, ASCII_Fonts::Font::Larry3D);
   
   // Cholecystectomy
