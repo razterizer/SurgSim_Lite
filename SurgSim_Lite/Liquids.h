@@ -1,6 +1,6 @@
 //
 //  Liquids.h
-//  LapSim Lite
+//  Surgsim_Lite
 //
 //  Created by Rasmus Anthin on 2022-10-22.
 //
