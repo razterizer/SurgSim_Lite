@@ -2,24 +2,24 @@
 
 // avatar
 //
-//  _     ____  ____  ____  _  _        _     _ _____ _____
-// / \   /  _ \/  __\/ ___\/ \/ \__/|  / \   / Y__ __Y  __/
-// | |   | / \||  \/||    \| || |\/||  | |   | | / \ |  \
-// | |_/\| |-|||  __/\___ || || |  ||  | |_/\| | | | |  /_
-// \____/\_/ \|\_/   \____/\_/\_/  \|  \____/\_/ \_/ \____\
+//  ____  _     ____  _____ ____  _  _        _     _ _____ _____
+// / ___\/ \ /\/  __\/  __// ___\/ \/ \__/|  / \   / Y__ __Y  __/
+// |    \| | |||  \/|| |  _|    \| || |\/||  | |   | | / \ |  \
+// \___ || \_/||    /| |_//\___ || || |  ||  | |_/\| | | | |  /_
+// \____/\____/\_/\_\\____\\____/\_/\_/  \|  \____/\_/ \_/ \____\
 
 template<int NR, int NC>
 void draw_instructions(SpriteHandler<NR, NC>& sh, int max_health)
 {
-  sh.write_buffer("_     ____  ____  ____  _  _        _     _ _____ _____", 1, 11, Text::Color::White);
+  sh.write_buffer("____  _     ____  _____ ____  _  _        _     _ _____ _____", 1, 9, Text::Color::White);
 
-  sh.write_buffer("/ \\   /  _ \\/  __\\/ ___\\/ \\/ \\__/|  / \\   / Y__ __Y  __/", 2, 10, Text::Color::White);
+  sh.write_buffer("/ ___\\/ \\ /\\/  __\\/  __// ___\\/ \\/ \\__/|  / \\   / Y__ __Y  __/", 2, 8, Text::Color::White);
 
-  sh.write_buffer("| |   | / \\||  \\/||    \\| || |\\/||  | |   | | / \\ |  \\", 3, 10, Text::Color::White);
+  sh.write_buffer("|    \\| | |||  \\/|| |  _|    \\| || |\\/||  | |   | | / \\ |  \\", 3, 8, Text::Color::White);
 
-  sh.write_buffer("| |_/\\| |-|||  __/\\___ || || |  ||  | |_/\\| | | | |  /_", 4, 10, Text::Color::White);
+  sh.write_buffer("\\___ || \\_/||    /| |_//\\___ || || |  ||  | |_/\\| | | | |  /_", 4, 8, Text::Color::White);
 
-  sh.write_buffer("\\____/\\_/ \\|\\_/   \\____/\\_/\\_/  \\|  \\____/\\_/ \\_/ \\____\\", 5, 10, Text::Color::White);
+  sh.write_buffer("\\____/\\____/\\_/\\_\\\\____\\\\____/\\_/\\_/  \\|  \\____/\\_/ \\_/ \\____\\", 5, 8, Text::Color::White);
 
   sh.write_buffer("The objective of this game is to complete the operation by ", 7, 2, Text::Color::White);
   sh.write_buffer(" properly sealing the cystic artery and the cystic duct and ", 8, 2, Text::Color::White);
