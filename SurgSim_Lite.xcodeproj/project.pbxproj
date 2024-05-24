@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0712497728FFEC73002B6247 /* lapsim_lite.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0712497528FFEC73002B6247 /* lapsim_lite.cpp */; };
+		078F2B852C0126BE00FF60F8 /* surgsim_lite.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 078F2B732C0126BE00FF60F8 /* surgsim_lite.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -24,29 +24,29 @@
 
 /* Begin PBXFileReference section */
 		0712496B28FFEBDE002B6247 /* LapSim Lite */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "LapSim Lite"; sourceTree = BUILT_PRODUCTS_DIR; };
-		0712497528FFEC73002B6247 /* lapsim_lite.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = lapsim_lite.cpp; sourceTree = "<group>"; };
-		0712497628FFEC73002B6247 /* build.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = build.sh; sourceTree = "<group>"; };
-		071CC3DE290487BA007B4B98 /* AnatomyLineData.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AnatomyLineData.h; sourceTree = "<group>"; };
-		071CC3E029048B3D007B4B98 /* InstructionsScreen.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = InstructionsScreen.h; sourceTree = "<group>"; };
-		071CC3E129048B45007B4B98 /* TitleScreen.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TitleScreen.h; sourceTree = "<group>"; };
-		071CC3E229048C00007B4B98 /* CreateAnatomies.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CreateAnatomies.h; sourceTree = "<group>"; };
-		071CC3E429048CD5007B4B98 /* icon_data.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = icon_data.h; sourceTree = "<group>"; };
-		071CC3E529048D25007B4B98 /* Instruments.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Instruments.h; sourceTree = "<group>"; };
-		071CC3E629048D85007B4B98 /* Enums.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Enums.h; sourceTree = "<group>"; };
-		071CC3E729048DE0007B4B98 /* ToolMenus.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ToolMenus.h; sourceTree = "<group>"; };
-		071CC3E829048E54007B4B98 /* TexLineCharIdx.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TexLineCharIdx.h; sourceTree = "<group>"; };
-		071CC3E929048E77007B4B98 /* HealthStates.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HealthStates.h; sourceTree = "<group>"; };
-		071CC3EA29048EE1007B4B98 /* Dissection.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Dissection.h; sourceTree = "<group>"; };
-		071CC3EB29048F4D007B4B98 /* MessageHandler.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MessageHandler.h; sourceTree = "<group>"; };
-		071CC3EC2904903B007B4B98 /* Keyboard.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Keyboard.h; sourceTree = "<group>"; };
-		071CC3ED29049241007B4B98 /* Hud.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Hud.h; sourceTree = "<group>"; };
-		071CC3EE29049979007B4B98 /* Liquids.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Liquids.h; sourceTree = "<group>"; };
-		071CC3EF29057586007B4B98 /* TubeTopology.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TubeTopology.h; sourceTree = "<group>"; };
-		0722BF03290ABF8F006AB12C /* Grasping.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Grasping.h; sourceTree = "<group>"; };
-		0722BF04290BE338006AB12C /* ParticleSystem.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ParticleSystem.h; sourceTree = "<group>"; };
-		0722BF05290BE382006AB12C /* LiquidVolumes.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LiquidVolumes.h; sourceTree = "<group>"; };
-		0735B7A2290F4BC5002D12B9 /* InstrumentData.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = InstrumentData.h; sourceTree = "<group>"; };
-		078F2B662C01239D00FF60F8 /* title.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = title.txt; sourceTree = "<group>"; };
+		078F2B6D2C0126BE00FF60F8 /* Instruments.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Instruments.h; sourceTree = "<group>"; };
+		078F2B6E2C0126BE00FF60F8 /* Dissection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Dissection.h; sourceTree = "<group>"; };
+		078F2B6F2C0126BE00FF60F8 /* InstructionsScreen.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InstructionsScreen.h; sourceTree = "<group>"; };
+		078F2B702C0126BE00FF60F8 /* Grasping.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Grasping.h; sourceTree = "<group>"; };
+		078F2B712C0126BE00FF60F8 /* CreateAnatomies.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CreateAnatomies.h; sourceTree = "<group>"; };
+		078F2B722C0126BE00FF60F8 /* Enums.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Enums.h; sourceTree = "<group>"; };
+		078F2B732C0126BE00FF60F8 /* surgsim_lite.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = surgsim_lite.cpp; sourceTree = "<group>"; };
+		078F2B742C0126BE00FF60F8 /* LiquidVolumes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LiquidVolumes.h; sourceTree = "<group>"; };
+		078F2B752C0126BE00FF60F8 /* InstrumentData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InstrumentData.h; sourceTree = "<group>"; };
+		078F2B762C0126BE00FF60F8 /* AnatomyLineData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnatomyLineData.h; sourceTree = "<group>"; };
+		078F2B772C0126BE00FF60F8 /* HealthStates.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HealthStates.h; sourceTree = "<group>"; };
+		078F2B792C0126BE00FF60F8 /* TexLineCharIdx.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TexLineCharIdx.h; sourceTree = "<group>"; };
+		078F2B7A2C0126BE00FF60F8 /* MessageHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessageHandler.h; sourceTree = "<group>"; };
+		078F2B7B2C0126BE00FF60F8 /* title.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = title.txt; sourceTree = "<group>"; };
+		078F2B7C2C0126BE00FF60F8 /* icon_data.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = icon_data.h; sourceTree = "<group>"; };
+		078F2B7D2C0126BE00FF60F8 /* build.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = build.sh; sourceTree = "<group>"; };
+		078F2B7E2C0126BE00FF60F8 /* TitleScreen.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TitleScreen.h; sourceTree = "<group>"; };
+		078F2B7F2C0126BE00FF60F8 /* ToolMenus.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ToolMenus.h; sourceTree = "<group>"; };
+		078F2B802C0126BE00FF60F8 /* TubeTopology.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TubeTopology.h; sourceTree = "<group>"; };
+		078F2B812C0126BE00FF60F8 /* Keyboard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Keyboard.h; sourceTree = "<group>"; };
+		078F2B822C0126BE00FF60F8 /* Hud.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Hud.h; sourceTree = "<group>"; };
+		078F2B832C0126BE00FF60F8 /* Liquids.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Liquids.h; sourceTree = "<group>"; };
+		078F2B842C0126BE00FF60F8 /* ParticleSystem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ParticleSystem.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,7 +63,7 @@
 		0712496228FFEBDE002B6247 = {
 			isa = PBXGroup;
 			children = (
-				0712496D28FFEBDE002B6247 /* LapSim Lite */,
+				078F2B6C2C01262C00FF60F8 /* SurgSim_Lite */,
 				0712496C28FFEBDE002B6247 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -76,34 +76,34 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		0712496D28FFEBDE002B6247 /* LapSim Lite */ = {
+		078F2B6C2C01262C00FF60F8 /* SurgSim_Lite */ = {
 			isa = PBXGroup;
 			children = (
-				0712497528FFEC73002B6247 /* lapsim_lite.cpp */,
-				0722BF03290ABF8F006AB12C /* Grasping.h */,
-				071CC3EE29049979007B4B98 /* Liquids.h */,
-				0722BF04290BE338006AB12C /* ParticleSystem.h */,
-				0722BF05290BE382006AB12C /* LiquidVolumes.h */,
-				071CC3EF29057586007B4B98 /* TubeTopology.h */,
-				071CC3ED29049241007B4B98 /* Hud.h */,
-				071CC3EC2904903B007B4B98 /* Keyboard.h */,
-				071CC3EB29048F4D007B4B98 /* MessageHandler.h */,
-				071CC3EA29048EE1007B4B98 /* Dissection.h */,
-				071CC3E929048E77007B4B98 /* HealthStates.h */,
-				071CC3E829048E54007B4B98 /* TexLineCharIdx.h */,
-				071CC3E729048DE0007B4B98 /* ToolMenus.h */,
-				071CC3E529048D25007B4B98 /* Instruments.h */,
-				0735B7A2290F4BC5002D12B9 /* InstrumentData.h */,
-				071CC3E629048D85007B4B98 /* Enums.h */,
-				071CC3E429048CD5007B4B98 /* icon_data.h */,
-				071CC3E229048C00007B4B98 /* CreateAnatomies.h */,
-				071CC3E029048B3D007B4B98 /* InstructionsScreen.h */,
-				071CC3E129048B45007B4B98 /* TitleScreen.h */,
-				071CC3DE290487BA007B4B98 /* AnatomyLineData.h */,
-				078F2B662C01239D00FF60F8 /* title.txt */,
-				0712497628FFEC73002B6247 /* build.sh */,
+				078F2B732C0126BE00FF60F8 /* surgsim_lite.cpp */,
+				078F2B762C0126BE00FF60F8 /* AnatomyLineData.h */,
+				078F2B712C0126BE00FF60F8 /* CreateAnatomies.h */,
+				078F2B6E2C0126BE00FF60F8 /* Dissection.h */,
+				078F2B722C0126BE00FF60F8 /* Enums.h */,
+				078F2B702C0126BE00FF60F8 /* Grasping.h */,
+				078F2B772C0126BE00FF60F8 /* HealthStates.h */,
+				078F2B822C0126BE00FF60F8 /* Hud.h */,
+				078F2B7C2C0126BE00FF60F8 /* icon_data.h */,
+				078F2B6F2C0126BE00FF60F8 /* InstructionsScreen.h */,
+				078F2B752C0126BE00FF60F8 /* InstrumentData.h */,
+				078F2B6D2C0126BE00FF60F8 /* Instruments.h */,
+				078F2B812C0126BE00FF60F8 /* Keyboard.h */,
+				078F2B832C0126BE00FF60F8 /* Liquids.h */,
+				078F2B742C0126BE00FF60F8 /* LiquidVolumes.h */,
+				078F2B7A2C0126BE00FF60F8 /* MessageHandler.h */,
+				078F2B842C0126BE00FF60F8 /* ParticleSystem.h */,
+				078F2B792C0126BE00FF60F8 /* TexLineCharIdx.h */,
+				078F2B7E2C0126BE00FF60F8 /* TitleScreen.h */,
+				078F2B7F2C0126BE00FF60F8 /* ToolMenus.h */,
+				078F2B802C0126BE00FF60F8 /* TubeTopology.h */,
+				078F2B7B2C0126BE00FF60F8 /* title.txt */,
+				078F2B7D2C0126BE00FF60F8 /* build.sh */,
 			);
-			path = "LapSim Lite";
+			path = SurgSim_Lite;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -140,7 +140,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 0712496628FFEBDE002B6247 /* Build configuration list for PBXProject "LapSim Lite" */;
+			buildConfigurationList = 0712496628FFEBDE002B6247 /* Build configuration list for PBXProject "SurgSim_Lite" */;
 			compatibilityVersion = "Xcode 13.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -163,7 +163,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0712497728FFEC73002B6247 /* lapsim_lite.cpp in Sources */,
+				078F2B852C0126BE00FF60F8 /* surgsim_lite.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -304,7 +304,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		0712496628FFEBDE002B6247 /* Build configuration list for PBXProject "LapSim Lite" */ = {
+		0712496628FFEBDE002B6247 /* Build configuration list for PBXProject "SurgSim_Lite" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				0712497028FFEBDE002B6247 /* Debug */,
