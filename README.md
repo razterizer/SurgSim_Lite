@@ -24,16 +24,12 @@ Then just open `<my_source_code_dir>/SurgSim_Lite/SurgSim_Lite/SurgSim_Lite.sln`
 
 ### MacOS
 
-Make sure you have OpenAL-Soft installed: `brew install openal-soft`.
-
-Then goto `<my_source_code_dir>/SurgSim_Lite/SurgSim_Lite/` and build with `./build.sh`.
+Goto `<my_source_code_dir>/SurgSim_Lite/SurgSim_Lite/` and build with `./build.sh`.
 
 Then run by typing `./bin/surgsim_lite`.
 
 ### Linux (Ubuntu)
 
-Make sure you have OpenAL-Soft installed: `sudo apt install libopenal-dev`.
-
-Then goto `<my_source_code_dir>/SurgSim_Lite/SurgSim_Lite/` and build with `./build.sh`.
+Goto `<my_source_code_dir>/SurgSim_Lite/SurgSim_Lite/` and build with `./build.sh`.
 
 Then run by typing `./bin/surgsim_lite`.
