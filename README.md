@@ -8,6 +8,18 @@
 
 ## Build & Run Instructions
 
+
+There are two options on dealing with repo dependencies:
+### Repo Dependencies Option 1
+
+Run the following command from `<my_source_code_dir>`.
+```sh
+./SurgSim_Lite/fetch-dependencies ./SurgSim_Lite/dependencies
+```
+This will make sure you are running the latest stable versions that work with `SurgSim_Lite`.
+
+### Repo Dependencies Option 2
+
 You need the following header-only libraries that I've made:
 * https://github.com/razterizer/Core
 * https://github.com/razterizer/Termin8or
@@ -18,6 +30,9 @@ Make sure the folder structure looks like this:
 <my_source_code_dir>/lib/Termin8or/              ; Termin8or repo workspace/checkout goes here.
 <my_source_code_dir>SurgSim_Lite/                ; SurgSim_Lite repo workspace/checkout goes here.
 ```
+
+These repos are not guaranteed to all the time work with the latest version of `SurgSim_Lite`. If you want the more stable aproach then look at Option 1 instead.
+
 ### Windows (not yet implemented)
 
 Then just open `<my_source_code_dir>/SurgSim_Lite/SurgSim_Lite/SurgSim_Lite.sln` and build and run. That's it!
