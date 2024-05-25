@@ -18,6 +18,8 @@ Run the following command from `<my_source_code_dir>`.
 ```
 This will make sure you are running the latest stable versions that work with `SurgSim_Lite`.
 
+This script was created by [Thibaut Buchert](https://github.com/thibautbuchert).
+
 ### Repo Dependencies Option 2
 
 You need the following header-only libraries that I've made:
