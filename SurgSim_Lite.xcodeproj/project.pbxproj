@@ -23,7 +23,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		0712496B28FFEBDE002B6247 /* LapSim Lite */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "LapSim Lite"; sourceTree = BUILT_PRODUCTS_DIR; };
+		0712496B28FFEBDE002B6247 /* SurgSim_Lite */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = SurgSim_Lite; sourceTree = BUILT_PRODUCTS_DIR; };
 		078F2B6D2C0126BE00FF60F8 /* Instruments.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Instruments.h; sourceTree = "<group>"; };
 		078F2B6E2C0126BE00FF60F8 /* Dissection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Dissection.h; sourceTree = "<group>"; };
 		078F2B6F2C0126BE00FF60F8 /* InstructionsScreen.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InstructionsScreen.h; sourceTree = "<group>"; };
@@ -71,7 +71,7 @@
 		0712496C28FFEBDE002B6247 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				0712496B28FFEBDE002B6247 /* LapSim Lite */,
+				0712496B28FFEBDE002B6247 /* SurgSim_Lite */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -109,9 +109,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		0712496A28FFEBDE002B6247 /* LapSim Lite */ = {
+		0712496A28FFEBDE002B6247 /* SurgSim_Lite */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 0712497228FFEBDE002B6247 /* Build configuration list for PBXNativeTarget "LapSim Lite" */;
+			buildConfigurationList = 0712497228FFEBDE002B6247 /* Build configuration list for PBXNativeTarget "SurgSim_Lite" */;
 			buildPhases = (
 				0712496728FFEBDE002B6247 /* Sources */,
 				0712496828FFEBDE002B6247 /* Frameworks */,
@@ -121,9 +121,9 @@
 			);
 			dependencies = (
 			);
-			name = "LapSim Lite";
+			name = SurgSim_Lite;
 			productName = "LapSim Lite";
-			productReference = 0712496B28FFEBDE002B6247 /* LapSim Lite */;
+			productReference = 0712496B28FFEBDE002B6247 /* SurgSim_Lite */;
 			productType = "com.apple.product-type.tool";
 		};
 /* End PBXNativeTarget section */
@@ -153,7 +153,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				0712496A28FFEBDE002B6247 /* LapSim Lite */,
+				0712496A28FFEBDE002B6247 /* SurgSim_Lite */,
 			);
 		};
 /* End PBXProject section */
@@ -313,7 +313,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		0712497228FFEBDE002B6247 /* Build configuration list for PBXNativeTarget "LapSim Lite" */ = {
+		0712497228FFEBDE002B6247 /* Build configuration list for PBXNativeTarget "SurgSim_Lite" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				0712497328FFEBDE002B6247 /* Debug */,
