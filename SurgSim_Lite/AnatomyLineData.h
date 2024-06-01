@@ -1,10 +1,10 @@
 #pragma once
-#include "../../lib/Termin8or/ColorGradient.h"
-#include "../../lib/Core/Physics.h"
-#include "../../lib/Termin8or/Pixel.h"
-#include "../../lib/Termin8or/RC.h"
-#include "../../lib/Core/StringHelper.h"
-#include "../../lib/Termin8or/SpriteHandler.h"
+#include <Termin8or/ColorGradient.h>
+#include <Core/Physics.h>
+#include <Termin8or/Pixel.h>
+#include <Termin8or/RC.h>
+#include <Core/StringHelper.h>
+#include <Termin8or/SpriteHandler.h>
 #include "Enums.h"
 #include "TexLineCharIdx.h"
 

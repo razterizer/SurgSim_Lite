@@ -1,8 +1,8 @@
 #pragma once
 #include "InstrumentData.h"
-#include "../../lib/Termin8or/RC.h"
-#include "../../lib/Core/Math.h"
-#include "../../lib/Termin8or/Drawing.h"
+#include <Termin8or/RC.h>
+#include <Core/Math.h>
+#include <Termin8or/Drawing.h>
 #include "Enums.h"
 #include "icon_data.h"
 

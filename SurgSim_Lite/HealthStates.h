@@ -3,9 +3,9 @@
 #include "AnatomyLineData.h"
 #include "MessageHandler.h"
 #include "Liquids.h"
-#include "../../lib/Core/Math.h"
-#include "../../lib/Core/FlankDetector.h"
-#include "../../lib/Core/OneShot.h"
+#include <Core/Math.h>
+#include <Core/FlankDetector.h>
+#include <Core/OneShot.h>
 
 class HealthStates
 {

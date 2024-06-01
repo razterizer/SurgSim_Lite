@@ -1,5 +1,5 @@
 #pragma once
-#include "../../lib/Termin8or/RC.h"
+#include <Termin8or/RC.h>
 #include "AnatomyLineData.h"
 #include "TexLineCharIdx.h"
 #include "HealthStates.h"

@@ -11,10 +11,10 @@
 #include "Hud.h"
 #include "Grasping.h"
 
-#include "../../lib/Termin8or/Screen.h"
-#include "../../lib/Core/Delay.h"
-#include "../../lib/Termin8or/GameEngine.h"
-#include "../../lib/Termin8or/ASCII_Fonts.h"
+#include <Termin8or/Screen.h>
+#include <Core/Delay.h>
+#include <Termin8or/GameEngine.h>
+#include <Termin8or/ASCII_Fonts.h>
 
 #include <iostream>
 

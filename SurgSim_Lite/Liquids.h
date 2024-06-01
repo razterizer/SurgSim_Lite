@@ -9,8 +9,8 @@
 #include "TubeTopology.h"
 #include "LiquidVolumes.h"
 #include "ParticleSystem.h"
-#include "../../lib/Termin8or/ColorGradient.h"
-#include "../../lib/Termin8or/Screen.h"
+#include <Termin8or/ColorGradient.h>
+#include <Termin8or/Screen.h>
 #include <optional>
 
 namespace liquids

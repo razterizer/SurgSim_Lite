@@ -1,6 +1,6 @@
 #pragma once
 #include "LiquidVolumes.h"
-#include "../../lib/Termin8or/ParticleSystem.h"
+#include <Termin8or/ParticleSystem.h>
 
 
 struct ParticleFluidHandler : ParticleHandler

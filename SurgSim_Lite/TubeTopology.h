@@ -1,5 +1,5 @@
 #pragma once
-#include "../../lib/Termin8or/RC.h"
+#include <Termin8or/RC.h>
 #include <vector>
 
 namespace tube_topology

@@ -1,7 +1,7 @@
 #pragma once
-#include "../../lib/Termin8or/SpriteHandler.h"
-#include "../../lib/Termin8or/ASCII_Fonts.h"
-#include "../../lib/Core/TextIO.h"
+#include <Termin8or/SpriteHandler.h>
+#include <Termin8or/ASCII_Fonts.h>
+#include <Core/TextIO.h>
 
 
 

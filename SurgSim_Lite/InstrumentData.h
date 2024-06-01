@@ -1,6 +1,6 @@
 #pragma once
 #include "Enums.h"
-#include "../../lib/Core/Math.h"
+#include <Core/Math.h>
 
 
 class InstrumentData
