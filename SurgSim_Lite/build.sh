@@ -9,4 +9,4 @@ else
   # export BUILD_PKG_CONFIG_MODULES='openal'
 fi
 
-../../lib/Core/build.sh pilot_episode "$1" "${additional_flags[@]}"
+../../lib/Core/build.sh surgsim_lite "$1" "${additional_flags[@]}"
