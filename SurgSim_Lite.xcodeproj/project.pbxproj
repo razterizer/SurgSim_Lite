@@ -3,15 +3,15 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 55;
+	objectVersion = 56;
 	objects = {
 
 /* Begin PBXBuildFile section */
-		078F2B852C0126BE00FF60F8 /* surgsim_lite.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 078F2B732C0126BE00FF60F8 /* surgsim_lite.cpp */; };
+		07E6EAA62C0B6BD5007BBC6B /* surgsim_lite.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 07E6EA9D2C0B6BD4007BBC6B /* surgsim_lite.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		0712496928FFEBDE002B6247 /* CopyFiles */ = {
+		07E6EA832C0B6B35007BBC6B /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = /usr/share/man/man1/;
@@ -23,34 +23,34 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		0712496B28FFEBDE002B6247 /* SurgSim_Lite */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = SurgSim_Lite; sourceTree = BUILT_PRODUCTS_DIR; };
-		078F2B6D2C0126BE00FF60F8 /* Instruments.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Instruments.h; sourceTree = "<group>"; };
-		078F2B6E2C0126BE00FF60F8 /* Dissection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Dissection.h; sourceTree = "<group>"; };
-		078F2B6F2C0126BE00FF60F8 /* InstructionsScreen.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InstructionsScreen.h; sourceTree = "<group>"; };
-		078F2B702C0126BE00FF60F8 /* Grasping.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Grasping.h; sourceTree = "<group>"; };
-		078F2B712C0126BE00FF60F8 /* CreateAnatomies.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CreateAnatomies.h; sourceTree = "<group>"; };
-		078F2B722C0126BE00FF60F8 /* Enums.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Enums.h; sourceTree = "<group>"; };
-		078F2B732C0126BE00FF60F8 /* surgsim_lite.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = surgsim_lite.cpp; sourceTree = "<group>"; };
-		078F2B742C0126BE00FF60F8 /* LiquidVolumes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LiquidVolumes.h; sourceTree = "<group>"; };
-		078F2B752C0126BE00FF60F8 /* InstrumentData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InstrumentData.h; sourceTree = "<group>"; };
-		078F2B762C0126BE00FF60F8 /* AnatomyLineData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnatomyLineData.h; sourceTree = "<group>"; };
-		078F2B772C0126BE00FF60F8 /* HealthStates.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HealthStates.h; sourceTree = "<group>"; };
-		078F2B792C0126BE00FF60F8 /* TexLineCharIdx.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TexLineCharIdx.h; sourceTree = "<group>"; };
-		078F2B7A2C0126BE00FF60F8 /* MessageHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessageHandler.h; sourceTree = "<group>"; };
-		078F2B7B2C0126BE00FF60F8 /* title.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = title.txt; sourceTree = "<group>"; };
-		078F2B7C2C0126BE00FF60F8 /* icon_data.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = icon_data.h; sourceTree = "<group>"; };
-		078F2B7D2C0126BE00FF60F8 /* build.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = build.sh; sourceTree = "<group>"; };
-		078F2B7E2C0126BE00FF60F8 /* TitleScreen.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TitleScreen.h; sourceTree = "<group>"; };
-		078F2B7F2C0126BE00FF60F8 /* ToolMenus.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ToolMenus.h; sourceTree = "<group>"; };
-		078F2B802C0126BE00FF60F8 /* TubeTopology.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TubeTopology.h; sourceTree = "<group>"; };
-		078F2B812C0126BE00FF60F8 /* Keyboard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Keyboard.h; sourceTree = "<group>"; };
-		078F2B822C0126BE00FF60F8 /* Hud.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Hud.h; sourceTree = "<group>"; };
-		078F2B832C0126BE00FF60F8 /* Liquids.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Liquids.h; sourceTree = "<group>"; };
-		078F2B842C0126BE00FF60F8 /* ParticleSystem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ParticleSystem.h; sourceTree = "<group>"; };
+		07E6EA852C0B6B35007BBC6B /* SurgSim_Lite */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = SurgSim_Lite; sourceTree = BUILT_PRODUCTS_DIR; };
+		07E6EA8F2C0B6BD4007BBC6B /* Liquids.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Liquids.h; sourceTree = "<group>"; };
+		07E6EA902C0B6BD4007BBC6B /* MessageHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessageHandler.h; sourceTree = "<group>"; };
+		07E6EA912C0B6BD4007BBC6B /* ParticleSystem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ParticleSystem.h; sourceTree = "<group>"; };
+		07E6EA922C0B6BD4007BBC6B /* title.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = title.txt; sourceTree = "<group>"; };
+		07E6EA932C0B6BD4007BBC6B /* Grasping.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Grasping.h; sourceTree = "<group>"; };
+		07E6EA942C0B6BD4007BBC6B /* icon_data.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = icon_data.h; sourceTree = "<group>"; };
+		07E6EA952C0B6BD4007BBC6B /* LiquidVolumes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LiquidVolumes.h; sourceTree = "<group>"; };
+		07E6EA962C0B6BD4007BBC6B /* TexLineCharIdx.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TexLineCharIdx.h; sourceTree = "<group>"; };
+		07E6EA972C0B6BD4007BBC6B /* ToolMenus.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ToolMenus.h; sourceTree = "<group>"; };
+		07E6EA982C0B6BD4007BBC6B /* build.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = build.sh; sourceTree = "<group>"; };
+		07E6EA992C0B6BD4007BBC6B /* TubeTopology.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TubeTopology.h; sourceTree = "<group>"; };
+		07E6EA9A2C0B6BD4007BBC6B /* Enums.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Enums.h; sourceTree = "<group>"; };
+		07E6EA9B2C0B6BD4007BBC6B /* AnatomyLineData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnatomyLineData.h; sourceTree = "<group>"; };
+		07E6EA9C2C0B6BD4007BBC6B /* Dissection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Dissection.h; sourceTree = "<group>"; };
+		07E6EA9D2C0B6BD4007BBC6B /* surgsim_lite.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = surgsim_lite.cpp; sourceTree = "<group>"; };
+		07E6EA9E2C0B6BD5007BBC6B /* TitleScreen.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TitleScreen.h; sourceTree = "<group>"; };
+		07E6EA9F2C0B6BD5007BBC6B /* Hud.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Hud.h; sourceTree = "<group>"; };
+		07E6EAA02C0B6BD5007BBC6B /* HealthStates.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HealthStates.h; sourceTree = "<group>"; };
+		07E6EAA12C0B6BD5007BBC6B /* Instruments.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Instruments.h; sourceTree = "<group>"; };
+		07E6EAA22C0B6BD5007BBC6B /* CreateAnatomies.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CreateAnatomies.h; sourceTree = "<group>"; };
+		07E6EAA32C0B6BD5007BBC6B /* InstructionsScreen.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InstructionsScreen.h; sourceTree = "<group>"; };
+		07E6EAA42C0B6BD5007BBC6B /* InstrumentData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InstrumentData.h; sourceTree = "<group>"; };
+		07E6EAA52C0B6BD5007BBC6B /* Keyboard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Keyboard.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		0712496828FFEBDE002B6247 /* Frameworks */ = {
+		07E6EA822C0B6B35007BBC6B /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -60,48 +60,48 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		0712496228FFEBDE002B6247 = {
+		07E6EA7C2C0B6B35007BBC6B = {
 			isa = PBXGroup;
 			children = (
-				078F2B6C2C01262C00FF60F8 /* SurgSim_Lite */,
-				0712496C28FFEBDE002B6247 /* Products */,
+				07E6EA872C0B6B35007BBC6B /* SurgSim_Lite */,
+				07E6EA862C0B6B35007BBC6B /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		0712496C28FFEBDE002B6247 /* Products */ = {
+		07E6EA862C0B6B35007BBC6B /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				0712496B28FFEBDE002B6247 /* SurgSim_Lite */,
+				07E6EA852C0B6B35007BBC6B /* SurgSim_Lite */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		078F2B6C2C01262C00FF60F8 /* SurgSim_Lite */ = {
+		07E6EA872C0B6B35007BBC6B /* SurgSim_Lite */ = {
 			isa = PBXGroup;
 			children = (
-				078F2B732C0126BE00FF60F8 /* surgsim_lite.cpp */,
-				078F2B762C0126BE00FF60F8 /* AnatomyLineData.h */,
-				078F2B712C0126BE00FF60F8 /* CreateAnatomies.h */,
-				078F2B6E2C0126BE00FF60F8 /* Dissection.h */,
-				078F2B722C0126BE00FF60F8 /* Enums.h */,
-				078F2B702C0126BE00FF60F8 /* Grasping.h */,
-				078F2B772C0126BE00FF60F8 /* HealthStates.h */,
-				078F2B822C0126BE00FF60F8 /* Hud.h */,
-				078F2B7C2C0126BE00FF60F8 /* icon_data.h */,
-				078F2B6F2C0126BE00FF60F8 /* InstructionsScreen.h */,
-				078F2B752C0126BE00FF60F8 /* InstrumentData.h */,
-				078F2B6D2C0126BE00FF60F8 /* Instruments.h */,
-				078F2B812C0126BE00FF60F8 /* Keyboard.h */,
-				078F2B832C0126BE00FF60F8 /* Liquids.h */,
-				078F2B742C0126BE00FF60F8 /* LiquidVolumes.h */,
-				078F2B7A2C0126BE00FF60F8 /* MessageHandler.h */,
-				078F2B842C0126BE00FF60F8 /* ParticleSystem.h */,
-				078F2B792C0126BE00FF60F8 /* TexLineCharIdx.h */,
-				078F2B7E2C0126BE00FF60F8 /* TitleScreen.h */,
-				078F2B7F2C0126BE00FF60F8 /* ToolMenus.h */,
-				078F2B802C0126BE00FF60F8 /* TubeTopology.h */,
-				078F2B7B2C0126BE00FF60F8 /* title.txt */,
-				078F2B7D2C0126BE00FF60F8 /* build.sh */,
+				07E6EA9D2C0B6BD4007BBC6B /* surgsim_lite.cpp */,
+				07E6EA9B2C0B6BD4007BBC6B /* AnatomyLineData.h */,
+				07E6EAA22C0B6BD5007BBC6B /* CreateAnatomies.h */,
+				07E6EA9C2C0B6BD4007BBC6B /* Dissection.h */,
+				07E6EA9A2C0B6BD4007BBC6B /* Enums.h */,
+				07E6EA932C0B6BD4007BBC6B /* Grasping.h */,
+				07E6EAA02C0B6BD5007BBC6B /* HealthStates.h */,
+				07E6EA9F2C0B6BD5007BBC6B /* Hud.h */,
+				07E6EA942C0B6BD4007BBC6B /* icon_data.h */,
+				07E6EAA32C0B6BD5007BBC6B /* InstructionsScreen.h */,
+				07E6EAA42C0B6BD5007BBC6B /* InstrumentData.h */,
+				07E6EAA12C0B6BD5007BBC6B /* Instruments.h */,
+				07E6EAA52C0B6BD5007BBC6B /* Keyboard.h */,
+				07E6EA8F2C0B6BD4007BBC6B /* Liquids.h */,
+				07E6EA952C0B6BD4007BBC6B /* LiquidVolumes.h */,
+				07E6EA902C0B6BD4007BBC6B /* MessageHandler.h */,
+				07E6EA912C0B6BD4007BBC6B /* ParticleSystem.h */,
+				07E6EA962C0B6BD4007BBC6B /* TexLineCharIdx.h */,
+				07E6EA9E2C0B6BD5007BBC6B /* TitleScreen.h */,
+				07E6EA972C0B6BD4007BBC6B /* ToolMenus.h */,
+				07E6EA992C0B6BD4007BBC6B /* TubeTopology.h */,
+				07E6EA922C0B6BD4007BBC6B /* title.txt */,
+				07E6EA982C0B6BD4007BBC6B /* build.sh */,
 			);
 			path = SurgSim_Lite;
 			sourceTree = "<group>";
@@ -109,75 +109,75 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		0712496A28FFEBDE002B6247 /* SurgSim_Lite */ = {
+		07E6EA842C0B6B35007BBC6B /* SurgSim_Lite */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 0712497228FFEBDE002B6247 /* Build configuration list for PBXNativeTarget "SurgSim_Lite" */;
+			buildConfigurationList = 07E6EA8C2C0B6B35007BBC6B /* Build configuration list for PBXNativeTarget "SurgSim_Lite" */;
 			buildPhases = (
-				0712496728FFEBDE002B6247 /* Sources */,
-				0712496828FFEBDE002B6247 /* Frameworks */,
-				0712496928FFEBDE002B6247 /* CopyFiles */,
+				07E6EA812C0B6B35007BBC6B /* Sources */,
+				07E6EA822C0B6B35007BBC6B /* Frameworks */,
+				07E6EA832C0B6B35007BBC6B /* CopyFiles */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			name = SurgSim_Lite;
-			productName = "LapSim Lite";
-			productReference = 0712496B28FFEBDE002B6247 /* SurgSim_Lite */;
+			productName = SurgSim_Lite;
+			productReference = 07E6EA852C0B6B35007BBC6B /* SurgSim_Lite */;
 			productType = "com.apple.product-type.tool";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		0712496328FFEBDE002B6247 /* Project object */ = {
+		07E6EA7D2C0B6B35007BBC6B /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
-				LastUpgradeCheck = 1320;
+				LastUpgradeCheck = 1540;
 				TargetAttributes = {
-					0712496A28FFEBDE002B6247 = {
-						CreatedOnToolsVersion = 13.2.1;
+					07E6EA842C0B6B35007BBC6B = {
+						CreatedOnToolsVersion = 15.4;
 					};
 				};
 			};
-			buildConfigurationList = 0712496628FFEBDE002B6247 /* Build configuration list for PBXProject "SurgSim_Lite" */;
-			compatibilityVersion = "Xcode 13.0";
+			buildConfigurationList = 07E6EA802C0B6B35007BBC6B /* Build configuration list for PBXProject "SurgSim_Lite" */;
+			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
 				Base,
 			);
-			mainGroup = 0712496228FFEBDE002B6247;
-			productRefGroup = 0712496C28FFEBDE002B6247 /* Products */;
+			mainGroup = 07E6EA7C2C0B6B35007BBC6B;
+			productRefGroup = 07E6EA862C0B6B35007BBC6B /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				0712496A28FFEBDE002B6247 /* SurgSim_Lite */,
+				07E6EA842C0B6B35007BBC6B /* SurgSim_Lite */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXSourcesBuildPhase section */
-		0712496728FFEBDE002B6247 /* Sources */ = {
+		07E6EA812C0B6B35007BBC6B /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				078F2B852C0126BE00FF60F8 /* surgsim_lite.cpp in Sources */,
+				07E6EAA62C0B6BD5007BBC6B /* surgsim_lite.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
-		0712497028FFEBDE002B6247 /* Debug */ = {
+		07E6EA8A2C0B6B35007BBC6B /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
-				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CLANG_ENABLE_OBJC_WEAK = YES;
@@ -207,7 +207,8 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
-				GCC_C_LANGUAGE_STANDARD = gnu11;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -221,7 +222,8 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 12.1;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MACOSX_DEPLOYMENT_TARGET = 14.2;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -229,14 +231,14 @@
 			};
 			name = Debug;
 		};
-		0712497128FFEBDE002B6247 /* Release */ = {
+		07E6EA8B2C0B6B35007BBC6B /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
-				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CLANG_ENABLE_OBJC_WEAK = YES;
@@ -266,7 +268,8 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_C_LANGUAGE_STANDARD = gnu11;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
@@ -274,29 +277,34 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 12.1;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MACOSX_DEPLOYMENT_TARGET = 14.2;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = macosx;
 			};
 			name = Release;
 		};
-		0712497328FFEBDE002B6247 /* Debug */ = {
+		07E6EA8D2C0B6B35007BBC6B /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "c++20";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = HFL2Q84SZB;
 				ENABLE_HARDENED_RUNTIME = YES;
+				HEADER_SEARCH_PATHS = ../lib/;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
 		};
-		0712497428FFEBDE002B6247 /* Release */ = {
+		07E6EA8E2C0B6B35007BBC6B /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "c++20";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = HFL2Q84SZB;
 				ENABLE_HARDENED_RUNTIME = YES;
+				HEADER_SEARCH_PATHS = ../lib/;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
@@ -304,25 +312,25 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		0712496628FFEBDE002B6247 /* Build configuration list for PBXProject "SurgSim_Lite" */ = {
+		07E6EA802C0B6B35007BBC6B /* Build configuration list for PBXProject "SurgSim_Lite" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				0712497028FFEBDE002B6247 /* Debug */,
-				0712497128FFEBDE002B6247 /* Release */,
+				07E6EA8A2C0B6B35007BBC6B /* Debug */,
+				07E6EA8B2C0B6B35007BBC6B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		0712497228FFEBDE002B6247 /* Build configuration list for PBXNativeTarget "SurgSim_Lite" */ = {
+		07E6EA8C2C0B6B35007BBC6B /* Build configuration list for PBXNativeTarget "SurgSim_Lite" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				0712497328FFEBDE002B6247 /* Debug */,
-				0712497428FFEBDE002B6247 /* Release */,
+				07E6EA8D2C0B6B35007BBC6B /* Debug */,
+				07E6EA8E2C0B6B35007BBC6B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = 0712496328FFEBDE002B6247 /* Project object */;
+	rootObject = 07E6EA7D2C0B6B35007BBC6B /* Project object */;
 }
