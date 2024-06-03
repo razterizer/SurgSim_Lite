@@ -30,7 +30,7 @@ class InstrumentData
 
 public:
   InstrumentData(InstrumentSide side, float shaft_length, float shaft_z_len, float angle_rad, const float px_aspect)
-    : instr_side(side), shaft_len(shaft_length), shaft_z(shaft_z_len), ang_rad(angle_rad), pix_ar(px_aspect)
+    : instr_side(side), pix_ar(px_aspect), shaft_len(shaft_length), shaft_z(shaft_z_len), ang_rad(angle_rad)
   {
     update();
   }

@@ -254,7 +254,7 @@ namespace liquids
     register_leaks(reg_leakage_pts_artery_tree, new_leakage_pt_artery_tree, time);
     register_leaks(reg_leakage_pts_duct_tree, new_leakage_pt_duct_tree, time);
     
-    auto update_dripping = [&liquid_volumes, &liquid_flow, dt, time, &sh]
+    auto update_dripping = [&liquid_volumes, &liquid_flow, dt, time]
                            (std::vector<RC>& registered_leakage_pts,
                             ParticleFluidHandler& droplets,
                             float speed, float gravity_acc,
@@ -323,7 +323,7 @@ namespace liquids
         liquid_volumes -= vol_rate;
     };
     
-    auto update_rinsing = [&liquid_volumes, &liquid_flow, screen_width, dt, time, &all_textures]
+    auto update_rinsing = [&liquid_volumes, &liquid_flow, dt, time, &all_textures]
                           (const RC& tcp, InstrumentSide side,
                            bool rinsing,
                            ParticleFluidHandler& droplets,
