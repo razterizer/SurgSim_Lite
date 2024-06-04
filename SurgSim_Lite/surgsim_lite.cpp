@@ -84,13 +84,13 @@ class Game : public GameEngine<>
 {
 public:
   Game(int argc, char** argv)
-    : instr_data_left(InstrumentSide::Left, shaft_len, shaft_z_left, ang_left_rad, pix_ar)
+    : GameEngine(false, Text::Color::DarkMagenta, Text::Color::LightGray, Text::Color::Black)
+    , instr_data_left(InstrumentSide::Left, shaft_len, shaft_z_left, ang_left_rad, pix_ar)
     , instr_data_right(InstrumentSide::Right, shaft_len, shaft_z_right, ang_right_rad, pix_ar)
   {
-    delay = 200'000;
+    set_delay_us(200'000);
     if (argc >= 2)
-      delay = atoi(argv[1]);
-    dt = static_cast<float>(delay) / 1e6f;
+      set_delay_us(atoi(argv[1]));
 
     if (argc >= 3)
     {
@@ -129,39 +129,10 @@ public:
   }
 
 private:
-  virtual bool update() override
+  virtual void update() override
   {
-    if (show_title)
-      bg_color = Text::Color::LightGray;
-    else if (show_instructions)
-      bg_color = Text::Color::Black;
-    else
-      bg_color = Text::Color::DarkMagenta;
+    Key curr_special_key = register_keypresses(kpd);
 
-    Key curr_key = Key::None;
-
-    if (!register_keypresses(curr_key, key_ctr, arrow_key_ctr, arrow_key_buffer, paused))
-      return false;
-
-    if (show_title)
-    {
-      draw_title(sh, font_data);
-      if (curr_key == Key::Skip)
-      {
-        show_title = false;
-        show_instructions = true;
-      }
-    }
-    else if (show_instructions)
-    {
-      draw_instructions(sh, max_health);
-      if (curr_key == Key::Skip)
-        show_instructions = false;
-    }
-    else if (paused)
-      draw_paused(sh, anim_ctr);
-    else
-    {
       trg_tool_left = anim_idx_curr_left == 1 && anim_idx_prev_left == 0;
       trg_tool_right = anim_idx_curr_right == 1 && anim_idx_prev_right == 0;
       anim_idx_prev_left = anim_idx_curr_left;
@@ -199,7 +170,7 @@ private:
       health_states.check_correct_duct_division(all_textures, score);
       health_states.check_liquid_pool_empty(score);
 
-      if (curr_key == Key::Menu)
+      if (curr_special_key == Key::Menu)
         show_menus = !show_menus;
       if (show_menus)
       {
@@ -216,7 +187,7 @@ private:
               idx = icon_data::num_tool_types - 1;
             tool_type = static_cast<ToolType>(idx);
           };
-        switch (curr_key)
+        switch (curr_special_key)
         {
           case Key::LI_Up:   step_tool(tool_type_left, -1); break;
           case Key::LI_Down: step_tool(tool_type_left, +1); break;
@@ -236,7 +207,7 @@ private:
         //else if (anim_ctr == 3)
         //  curr_key = Key::None;
         //curr_key = Key::Coag; // #HACK
-        update_instruments(curr_key,
+        update_instruments(curr_special_key,
           tool_type_left, tool_type_right,
           anim_idx_curr_left, anim_idx_curr_right,
           instr_data_left, instr_data_right,
@@ -269,18 +240,18 @@ private:
         instr_data_right,
         pix_ar);
 
-      generate_sparks(sh, curr_key,
+      generate_sparks(sh, curr_special_key,
         tcp_rc_left, tcp_rc_right,
         tool_type_left, tool_type_right,
         anim_ctr);
-      generate_smoke(sh, curr_key,
+      generate_smoke(sh, curr_special_key,
         tcp_rc_left, tcp_rc_right,
         tool_type_left, tool_type_right,
         dt, time);
 
       std::vector<RC> fluid_sources;
       liquids::update_profuse_liquids(sh,
-        curr_key,
+        curr_special_key,
         tcp_rc_left, tcp_rc_right,
         tool_type_left, tool_type_right,
         all_textures,
@@ -295,31 +266,35 @@ private:
       draw_opaque_anatomy(sh, all_textures[static_cast<size_t>(TextureType::LIVER)]);
       draw_ground(sh);
 
-      update_burn(dt, curr_key,
+      update_burn(dt, curr_special_key,
         tcp_rc_left, tcp_rc_right,
         tool_type_left, tool_type_right,
         trg_tool_left, trg_tool_right,
         all_textures,
         health_states);
 
-      handle_clip_applying(curr_key,
+      handle_clip_applying(curr_special_key,
         tcp_rc_left, tcp_rc_right,
         tool_type_left, tool_type_right,
         trg_tool_left, trg_tool_right,
         all_textures,
         health_states);
-    }
     ///
 
     //sh.replace_bg_color(Text::Color::Transparent, Text::Color::DarkBlue, { 1, 1, 77, h_offs });
-    
-    return true;
+  }
+  
+  virtual void draw_title() override
+  {
+    ::draw_title(sh, font_data);
+  }
+  
+  virtual void draw_instructions() override
+  {
+    ::draw_instructions(sh, max_health);
   }
 
   //////////////////////////////////////////////////////////////////////////
-
-  std::array<Key, 3> arrow_key_buffer;
-  int arrow_key_ctr = 0;
 
   // Instruments
   float ang_left_rad = 0.7854 - 0.1f;
