@@ -22,9 +22,6 @@ const int max_health = 30;
 int health = max_health; // #HACKABLE
 const int max_blood = 30;
 int blood = 0;
-int score = 0;
-bool show_title = true; // (true) #HACKABLE
-bool show_instructions = false;
 
 // TODO:
 // 1. --Render organ sprites. E.g. liver, gallbladder, cystic artery, cystic duct and hepatoduodenal ligament.
@@ -84,7 +81,7 @@ class Game : public GameEngine<>
 {
 public:
   Game(int argc, char** argv)
-    : GameEngine(false, Text::Color::DarkMagenta, Text::Color::LightGray, Text::Color::Black)
+    : GameEngine(argv[0], false, Text::Color::DarkMagenta, Text::Color::LightGray, Text::Color::Black)
     , instr_data_left(InstrumentSide::Left, shaft_len, shaft_z_left, ang_left_rad, pix_ar)
     , instr_data_right(InstrumentSide::Right, shaft_len, shaft_z_right, ang_right_rad, pix_ar)
   {
@@ -140,35 +137,25 @@ private:
 
       RC tcp_rc_left, tcp_rc_right;
 
-      draw_hud(sh, health, max_health, blood, max_blood, score);
+      draw_hud(sh, health, max_health, blood, max_blood, GameEngine::ref_score());
 
       draw_frame(sh, Text::Color::Black);
 
       if (health <= 0 || blood >= max_blood)
-      {
-        if (game_over_timer == 0)
-          draw_game_over(sh);
-        else
-          game_over_timer--;
-      }
+        GameEngine::set_state_game_over();
       else if (health_states.is_exercise_completed())
-      {
-        if (you_won_timer == 0)
-          draw_you_won(sh);
-        else
-          you_won_timer--;
-      }
+        GameEngine::set_state_you_won();
 
       handle_injuries(sh, msg_handler, health_states,
-        health, blood, max_blood, score,
+        health, blood, max_blood, GameEngine::ref_score(),
         time);
-      if (score < 0)
-        score = 0;
+      if (GameEngine::ref_score() < 0)
+        GameEngine::ref_score() = 0;
 
-      health_states.check_visibility(all_textures, TextureType::HD_LIG, score);
-      health_states.check_correct_artery_division(all_textures, score);
-      health_states.check_correct_duct_division(all_textures, score);
-      health_states.check_liquid_pool_empty(score);
+      health_states.check_visibility(all_textures, TextureType::HD_LIG, GameEngine::ref_score());
+      health_states.check_correct_artery_division(all_textures, GameEngine::ref_score());
+      health_states.check_correct_duct_division(all_textures, GameEngine::ref_score());
+      health_states.check_liquid_pool_empty(GameEngine::ref_score());
 
       if (curr_special_key == Key::Menu)
         show_menus = !show_menus;
