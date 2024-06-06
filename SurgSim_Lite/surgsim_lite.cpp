@@ -85,9 +85,9 @@ public:
     , instr_data_left(InstrumentSide::Left, shaft_len, shaft_z_left, ang_left_rad, pix_ar)
     , instr_data_right(InstrumentSide::Right, shaft_len, shaft_z_right, ang_right_rad, pix_ar)
   {
-    set_delay_us(200'000);
+    GameEngine::set_delay_us(200'000);
     if (argc >= 2)
-      set_delay_us(atoi(argv[1]));
+      GameEngine::set_delay_us(atoi(argv[1]));
 
     if (argc >= 3)
     {
