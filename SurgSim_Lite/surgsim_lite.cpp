@@ -333,9 +333,9 @@ int main(int argc, char** argv)
   }
   
   GameEngineParams params;
-  params.bg_color_default = Text::Color::DarkMagenta;
-  params.bg_color_title = Text::Color::LightGray;
-  params.bg_color_instructions = Text::Color::Black;
+  params.screen_bg_color_default = Text::Color::DarkMagenta;
+  params.screen_bg_color_title = Text::Color::LightGray;
+  params.screen_bg_color_instructions = Text::Color::Black;
 
   //nodelay(stdscr, TRUE);
   
