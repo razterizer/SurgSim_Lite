@@ -81,7 +81,7 @@ class Game : public GameEngine<>
 {
 public:
   Game(int argc, char** argv)
-    : GameEngine(argv[0], false, Text::Color::DarkMagenta, Text::Color::LightGray, Text::Color::Black)
+    : GameEngine(argv[0], Text::Color::DarkMagenta, Text::Color::LightGray, Text::Color::Black)
     , instr_data_left(InstrumentSide::Left, shaft_len, shaft_z_left, ang_left_rad, pix_ar)
     , instr_data_right(InstrumentSide::Right, shaft_len, shaft_z_right, ang_right_rad, pix_ar)
   {
