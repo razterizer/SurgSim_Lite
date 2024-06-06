@@ -80,8 +80,8 @@ int blood = 0;
 class Game : public GameEngine<>
 {
 public:
-  Game(int argc, char** argv)
-    : GameEngine(argv[0], Text::Color::DarkMagenta, Text::Color::LightGray, Text::Color::Black)
+  Game(int argc, char** argv, const GameEngineParams& params)
+    : GameEngine(argv[0], params)
     , instr_data_left(InstrumentSide::Left, shaft_len, shaft_z_left, ang_left_rad, pix_ar)
     , instr_data_right(InstrumentSide::Right, shaft_len, shaft_z_right, ang_right_rad, pix_ar)
   {
@@ -331,10 +331,15 @@ int main(int argc, char** argv)
     std::cout << "surgsim_lite (\"--help\" | [<frame-delay-us> [<nåt-här>]])" << std::endl;
     return EXIT_SUCCESS;
   }
+  
+  GameEngineParams params;
+  params.bg_color_default = Text::Color::DarkMagenta;
+  params.bg_color_title = Text::Color::LightGray;
+  params.bg_color_instructions = Text::Color::Black;
 
   //nodelay(stdscr, TRUE);
   
-  Game game(argc, argv);
+  Game game(argc, argv, params);
   game.init();
   game.generate_data();
   game.run();
