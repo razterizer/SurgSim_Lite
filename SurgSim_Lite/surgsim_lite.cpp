@@ -116,10 +116,10 @@ public:
     
     color_schemes.emplace_back();
     auto& cs = color_schemes.emplace_back();
-    cs.bg_internal = Text::Color::Red;
-    cs.bg_side_h = Text::Color::DarkRed;
-    cs.bg_dot_internal = Text::Color::DarkGray;
-    cs.bg_dot_side_h = Text::Color::Black;
+    cs.internal.bg_color = Text::Color::Red;
+    cs.side_h.bg_color = Text::Color::DarkRed;
+    cs.dot_internal.bg_color = Text::Color::DarkGray;
+    cs.dot_side_h.bg_color = Text::Color::Black;
     
     for (auto& cs : color_schemes)
       font_data.emplace_back(ASCII_Fonts::load_font_data(cs, font_data_path));
