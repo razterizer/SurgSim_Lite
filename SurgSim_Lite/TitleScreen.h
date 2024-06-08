@@ -147,7 +147,7 @@
 //29//                                                                 (c) 2022       |
 //30//--------------------------------------------------------------------------------+
 template<int NR, int NC>
-void draw_title(SpriteHandler<NR, NC>& sh, const std::vector<ASCII_Fonts::FontDataColl>& font_data)
+void draw_title(SpriteHandler<NR, NC>& sh, const ASCII_Fonts::FontDataColl& font_data, const std::vector<ASCII_Fonts::ColorScheme>& font_colors)
 {
   //const auto wht = Text::Color::White;
   //const auto lgry = Text::Color::LightGray;
@@ -169,14 +169,14 @@ void draw_title(SpriteHandler<NR, NC>& sh, const std::vector<ASCII_Fonts::FontDa
   
   std::vector<std::string> lines;
   if (TextIO::read_file("title.txt", lines) && !lines.empty())
-    ASCII_Fonts::draw_text(sh, font_data[0], lines.back(), 1, 8, ASCII_Fonts::Font::Larry3D);
+    ASCII_Fonts::draw_text(sh, font_data, font_colors[0], lines.back(), 1, 8, ASCII_Fonts::Font::Larry3D);
   else
-    ASCII_Fonts::draw_text(sh, font_data[0], "SurgSim", 1, 8, ASCII_Fonts::Font::Larry3D);
-  ASCII_Fonts::draw_text(sh, font_data[1], "Lite", 11, 31, ASCII_Fonts::Font::Larry3D);
+    ASCII_Fonts::draw_text(sh, font_data, font_colors[0], "SurgSim", 1, 8, ASCII_Fonts::Font::Larry3D);
+  ASCII_Fonts::draw_text(sh, font_data, font_colors[1], "Lite", 11, 31, ASCII_Fonts::Font::Larry3D);
   
   // Cholecystectomy
-  ASCII_Fonts::draw_text(sh, font_data[2], "Cholecystectomy", 19, 3, ASCII_Fonts::Font::SMSlant);
-  ASCII_Fonts::draw_text(sh, font_data[2], "Edition", 24, 3, ASCII_Fonts::Font::SMSlant);
+  ASCII_Fonts::draw_text(sh, font_data, font_colors[2], "Cholecystectomy", 19, 3, ASCII_Fonts::Font::SMSlant);
+  ASCII_Fonts::draw_text(sh, font_data, font_colors[2], "Edition", 24, 3, ASCII_Fonts::Font::SMSlant);
   
 
   print("Press space-bar to continue...", 29, 24, dgry);

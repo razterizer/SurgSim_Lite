@@ -127,8 +127,7 @@ public:
     cs3.internal.fg_color = Text::Color::White;
     cs3.internal.bg_color = Text::Color::Transparent;
     
-    for (auto& cs : color_schemes)
-      font_data.emplace_back(ASCII_Fonts::load_font_data(cs, font_data_path));
+    font_data = ASCII_Fonts::load_font_data(font_data_path);
   }
 
 private:
@@ -279,12 +278,12 @@ private:
   
   virtual void draw_title() override
   {
-    ::draw_title(sh, font_data);
+    ::draw_title(sh, font_data, color_schemes);
   }
   
   virtual void draw_instructions() override
   {
-    ::draw_instructions(sh, max_health, font_data[3]);
+    ::draw_instructions(sh, max_health, font_data, color_schemes[3]);
   }
 
   //////////////////////////////////////////////////////////////////////////
@@ -320,7 +319,7 @@ private:
   liquids::LiquidFlow liquid_flow;
   
   std::vector<ASCII_Fonts::ColorScheme> color_schemes;
-  std::vector<ASCII_Fonts::FontDataColl> font_data;
+  ASCII_Fonts::FontDataColl font_data;
 };
 
 //////////////////////////////////////////////////////////////////////////
