@@ -115,11 +115,11 @@ public:
     std::cout << font_data_path << std::endl;
     
     color_schemes.emplace_back();
-    auto& cs = color_schemes.emplace_back();
-    cs.internal.bg_color = Text::Color::Red;
-    cs.side_h.bg_color = Text::Color::DarkRed;
-    cs.dot_internal.bg_color = Text::Color::DarkGray;
-    cs.dot_side_h.bg_color = Text::Color::Black;
+    auto& cs1 = color_schemes.emplace_back();
+    cs1.internal.bg_color = Text::Color::Red;
+    cs1.side_h.bg_color = Text::Color::DarkRed;
+    cs1.dot_internal.bg_color = Text::Color::DarkGray;
+    cs1.dot_side_h.bg_color = Text::Color::Black;
     
     for (auto& cs : color_schemes)
       font_data.emplace_back(ASCII_Fonts::load_font_data(cs, font_data_path));
