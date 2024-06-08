@@ -120,6 +120,12 @@ public:
     cs1.side_h.bg_color = Text::Color::DarkRed;
     cs1.dot_internal.bg_color = Text::Color::DarkGray;
     cs1.dot_side_h.bg_color = Text::Color::Black;
+    auto& cs2 = color_schemes.emplace_back();
+    cs2.dot_internal.bg_color = Text::Color::DarkGray;
+    cs2.dot_side_h.bg_color = Text::Color::DarkGray;
+    auto& cs3 = color_schemes.emplace_back();
+    cs3.internal.fg_color = Text::Color::White;
+    cs3.internal.bg_color = Text::Color::Transparent;
     
     for (auto& cs : color_schemes)
       font_data.emplace_back(ASCII_Fonts::load_font_data(cs, font_data_path));
@@ -278,7 +284,7 @@ private:
   
   virtual void draw_instructions() override
   {
-    ::draw_instructions(sh, max_health);
+    ::draw_instructions(sh, max_health, font_data[3]);
   }
 
   //////////////////////////////////////////////////////////////////////////

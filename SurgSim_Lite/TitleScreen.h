@@ -149,7 +149,7 @@
 template<int NR, int NC>
 void draw_title(SpriteHandler<NR, NC>& sh, const std::vector<ASCII_Fonts::FontDataColl>& font_data)
 {
-  const auto wht = Text::Color::White;
+  //const auto wht = Text::Color::White;
   //const auto lgry = Text::Color::LightGray;
   const auto dgry = Text::Color::DarkGray;
   //const auto blk = Text::Color::Black;
@@ -175,35 +175,8 @@ void draw_title(SpriteHandler<NR, NC>& sh, const std::vector<ASCII_Fonts::FontDa
   ASCII_Fonts::draw_text(sh, font_data[1], "Lite", 11, 31, ASCII_Fonts::Font::Larry3D);
   
   // Cholecystectomy
-  print("_______", 19, 5, wht);
-  print("__", 19, 20, wht);
-  print("__", 19, 39, wht);
-  print("__", 19, 51, wht);
-  print("/ ___/ /", 20, 4, wht, dgry);
-  print("___", 20, 14, wht);
-  print("/ /", 20, 19, wht, dgry);
-  print("__ ______ _____", 20, 22, wht);
-  print("/ /", 20, 38, wht, dgry);
-  print("____ ____", 20, 41, wht);
-  print("/ /", 20, 50, wht, dgry);
-  print("____  __ _  __ __", 20, 53, wht);
-  print("/ /", 21, 3, wht, dgry);
-  print("__", 21, 6, wht);
-  print("/ _ \\/ _ \\/ / -_) __/ // (_-</ __/ -_) __/ __/ _ \\/  ' \\/ // /", 21, 8, wht, dgry);
-  print("\\___/_//_/\\___/_/\\__/\\__/\\_, /___/\\__/\\__/\\__/\\__/\\___/_/_/_/\\_, /", 22, 3, wht, dgry);
-  print("/___/", 23, 27, wht, dgry);
-  print("/___/", 23, 63, wht, dgry);
-  
-  // Edition
-  print("____   ___ __  _", 24, 6, wht);
-  print("/ __/", 25, 5, wht, dgry);
-  print("__", 25, 10, wht);
-  print("/ (_) /", 25, 12, wht, dgry);
-  print("_", 25, 19, wht);
-  print("(_)", 25, 20, wht, dgry);
-  print("__  ___", 25, 23, wht);
-  print("/ _// _  / / __/ / _ \\/ _ \\", 26, 4, wht, dgry);
-  print("/___/\\_,_/_/\\__/_/\\___/_//_/", 27, 3, wht, dgry);
+  ASCII_Fonts::draw_text(sh, font_data[2], "Cholecystectomy", 19, 3, ASCII_Fonts::Font::SMSlant);
+  ASCII_Fonts::draw_text(sh, font_data[2], "Edition", 24, 3, ASCII_Fonts::Font::SMSlant);
   
 
   print("Press space-bar to continue...", 29, 24, dgry);
