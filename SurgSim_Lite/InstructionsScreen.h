@@ -11,8 +11,11 @@
 template<int NR, int NC>
 void draw_instructions(SpriteHandler<NR, NC>& sh, int max_health, const ASCII_Fonts::FontDataColl& font_data, const ASCII_Fonts::ColorScheme& font_colors)
 {
-  ASCII_Fonts::draw_text(sh, font_data, font_colors,
-                         "SurgSim Lite", 1, 8, ASCII_Fonts::Font::Avatar);
+  std::vector<std::string> lines;
+  if (TextIO::read_file("title.txt", lines) && !lines.empty())
+    ASCII_Fonts::draw_text(sh, font_data, font_colors, lines.back() + " Lite", 1, 8, ASCII_Fonts::Font::Avatar);
+  else
+    ASCII_Fonts::draw_text(sh, font_data, font_colors, "SurgSim Lite", 1, 8, ASCII_Fonts::Font::Avatar);
 
   sh.write_buffer("The objective of this game is to complete the operation by ", 7, 2, Text::Color::White);
   sh.write_buffer(" properly sealing the cystic artery and the cystic duct and ", 8, 2, Text::Color::White);
