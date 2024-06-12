@@ -272,8 +272,6 @@ private:
         all_textures,
         health_states);
     ///
-
-    //sh.replace_bg_color(Text::Color::Transparent, Text::Color::DarkBlue, { 1, 1, 77, h_offs });
   }
   
   virtual void draw_title() override
