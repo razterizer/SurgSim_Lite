@@ -54,7 +54,7 @@ public:
       messages.pop_back();
       str_len = static_cast<int>(curr_message.size());
       message_empty = false;
-      c = std::round((80.f - str_len)/2.f);
+      c = std::round((NC - str_len)/2.f);
     }
     
     if (time - trg_time <= duration)
