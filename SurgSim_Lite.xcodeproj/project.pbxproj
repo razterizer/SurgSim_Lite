@@ -25,7 +25,6 @@
 /* Begin PBXFileReference section */
 		07E6EA852C0B6B35007BBC6B /* SurgSim_Lite */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = SurgSim_Lite; sourceTree = BUILT_PRODUCTS_DIR; };
 		07E6EA8F2C0B6BD4007BBC6B /* Liquids.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Liquids.h; sourceTree = "<group>"; };
-		07E6EA902C0B6BD4007BBC6B /* MessageHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessageHandler.h; sourceTree = "<group>"; };
 		07E6EA912C0B6BD4007BBC6B /* ParticleSystem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ParticleSystem.h; sourceTree = "<group>"; };
 		07E6EA922C0B6BD4007BBC6B /* title.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = title.txt; sourceTree = "<group>"; };
 		07E6EA932C0B6BD4007BBC6B /* Grasping.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Grasping.h; sourceTree = "<group>"; };
@@ -94,7 +93,6 @@
 				07E6EAA52C0B6BD5007BBC6B /* Keyboard.h */,
 				07E6EA8F2C0B6BD4007BBC6B /* Liquids.h */,
 				07E6EA952C0B6BD4007BBC6B /* LiquidVolumes.h */,
-				07E6EA902C0B6BD4007BBC6B /* MessageHandler.h */,
 				07E6EA912C0B6BD4007BBC6B /* ParticleSystem.h */,
 				07E6EA962C0B6BD4007BBC6B /* TexLineCharIdx.h */,
 				07E6EA9E2C0B6BD5007BBC6B /* TitleScreen.h */,
