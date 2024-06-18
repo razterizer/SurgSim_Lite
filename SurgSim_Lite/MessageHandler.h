@@ -19,7 +19,8 @@ private:
   
   Text::Color get_fg_color() const
   {
-    switch (curr_level) {
+    switch (curr_level)
+    {
       case Level::Guide:   return Text::Color::White;
       case Level::Warning: return Text::Color::White;
       case Level::Fatal:   return Text::Color::White;
@@ -29,7 +30,8 @@ private:
   
   Text::Color get_bg_color() const
   {
-    switch (curr_level) {
+    switch (curr_level)
+    {
       case Level::Guide:   return Text::Color::DarkBlue;
       case Level::Warning: return Text::Color::DarkYellow;
       case Level::Fatal:   return Text::Color::DarkRed;
