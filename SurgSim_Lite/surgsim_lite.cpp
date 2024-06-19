@@ -111,7 +111,7 @@ public:
 
     health_states.set_critical_blood_vol(12 * 80);
     
-    std::string font_data_path = ASCII_Fonts::get_path_to_font_data();
+    std::string font_data_path = ASCII_Fonts::get_path_to_font_data(get_exe_folder());
     std::cout << font_data_path << std::endl;
     
     color_schemes.emplace_back();
