@@ -10,3 +10,7 @@ else
 fi
 
 ../../lib/Core/build.sh surgsim_lite "$1" "${additional_flags[@]}"
+
+### Post-Build Actions ###
+
+cp title.txt bin/
