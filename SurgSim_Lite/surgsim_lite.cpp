@@ -329,7 +329,7 @@ int main(int argc, char** argv)
   //cbreak();
   //keypad(stdscr, true);
 
-  if (argc >= 2 && !strcmp(argv[1], "--help"))
+  if (argc >= 2 && strcmp(argv[1], "--help") == 0)
   {
     std::cout << "surgsim_lite (\"--help\" | [<frame-delay-us> [<nåt-här>]])" << std::endl;
     return EXIT_SUCCESS;
