@@ -276,12 +276,12 @@ private:
   
   virtual void draw_title() override
   {
-    ::draw_title(sh, font_data, color_schemes);
+    ::draw_title(sh, font_data, color_schemes, get_exe_folder());
   }
   
   virtual void draw_instructions() override
   {
-    ::draw_instructions(sh, max_health, font_data, color_schemes[3]);
+    ::draw_instructions(sh, max_health, font_data, color_schemes[3], get_exe_folder());
   }
 
   //////////////////////////////////////////////////////////////////////////

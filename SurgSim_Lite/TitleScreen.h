@@ -147,7 +147,7 @@
 //29//                                                                 (c) 2022       |
 //30//--------------------------------------------------------------------------------+
 template<int NR, int NC>
-void draw_title(SpriteHandler<NR, NC>& sh, const ASCII_Fonts::FontDataColl& font_data, const std::vector<ASCII_Fonts::ColorScheme>& font_colors)
+void draw_title(SpriteHandler<NR, NC>& sh, const ASCII_Fonts::FontDataColl& font_data, const std::vector<ASCII_Fonts::ColorScheme>& font_colors, const std::string& exe_folder)
 {
   //const auto wht = Text::Color::White;
   //const auto lgry = Text::Color::LightGray;
@@ -168,7 +168,7 @@ void draw_title(SpriteHandler<NR, NC>& sh, const ASCII_Fonts::FontDataColl& font
   print("Presents:", 1, 57, red, trp);
   
   std::vector<std::string> lines;
-  if (TextIO::read_file("title.txt", lines) && !lines.empty())
+  if (TextIO::read_file(folder::join_file_path({ exe_folder, "title.txt" }), lines) && !lines.empty())
     ASCII_Fonts::draw_text(sh, font_data, font_colors[0], lines.back(), 1, 8, ASCII_Fonts::Font::Larry3D);
   else
     ASCII_Fonts::draw_text(sh, font_data, font_colors[0], "SurgSim", 1, 8, ASCII_Fonts::Font::Larry3D);
