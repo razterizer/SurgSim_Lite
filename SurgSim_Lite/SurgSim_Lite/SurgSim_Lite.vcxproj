@@ -102,10 +102,10 @@
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
-    <ExternalIncludePath>$(SolutionDir)\..\..\lib\3rdparty\include</ExternalIncludePath>
+    <ExternalIncludePath>$(SolutionDir)\..\..\lib;$(SolutionDir)\..\..\lib\3rdparty\include</ExternalIncludePath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
-    <ExternalIncludePath>$(SolutionDir)\..\..\lib\3rdparty\include</ExternalIncludePath>
+    <ExternalIncludePath>$(SolutionDir)\..\..\lib;$(SolutionDir)\..\..\lib\3rdparty\include</ExternalIncludePath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
