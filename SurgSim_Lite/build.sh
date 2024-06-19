@@ -14,3 +14,6 @@ fi
 ### Post-Build Actions ###
 
 cp title.txt bin/
+
+mkdir bin/fonts/
+cp ../../lib/Termin8or/fonts/* bin/fonts/
