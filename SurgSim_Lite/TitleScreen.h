@@ -149,17 +149,17 @@
 template<int NR, int NC>
 void draw_title(SpriteHandler<NR, NC>& sh, const ASCII_Fonts::FontDataColl& font_data, const std::vector<ASCII_Fonts::ColorScheme>& font_colors, const std::string& exe_folder)
 {
-  //const auto wht = Text::Color::White;
-  //const auto lgry = Text::Color::LightGray;
-  const auto dgry = Text::Color::DarkGray;
-  //const auto blk = Text::Color::Black;
-  const auto red = Text::Color::Red;
-  //const auto dred = Text::Color::DarkRed;
-  //const auto cyn = Text::Color::Cyan;
-  const auto trp = Text::Color::Transparent;
+  //const auto wht = Color::White;
+  //const auto lgry = Color::LightGray;
+  const auto dgry = Color::DarkGray;
+  //const auto blk = Color::Black;
+  const auto red = Color::Red;
+  //const auto dred = Color::DarkRed;
+  //const auto cyn = Color::Cyan;
+  const auto trp = Color::Transparent;
   
   // Simplifies typing.
-  auto print = [&sh](const std::string& str, int r, int c, Text::Color fg_color, Text::Color bg_color = Text::Color::Transparent)
+  auto print = [&sh](const std::string& str, int r, int c, Color fg_color, Color bg_color = Color::Transparent)
   {
     sh.write_buffer(str, r, c, fg_color, bg_color);
   };

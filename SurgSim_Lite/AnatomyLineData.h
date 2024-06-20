@@ -16,8 +16,8 @@ struct AnatomyLineData
   //std::vector<float> temperature_K;
   std::vector<int> clip;
   std::string str;
-  std::vector<Text::Color> fg_colors;
-  Text::Color fg_cut_color;
+  std::vector<Color> fg_colors;
+  Color fg_cut_color;
   bool tube = false;
   std::vector<ColorGradient> bg_color_gradients;
   size_t N = 0;
@@ -43,7 +43,7 @@ struct AnatomyLineData
     std::fill(c.begin(), c.end(), -1);
     std::fill(c_orig.begin(), c_orig.end(), -1);
   }
-  AnatomyLineData(const std::string& s, const std::vector<Text::Color>& fg, Text::Color fg_cut, const std::vector<ColorGradient>& bg_col_grad)
+  AnatomyLineData(const std::string& s, const std::vector<Color>& fg, Color fg_cut, const std::vector<ColorGradient>& bg_col_grad)
     : str(s), fg_colors(fg), fg_cut_color(fg_cut), bg_color_gradients(bg_col_grad)
   {
     size_t N = std::min(str.size(), std::min(fg_colors.size(), bg_color_gradients.size()));
@@ -94,9 +94,9 @@ struct AnatomyLineData
       }
       if (clip[i] == 1 && active)
       {
-        fg_color = Text::Color::LightGray;
-        if (bg_color == Text::Color::Magenta || bg_color == Text::Color::LightGray || bg_color == Text::Color::White || bg_color == Text::Color::Yellow)
-          fg_color = Text::Color::DarkGray;
+        fg_color = Color::LightGray;
+        if (bg_color == Color::Magenta || bg_color == Color::LightGray || bg_color == Color::White || bg_color == Color::Yellow)
+          fg_color = Color::DarkGray;
         ch = '/';
       }
       pixels.emplace_back(ch, fg_color, bg_color, r, c[i], line_idx, i, active);
@@ -108,7 +108,7 @@ struct AnatomyLineData
 void create_texture_row_uniform(std::vector<AnatomyLineData>& texture,
                                 char ch_left, char ch_inner, char ch_right,
                                 int r, int c_from, int c_to,
-                                Text::Color fg_color, Text::Color fg_cut_color, const ColorGradient& bg_color_gradient)
+                                Color fg_color, Color fg_cut_color, const ColorGradient& bg_color_gradient)
 {
   AnatomyLineData line(c_to - c_from + 1);
   line.r = r;
@@ -136,7 +136,7 @@ void create_texture_row_uniform(std::vector<AnatomyLineData>& texture,
 void create_texture_row_tube(std::vector<AnatomyLineData>& texture,
                              const std::string& str,
                              int r, int c,
-                             Text::Color fg_color, const ColorGradient& bg_color_gradient)
+                             Color fg_color, const ColorGradient& bg_color_gradient)
 {
   int N = static_cast<int>(str.size());
   AnatomyLineData line(N);

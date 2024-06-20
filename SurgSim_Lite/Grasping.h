@@ -44,7 +44,7 @@ namespace grasp
           r_min = 0; // #FIXME: Won't bite sometimes. Why? (Seems to happen when first grasping in thin air (seems to be fixed after resetting the lock position before the early exit due to pixel not found)).
         
         //if (side == InstrumentSide::Left)
-        //  sh.write_buffer(std::to_string(tlc_idx.tex_idx), 1, 1, Text::Color::White);
+        //  sh.write_buffer(std::to_string(tlc_idx.tex_idx), 1, 1, Color::White);
         
         auto diff = instr_data.get_tcp() - tcp_rc_locked;
         auto abs_diff = diff.abs();

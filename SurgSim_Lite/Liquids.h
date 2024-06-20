@@ -70,53 +70,53 @@ namespace liquids
   ColorGradient fluid_pool_mixing_gradient_blood_bile_fg // blood to bile
   {
     {
-      { 0.f, Text::Color::Red },
-      { 0.5f, Text::Color::LightGray },
-      { 1.f, Text::Color::Yellow }
+      { 0.f, Color::Red },
+      { 0.5f, Color::LightGray },
+      { 1.f, Color::Yellow }
     }
   };
   ColorGradient fluid_pool_mixing_gradient_blood_bile_bg // blood to bile
   {
     {
-      { 0.f, Text::Color::DarkRed },
-      { 0.5f, Text::Color::DarkGray },
-      { 1.f, Text::Color::DarkYellow }
+      { 0.f, Color::DarkRed },
+      { 0.5f, Color::DarkGray },
+      { 1.f, Color::DarkYellow }
     }
   };
   ColorGradient fluid_pool_mixing_gradient_water_blood_fg
   {
     {
-      { 0.f, Text::Color::Blue },
-      { 0.5f, Text::Color::LightGray },
-      { 1.f, Text::Color::Red }
+      { 0.f, Color::Blue },
+      { 0.5f, Color::LightGray },
+      { 1.f, Color::Red }
     }
   };
   ColorGradient fluid_pool_mixing_gradient_water_blood_bg
   {
     {
-      { 0.f, Text::Color::DarkBlue },
-      { 0.5f, Text::Color::DarkGray },
-      { 1.f, Text::Color::DarkRed }
+      { 0.f, Color::DarkBlue },
+      { 0.5f, Color::DarkGray },
+      { 1.f, Color::DarkRed }
     }
   };
   ColorGradient fluid_pool_mixing_gradient_bile_water_fg
   {
     {
-      { 0.f, Text::Color::Yellow },
-      { 0.5f, Text::Color::LightGray },
-      { 1.f, Text::Color::Blue }
+      { 0.f, Color::Yellow },
+      { 0.5f, Color::LightGray },
+      { 1.f, Color::Blue }
     }
   };
   ColorGradient fluid_pool_mixing_gradient_bile_water_bg
   {
     {
-      { 0.f, Text::Color::DarkYellow },
-      { 0.5f, Text::Color::DarkGray },
-      { 1.f, Text::Color::DarkBlue }
+      { 0.f, Color::DarkYellow },
+      { 0.5f, Color::DarkGray },
+      { 1.f, Color::DarkBlue }
     }
   };
 
-  Text::Color get_liquid_fg_color(LiquidVolumes volumes)
+  Color get_liquid_fg_color(LiquidVolumes volumes)
   {
     float t_blood = volumes.t_blood();
     float t_bile = volumes.t_bile();
@@ -127,10 +127,10 @@ namespace liquids
       return fluid_pool_mixing_gradient_bile_water_fg(volumes.t_bile_water());
     else if (t_blood >= t_bile && t_water >= t_bile)
       return fluid_pool_mixing_gradient_water_blood_fg(volumes.t_water_blood());
-    return Text::Color::Default;
+    return Color::Default;
   }
 
-  Text::Color get_liquid_bg_color(LiquidVolumes volumes)
+  Color get_liquid_bg_color(LiquidVolumes volumes)
   {
     float t_blood = volumes.t_blood();
     float t_bile = volumes.t_bile();
@@ -141,7 +141,7 @@ namespace liquids
       return fluid_pool_mixing_gradient_bile_water_bg(volumes.t_bile_water());
     else if (t_blood >= t_bile && t_water >= t_bile)
       return fluid_pool_mixing_gradient_water_blood_bg(volumes.t_water_blood());
-    return Text::Color::Default;
+    return Color::Default;
   }
 
   template<int NR, int NC>
@@ -424,11 +424,11 @@ namespace liquids
         sh.write_buffer(str::rep_char('~', 80), r, 0, fg_color, bg_color);
     }
     
-    artery_droplets.draw(sh, "v", Text::Color::Red, Text::Color::DarkRed, time);
-    duct_droplets.draw(sh, "v", Text::Color::Yellow, Text::Color::DarkYellow, time);
+    artery_droplets.draw(sh, "v", Color::Red, Color::DarkRed, time);
+    duct_droplets.draw(sh, "v", Color::Yellow, Color::DarkYellow, time);
     
-    rinsing_droplets_left.draw(sh, "v", Text::Color::Blue, Text::Color::DarkBlue, time);
-    rinsing_droplets_right.draw(sh, "v", Text::Color::Blue, Text::Color::DarkBlue, time);
+    rinsing_droplets_left.draw(sh, "v", Color::Blue, Color::DarkBlue, time);
+    rinsing_droplets_right.draw(sh, "v", Color::Blue, Color::DarkBlue, time);
   }
 
 }
