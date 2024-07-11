@@ -23,6 +23,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		075C651D2C40104500B15451 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = SOURCE_ROOT; };
+		075C651E2C40104500B15451 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = SOURCE_ROOT; };
 		07E6EA852C0B6B35007BBC6B /* SurgSim_Lite */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = SurgSim_Lite; sourceTree = BUILT_PRODUCTS_DIR; };
 		07E6EA8F2C0B6BD4007BBC6B /* Liquids.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Liquids.h; sourceTree = "<group>"; };
 		07E6EA912C0B6BD4007BBC6B /* ParticleSystem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ParticleSystem.h; sourceTree = "<group>"; };
@@ -62,6 +64,8 @@
 		07E6EA7C2C0B6B35007BBC6B = {
 			isa = PBXGroup;
 			children = (
+				075C651E2C40104500B15451 /* LICENSE */,
+				075C651D2C40104500B15451 /* README.md */,
 				07E6EA872C0B6B35007BBC6B /* SurgSim_Lite */,
 				07E6EA862C0B6B35007BBC6B /* Products */,
 			);
