@@ -8,7 +8,6 @@
 
 ## Build & Run Instructions
 
-
 There are two options on dealing with repo dependencies:
 ### Repo Dependencies Option 1
 
