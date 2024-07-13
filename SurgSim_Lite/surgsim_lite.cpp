@@ -85,9 +85,9 @@ public:
     , instr_data_left(InstrumentSide::Left, shaft_len, shaft_z_left, ang_left_rad, pix_ar)
     , instr_data_right(InstrumentSide::Right, shaft_len, shaft_z_right, ang_right_rad, pix_ar)
   {
-    GameEngine::set_delay_us(200'000);
+    GameEngine::set_sim_delay_us(200'000);
     if (argc >= 2)
-      GameEngine::set_delay_us(atoi(argv[1]));
+      GameEngine::set_sim_delay_us(atoi(argv[1]));
 
     if (argc >= 3)
     {
@@ -153,7 +153,7 @@ private:
 
       handle_injuries(sh, msg_handler, health_states,
         health, blood, max_blood, GameEngine::ref_score(),
-        time);
+        sim_time);
       if (GameEngine::ref_score() < 0)
         GameEngine::ref_score() = 0;
 
@@ -203,7 +203,7 @@ private:
           tool_type_left, tool_type_right,
           anim_idx_curr_left, anim_idx_curr_right,
           instr_data_left, instr_data_right,
-          time, pix_ar);
+          sim_time, pix_ar);
       }
 
       //tcp_rc_left = { 20, 43 }; // (cystic artery) #HACK
@@ -239,7 +239,7 @@ private:
       generate_smoke(sh, curr_special_key,
         tcp_rc_left, tcp_rc_right,
         tool_type_left, tool_type_right,
-        dt, time);
+        sim_dt, sim_time);
 
       std::vector<RC> fluid_sources;
       liquids::update_profuse_liquids(sh,
@@ -248,7 +248,7 @@ private:
         tool_type_left, tool_type_right,
         all_textures,
         liquid_volumes, liquid_flow, fluid_sources,
-        time, dt);
+        sim_time, sim_dt);
       health_states.register_fluids(liquid_volumes, liquid_flow, fluid_sources);
 
       draw_anatomy(sh, all_textures[static_cast<size_t>(TextureType::HD_LIG)]);
@@ -258,7 +258,7 @@ private:
       draw_opaque_anatomy(sh, all_textures[static_cast<size_t>(TextureType::LIVER)]);
       draw_ground(sh);
 
-      update_burn(dt, curr_special_key,
+      update_burn(sim_dt, curr_special_key,
         tcp_rc_left, tcp_rc_right,
         tool_type_left, tool_type_right,
         trg_tool_left, trg_tool_right,
