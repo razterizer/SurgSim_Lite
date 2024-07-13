@@ -34,7 +34,7 @@ Make sure the folder structure looks like this:
 
 These repos are not guaranteed to all the time work with the latest version of `SurgSim_Lite`. If you want the more stable aproach then look at Option 1 instead.
 
-### Windows (not yet implemented)
+### Windows
 
 Then just open `<my_source_code_dir>/SurgSim_Lite/SurgSim_Lite/SurgSim_Lite.sln` and build and run. That's it!
 
