@@ -4,38 +4,40 @@
 Key register_keypresses(const keyboard::KeyPressData& kpd)
 {
   Key curr_special_key = Key::None;
+  auto key = keyboard::get_char_key(kpd);
+  auto special_key = keyboard::get_special_key(kpd);
 
-  if (kpd.curr_special_key == keyboard::SpecialKey::Left)
+  if (special_key == keyboard::SpecialKey::Left)
     curr_special_key = Key::RI_Left;
-  else if (kpd.curr_special_key == keyboard::SpecialKey::Right)
+  else if (special_key == keyboard::SpecialKey::Right)
     curr_special_key = Key::RI_Right;
-  else if (kpd.curr_special_key == keyboard::SpecialKey::Down)
+  else if (special_key == keyboard::SpecialKey::Down)
     curr_special_key = Key::RI_Down;
-  else if (kpd.curr_special_key == keyboard::SpecialKey::Up)
+  else if (special_key == keyboard::SpecialKey::Up)
     curr_special_key = Key::RI_Up;
-  else if (str::to_lower(kpd.curr_key) == 'a')
+  else if (str::to_lower(key) == 'a')
     curr_special_key = Key::LI_Left;
-  else if (str::to_lower(kpd.curr_key) == 'd')
+  else if (str::to_lower(key) == 'd')
     curr_special_key = Key::LI_Right;
-  else if (str::to_lower(kpd.curr_key) == 's')
+  else if (str::to_lower(key) == 's')
     curr_special_key = Key::LI_Down;
-  else if (str::to_lower(kpd.curr_key) == 'w')
+  else if (str::to_lower(key) == 'w')
     curr_special_key = Key::LI_Up;
-  else if (kpd.curr_key == ' ')
+  else if (key == ' ')
     curr_special_key = Key::Skip;
-  else if (kpd.curr_key == ',')
+  else if (key == ',')
     curr_special_key = Key::Cut;
-  else if (kpd.curr_key == '-')
+  else if (key == '-')
     curr_special_key = Key::Menu;
-  else if (kpd.curr_key == '.')
+  else if (key == '.')
     curr_special_key = Key::Coag;
-  else if (str::to_lower(kpd.curr_key) == 'f')
+  else if (str::to_lower(key) == 'f')
     curr_special_key = Key::LI_Trigger;
-  else if (str::to_lower(kpd.curr_key) == 'j')
+  else if (str::to_lower(key) == 'j')
     curr_special_key = Key::RI_Trigger;
-  else if (str::to_lower(kpd.curr_key) == 'g')
+  else if (str::to_lower(key) == 'g')
     curr_special_key = Key::LI_Trigger2;
-  else if (str::to_lower(kpd.curr_key) == 'h')
+  else if (str::to_lower(key) == 'h')
     curr_special_key = Key::RI_Trigger2;
 
   return curr_special_key;
