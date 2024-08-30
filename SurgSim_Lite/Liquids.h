@@ -261,27 +261,27 @@ namespace liquids
                             float spread, float life_time, int cluster_size,
                             LiquidType liquid_type, float droplet_vol, Reservoir& reservoir_vol)
     {
-      float dir_x = 0.f;
-      float dir_y = 0.f;
+      float dir_r = 0.f;
+      float dir_c = 0.f;
       switch (liquid_type)
       {
         case LiquidType::Blood:
-          dir_x = 1.f;
-          dir_y = -20.f;
+          dir_r = -20.f;
+          dir_c = 1.f;
           break;
         case LiquidType::Bile:
-          dir_x = 0.5f;
-          dir_y = 2.f;
+          dir_r = 2.f;
+          dir_c = 0.5f;
           break;
         default:
           break;
       }
-      math::normalize(dir_x, dir_y);
+      math::normalize(dir_r, dir_c);
       for (auto& leakage_pt : registered_leakage_pts)
       {
         float bernoulli_factor = math::lerp(reservoir_vol.calc_vol_t(), 0.01f, 1.f);
         droplets.update(leakage_pt, true,
-                        dir_x * speed, dir_y * speed, gravity_acc * bernoulli_factor, spread * bernoulli_factor, life_time, cluster_size,
+                        dir_r * speed, dir_c * speed, gravity_acc * bernoulli_factor, spread * bernoulli_factor, life_time, cluster_size,
                         liquid_volumes, liquid_type, droplet_vol, dt, time);
         liquid_flow.set(liquid_type, speed * spread);
         reservoir_vol -= droplet_vol;
@@ -331,24 +331,24 @@ namespace liquids
                            float spread, float life_time, int cluster_size,
                            float droplet_vol, float cleaning_rate)
     {
-      float dir_x = 0.f;
-      float dir_y = 0.f;
+      float dir_r = 0.f;
+      float dir_c = 0.f;
       switch (side)
       {
         case InstrumentSide::Left:
-          dir_x = tcp.c;
-          dir_y = tcp.r - 29;
+          dir_r = tcp.r - 29;
+          dir_c = tcp.c;
           break;
         case InstrumentSide::Right:
-          dir_x = tcp.c - 79;
-          dir_y = tcp.r - 29;
+          dir_r = tcp.r - 29;
+          dir_c = tcp.c - 79;
           break;
         case InstrumentSide::NUM_ITEMS:
           break;
       }
-      math::normalize(dir_x, dir_y);
+      math::normalize(dir_r, dir_c);
       droplets.update(tcp, rinsing,
-                      speed*dir_x, speed*dir_y, gravity_acc,
+                      speed*dir_r, speed*dir_c, gravity_acc,
                       spread, life_time, cluster_size,
                       liquid_volumes, LiquidType::Water, droplet_vol,
                       dt, time);
@@ -358,7 +358,7 @@ namespace liquids
       // Clean up charred tissue.
       for (const auto& drop : droplets.particle_stream)
       {
-        auto drop_curr_rc = RC { static_cast<int>(std::round(drop.pos_y)), static_cast<int>(std::round(drop.pos_x)) };
+        auto drop_curr_rc = RC { static_cast<int>(std::round(drop.pos_r)), static_cast<int>(std::round(drop.pos_c)) };
         const bool only_active = true;
         const bool orig_space = false;
         TexLineCharIdx tlc_idx = find_top_pixel(all_textures, drop_curr_rc, only_active, orig_space);

@@ -9,7 +9,7 @@ struct ParticleFluidHandler : ParticleHandler
     : ParticleHandler(N_particles) {}
   
   void update(const RC& start_pos, bool trigger,
-              float vel_x, float vel_y, float g,
+              float vel_r, float vel_c, float g,
               float spread, float life_time, int particle_cluster_size,
               liquids::LiquidVolumes& liquid_volumes, LiquidType liq_type, float droplet_vol,
               float dt, float time)
@@ -24,7 +24,7 @@ struct ParticleFluidHandler : ParticleHandler
         if (!particle.dead)
         {
           liquid_volumes.add(liq_type, droplet_vol);
-          particle.init(time, start_pos, vel_x, vel_y, g, spread, life_time);
+          particle.init(time, start_pos, vel_r, vel_c, g, spread, life_time);
         }
         if (particle_cluster_idx++ >= particle_cluster_size)
           trigger = false;

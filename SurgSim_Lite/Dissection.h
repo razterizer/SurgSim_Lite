@@ -234,10 +234,10 @@ void generate_smoke(SpriteHandler<NR, NC>& sh, Key curr_key,
   auto trig = curr_key == Key::Coag || curr_key == Key::Cut;
   auto trig_left = trig && tool_type_left == ToolType::Hook;
   auto trig_right = trig && tool_type_right == ToolType::Hook;
-  const float vel_x = 0.f, vel_y = 0.f, acc = -10.f, spread = 13.f, life_time = 6.f;
+  const float vel_r = 0.f, vel_c = 0.f, acc = -10.f, spread = 13.f, life_time = 6.f;
   const int cluster_size = 10;
-  smoke::smoke_left.update(tcp_rc_left, trig_left, vel_x, vel_y, acc, spread, life_time, cluster_size, dt, time);
-  smoke::smoke_right.update(tcp_rc_right, trig_right, vel_x, vel_y, acc, spread, life_time, cluster_size, dt, time);
+  smoke::smoke_left.update(tcp_rc_left, trig_left, vel_r, vel_c, acc, spread, life_time, cluster_size, dt, time);
+  smoke::smoke_right.update(tcp_rc_right, trig_right, vel_r, vel_c, acc, spread, life_time, cluster_size, dt, time);
   smoke::smoke_left.draw(sh, "&", Color::LightGray, Color::DarkGray, time);
   smoke::smoke_right.draw(sh, "&", Color::LightGray, Color::DarkGray, time);
 }
