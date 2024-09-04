@@ -40,7 +40,7 @@ void create_liver(std::vector<AnatomyLineData>& liver_texture)
 {
   auto fg_color = Color::Red;
   auto fg_cut_color = Color::DarkGray;
-  ColorGradient bg_color_gradient
+  Gradient<Color> bg_color_gradient
   {
     {
       { 0.f, Color::Red },
@@ -112,7 +112,7 @@ void create_gallbladder(std::vector<AnatomyLineData>& gallbladder_texture)
 {
   auto fg_color = Color::DarkCyan;
   auto fg_cut_color = Color::DarkGray;
-  ColorGradient bg_color_gradient
+  Gradient<Color> bg_color_gradient
   {
     {
       { 0.f, Color::LightGray },
@@ -174,7 +174,7 @@ void create_artery_tree(std::vector<AnatomyLineData>& artery_tree_texture)
 {
   auto fg_color = Color::Magenta;//Color::Magenta;
   //auto bg_color = Color::DarkMagenta;
-  ColorGradient bg_color_gradient
+  Gradient<Color> bg_color_gradient
   {
     {
       { 0.f, Color::DarkMagenta },
@@ -198,7 +198,7 @@ void create_duct_tree(std::vector<AnatomyLineData>& duct_tree_texture)
 {
   auto fg_color = Color::LightGray;
   //auto bg_color = Color::DarkMagenta;
-  ColorGradient bg_color_gradient
+  Gradient<Color> bg_color_gradient
   {
     {
       { 0.f, Color::Yellow },
@@ -255,7 +255,7 @@ void create_hepatoduodenal_ligament(std::vector<AnatomyLineData>& hd_ligament_te
 {
   auto fg_color = Color::Yellow;
   auto fg_cut_color = Color::Yellow;
-  ColorGradient bg_color_gradient
+  Gradient<Color> bg_color_gradient
   {
     {
       { 0.f, Color::DarkYellow },

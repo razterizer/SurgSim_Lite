@@ -9,7 +9,7 @@
 #include "TubeTopology.h"
 #include "LiquidVolumes.h"
 #include "ParticleSystem.h"
-#include <Termin8or/ColorGradient.h>
+#include <Termin8or/Gradient.h>
 #include <Termin8or/Screen.h>
 #include <optional>
 
@@ -67,7 +67,7 @@ namespace liquids
   ParticleFluidHandler artery_droplets(500), duct_droplets(500);
 
 
-  ColorGradient fluid_pool_mixing_gradient_blood_bile_fg // blood to bile
+  Gradient<Color> fluid_pool_mixing_gradient_blood_bile_fg // blood to bile
   {
     {
       { 0.f, Color::Red },
@@ -75,7 +75,7 @@ namespace liquids
       { 1.f, Color::Yellow }
     }
   };
-  ColorGradient fluid_pool_mixing_gradient_blood_bile_bg // blood to bile
+  Gradient<Color> fluid_pool_mixing_gradient_blood_bile_bg // blood to bile
   {
     {
       { 0.f, Color::DarkRed },
@@ -83,7 +83,7 @@ namespace liquids
       { 1.f, Color::DarkYellow }
     }
   };
-  ColorGradient fluid_pool_mixing_gradient_water_blood_fg
+  Gradient<Color> fluid_pool_mixing_gradient_water_blood_fg
   {
     {
       { 0.f, Color::Blue },
@@ -91,7 +91,7 @@ namespace liquids
       { 1.f, Color::Red }
     }
   };
-  ColorGradient fluid_pool_mixing_gradient_water_blood_bg
+  Gradient<Color> fluid_pool_mixing_gradient_water_blood_bg
   {
     {
       { 0.f, Color::DarkBlue },
@@ -99,7 +99,7 @@ namespace liquids
       { 1.f, Color::DarkRed }
     }
   };
-  ColorGradient fluid_pool_mixing_gradient_bile_water_fg
+  Gradient<Color> fluid_pool_mixing_gradient_bile_water_fg
   {
     {
       { 0.f, Color::Yellow },
@@ -107,7 +107,7 @@ namespace liquids
       { 1.f, Color::Blue }
     }
   };
-  ColorGradient fluid_pool_mixing_gradient_bile_water_bg
+  Gradient<Color> fluid_pool_mixing_gradient_bile_water_bg
   {
     {
       { 0.f, Color::DarkYellow },
