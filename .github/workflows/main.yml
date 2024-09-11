@@ -1,0 +1,57 @@
+name: Build Check
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    
+    steps:
+      # Step 1: Checkout the repository
+      - name: Checkout repository
+        uses: actions/checkout@v3
+      
+      # Step 2: Move to the parent directory and fetch dependencies
+      - name: Fetch dependencies
+        run: |
+          cd ..
+          mkdir lib
+          cd lib
+          git clone https://github.com/razterizer/Core.git
+          git clone https://github.com/razterizer/Termin8or.git
+
+      
+      # Step 3: Change to the correct directory and build
+      - name: Build project
+        run: |
+          cd SurgSim_Lite
+          ./build.sh
+        continue-on-error: false # Ensure errors are not bypassed
+  
+  build-with-locked-dependencies:
+    runs-on: ubuntu-latest
+    
+    steps:
+      # Step 1: Checkout the repository
+      - name: Checkout repository
+        uses: actions/checkout@v3
+      
+      # Step 2: Move to the parent directory and fetch dependencies
+      - name: Fetch dependencies
+        run: |
+          cd ..
+          ./SurgSim_Lite/fetch-dependencies.py SurgSim_Lite/dependencies -y
+      
+      # Step 3: Change to the correct directory and build
+      - name: Build project
+        run: |
+          cd SurgSim_Lite
+          ./build.sh
+        continue-on-error: false # Ensure errors are not bypassed
+
