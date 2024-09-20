@@ -25,6 +25,7 @@
 /* Begin PBXFileReference section */
 		075C651D2C40104500B15451 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = SOURCE_ROOT; };
 		075C651E2C40104500B15451 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = SOURCE_ROOT; };
+		076AB0632C9E2F4200531419 /* build.bat */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = build.bat; sourceTree = "<group>"; };
 		07E6EA852C0B6B35007BBC6B /* SurgSim_Lite */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = SurgSim_Lite; sourceTree = BUILT_PRODUCTS_DIR; };
 		07E6EA8F2C0B6BD4007BBC6B /* Liquids.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Liquids.h; sourceTree = "<group>"; };
 		07E6EA912C0B6BD4007BBC6B /* ParticleSystem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ParticleSystem.h; sourceTree = "<group>"; };
@@ -104,6 +105,7 @@
 				07E6EA992C0B6BD4007BBC6B /* TubeTopology.h */,
 				07E6EA922C0B6BD4007BBC6B /* title.txt */,
 				07E6EA982C0B6BD4007BBC6B /* build.sh */,
+				076AB0632C9E2F4200531419 /* build.bat */,
 			);
 			path = SurgSim_Lite;
 			sourceTree = "<group>";
