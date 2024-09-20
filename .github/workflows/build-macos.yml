@@ -25,8 +25,8 @@ jobs:
           cd lib
           git clone https://github.com/razterizer/Core.git
           git clone https://github.com/razterizer/Termin8or.git
-          git clone https://github.com/razterizer/8Beat.git
-          git clone https://github.com/razterizer/AudioLibSwitcher_OpenAL.git --recurse-submodules
+          # git clone https://github.com/razterizer/8Beat.git
+          # git clone https://github.com/razterizer/AudioLibSwitcher_OpenAL.git --recurse-submodules
 
       # Step 3: Install OpenAL
       - name: Install OpenAL
@@ -35,7 +35,7 @@ jobs:
       # Step 3: Change to the correct directory and build
       - name: Build project
         run: |
-          cd Pilot_Episode
+          cd SurgSim_Lite
           ./build.sh
         continue-on-error: false # Ensure errors are not bypassed
   
@@ -60,7 +60,7 @@ jobs:
       # Step 4: Change to the correct directory and build
       - name: Build project
         run: |
-          cd Pilot_Episode
+          cd SurgSim_Lite
           ./build.sh
         continue-on-error: false # Ensure errors are not bypassed
 
