@@ -62,6 +62,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		076AB0642C9E2FB300531419 /* workflows */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = workflows;
+			sourceTree = "<group>";
+		};
 		07E6EA7C2C0B6B35007BBC6B = {
 			isa = PBXGroup;
 			children = (
@@ -83,6 +90,7 @@
 		07E6EA872C0B6B35007BBC6B /* SurgSim_Lite */ = {
 			isa = PBXGroup;
 			children = (
+				076AB0642C9E2FB300531419 /* workflows */,
 				07E6EA9D2C0B6BD4007BBC6B /* surgsim_lite.cpp */,
 				07E6EA9B2C0B6BD4007BBC6B /* AnatomyLineData.h */,
 				07E6EAA22C0B6BD5007BBC6B /* CreateAnatomies.h */,
