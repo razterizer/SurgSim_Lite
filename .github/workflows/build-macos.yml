@@ -51,7 +51,7 @@ jobs:
       - name: Fetch dependencies
         run: |
           cd ..
-          ./Pilot_Episode/fetch-dependencies.py Pilot_Episode/dependencies -y
+          ./SurgSim_Lite/fetch-dependencies.py SurgSim_Lite/dependencies -y
 
       # Step 3: Install OpenAL
       - name: Install OpenAL
