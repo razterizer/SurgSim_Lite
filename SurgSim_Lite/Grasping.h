@@ -66,7 +66,7 @@ namespace grasp
           for (auto& line : tex)
           {
             line.r = line.r_orig + diff_clamped.r;
-            for (int ch_idx = 0; ch_idx < line.N; ++ch_idx)
+            for (int ch_idx = 0; ch_idx < static_cast<int>(line.N); ++ch_idx)
               line.c[ch_idx] = line.c_orig[ch_idx] + diff_clamped.c;
           }
         }
@@ -77,7 +77,7 @@ namespace grasp
         for (auto& line : tex)
         {
           line.r = line.r_orig;
-          for (int ch_idx = 0; ch_idx < line.N; ++ch_idx)
+          for (int ch_idx = 0; ch_idx < static_cast<int>(line.N); ++ch_idx)
             line.c[ch_idx] = line.c_orig[ch_idx];
         }
         instr_data.set(side, tcp_rc_locked);
