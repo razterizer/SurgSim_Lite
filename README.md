@@ -6,6 +6,13 @@
 [![build macos](https://github.com/razterizer/SurgSim_Lite/actions/workflows/build-macos.yml/badge.svg)](https://github.com/razterizer/SurgSim_Lite/actions/workflows/build-macos.yml)
 [![build windows](https://github.com/razterizer/SurgSim_Lite/actions/workflows/build-windows.yml/badge.svg)](https://github.com/razterizer/SurgSim_Lite/actions/workflows/build-windows.yml)
 
+![Top Languages](https://img.shields.io/github/languages/top/razterizer/SurgSim_Lite)
+![Goto](https://img.shields.io/github/search/razterizer/SurgSim_Lite/goto)
+![Commit Activity](https://img.shields.io/github/commit-activity/t/razterizer/SurgSim_Lite)
+![Last Commit](https://img.shields.io/github/last-commit/razterizer/SurgSim_Lite?color=blue)
+![Contributors](https://img.shields.io/github/contributors/razterizer/SurgSim_Lite?color=blue)
+<!-- ![Languages](https://img.shields.io/github/languages/count/razterizer/SurgSim_Lite) -->
+
 <img width="568" alt="image" src="https://github.com/razterizer/SurgSim_Lite/assets/32767250/2d356a54-6117-4d6b-aeca-4a025e8ae372">
 <img width="568" alt="image" src="https://github.com/razterizer/SurgSim_Lite/assets/32767250/1cf2f435-88b3-4c41-bafd-a7cabd30ca75">
 <img width="567" alt="image" src="https://github.com/razterizer/SurgSim_Lite/assets/32767250/0c7f3528-00d8-492c-9609-9bef63f8e797">
