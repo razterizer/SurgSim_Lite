@@ -2,9 +2,9 @@
 
 ![GitHub License](https://img.shields.io/github/license/razterizer/SurgSim_Lite?color=blue)
 
-[![build check ubuntu](https://github.com/razterizer/SurgSim_Lite/actions/workflows/build-ubuntu.yml/badge.svg)](https://github.com/razterizer/SurgSim_Lite/actions/workflows/build-ubuntu.yml)
-[![build check macos](https://github.com/razterizer/SurgSim_Lite/actions/workflows/build-macos.yml/badge.svg)](https://github.com/razterizer/SurgSim_Lite/actions/workflows/build-macos.yml)
-[![build check windows](https://github.com/razterizer/SurgSim_Lite/actions/workflows/build-windows.yml/badge.svg)](https://github.com/razterizer/SurgSim_Lite/actions/workflows/build-windows.yml)
+[![build ubuntu](https://github.com/razterizer/SurgSim_Lite/actions/workflows/build-ubuntu.yml/badge.svg)](https://github.com/razterizer/SurgSim_Lite/actions/workflows/build-ubuntu.yml)
+[![build macos](https://github.com/razterizer/SurgSim_Lite/actions/workflows/build-macos.yml/badge.svg)](https://github.com/razterizer/SurgSim_Lite/actions/workflows/build-macos.yml)
+[![build windows](https://github.com/razterizer/SurgSim_Lite/actions/workflows/build-windows.yml/badge.svg)](https://github.com/razterizer/SurgSim_Lite/actions/workflows/build-windows.yml)
 
 <img width="568" alt="image" src="https://github.com/razterizer/SurgSim_Lite/assets/32767250/2d356a54-6117-4d6b-aeca-4a025e8ae372">
 <img width="568" alt="image" src="https://github.com/razterizer/SurgSim_Lite/assets/32767250/1cf2f435-88b3-4c41-bafd-a7cabd30ca75">
