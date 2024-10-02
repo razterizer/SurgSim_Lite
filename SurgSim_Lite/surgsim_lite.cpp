@@ -87,7 +87,7 @@ public:
   {
     GameEngine::set_sim_delay_us(200'000.f);
     if (argc >= 2)
-      GameEngine::set_sim_delay_us(atoi(argv[1]));
+      GameEngine::set_sim_delay_us(static_cast<float>(atoi(argv[1])));
 
     if (argc >= 3)
     {
