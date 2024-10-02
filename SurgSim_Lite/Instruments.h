@@ -114,7 +114,7 @@ void draw_instruments(SpriteHandler<NR, NC>& sh, InstrumentSide side,
   const auto& texture = icon_data::side_anim_tool_textures[static_cast<int>(side)][anim_idx][static_cast<int>(tool_type)];
   auto tcp = instr_data.get_tcp();
   if (side == InstrumentSide::Right)
-    tcp.c -= texture.str.size() - 1;
+    tcp.c -= static_cast<int>(texture.str.size()) - 1;
   for (const auto& pixel : texture.get_pixels())
     sh.write_buffer(pixel.str, tcp.r, tcp.c++, pixel.fg_color, pixel.bg_color);
   

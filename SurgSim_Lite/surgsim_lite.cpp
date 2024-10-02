@@ -287,7 +287,7 @@ private:
   //////////////////////////////////////////////////////////////////////////
 
   // Instruments
-  float ang_left_rad = 0.7854 - 0.1f;
+  float ang_left_rad = 0.7854f - 0.1f;
   float ang_right_rad = -0.7854f + 0.12f;
   const float shaft_len = 80.f;
   float shaft_z_left = 35.f;

@@ -23,7 +23,7 @@ void draw_hud(SpriteHandler<NR, NC>& sh,
     + "]";
   sh.write_buffer(life_str, 0, hud_c, Color::Cyan);
   //sh.write_buffer(std::to_string(health), 5, 5, Color::Black);
-  hud_c += 1 + life_str.size();
+  hud_c += 1 + static_cast<int>(life_str.size());
   if (blood > max_blood)
     blood = max_blood;
   std::string blood_char = "b";
@@ -39,7 +39,7 @@ void draw_hud(SpriteHandler<NR, NC>& sh,
     + str::rep_char(' ', static_cast<int>(std::ceil(max_blood/3.f) - std::ceil(blood/3.f)))
     + "]";
   sh.write_buffer(blood_str, 0, hud_c, Color::Cyan);
-  hud_c += 1 + blood_str.size();
+  hud_c += 1 + static_cast<int>(blood_str.size());
   std::string score_str = "Score: ";
   score_str += std::to_string(score);
   sh.write_buffer(score_str, 0, hud_c, Color::Cyan);

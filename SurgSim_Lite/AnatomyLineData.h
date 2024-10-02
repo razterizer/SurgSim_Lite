@@ -99,7 +99,7 @@ struct AnatomyLineData
           fg_color = Color::DarkGray;
         ch = '/';
       }
-      pixels.emplace_back(ch, fg_color, bg_color, r, c[i], line_idx, i, active);
+      pixels.emplace_back(ch, fg_color, bg_color, r, c[i], line_idx, static_cast<int>(i), active);
     }
     return pixels;
   }

@@ -432,7 +432,7 @@ void handle_injuries(SpriteHandler<NR, NC>& sh, MessageHandler& mh,
   float blood_val = math::linmap(health_states.get_blood_vol(),
                            0.f, health_states.get_crit_blood_vol(),
                            0.f, static_cast<float>(max_blood));
-  blood = std::round(blood_val);
+  blood = math::roundI(blood_val);
   
   mh.update(sh, time);
 }

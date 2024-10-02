@@ -34,7 +34,7 @@ void draw_tool_menu(SpriteHandler<NR, NC>& sh, InstrumentSide side, int sel_idx)
     const int rr = r;
     int cc = c;
     if (side == InstrumentSide::Right)
-      cc -= label.str.size();
+      cc -= static_cast<int>(label.str.size());
     for (const auto& pixel : label.get_pixels())
     {
       auto bg_color = selected ? Color::Cyan : Color::DarkCyan; //pixel.bg_color;

@@ -286,8 +286,8 @@ namespace liquids
         liquid_flow.set(liquid_type, speed * spread);
         reservoir_vol -= droplet_vol;
       }
-      droplets.update({ -1, -1 }, false, 0.f, 0.f, 0.f, 0.f, 0,
-                      life_time, liquid_volumes, liquid_type, droplet_vol, dt, time);
+      droplets.update({ -1, -1 }, false, 0.f, 0.f, 0.f, 0.f,
+                      life_time, cluster_size, liquid_volumes, liquid_type, droplet_vol, dt, time);
       droplets.set_num_active_particles(reservoir_vol.calc_vol_t());
     };
     const float artery_speed = 31.f; //26.f;
@@ -318,7 +318,7 @@ namespace liquids
                           (const RC& tcp, float vol_rate)
     {
       float pool_height = liquid_volumes.pool_volume / screen_width;
-      int r = std::ceil(29 - pool_height);
+      auto r = static_cast<int>(std::ceil(29 - pool_height));
       if (tcp.r >= r)
         liquid_volumes -= vol_rate;
     };
@@ -336,12 +336,12 @@ namespace liquids
       switch (side)
       {
         case InstrumentSide::Left:
-          dir_r = tcp.r - 29;
-          dir_c = tcp.c;
+          dir_r = static_cast<float>(tcp.r - 29);
+          dir_c = static_cast<float>(tcp.c);
           break;
         case InstrumentSide::Right:
-          dir_r = tcp.r - 29;
-          dir_c = tcp.c - 79;
+          dir_r = static_cast<float>(tcp.r - 29);
+          dir_c = static_cast<float>(tcp.c - 79);
           break;
         case InstrumentSide::NUM_ITEMS:
           break;
@@ -419,7 +419,7 @@ namespace liquids
       // Draw fluid pool.
       auto fg_color = get_liquid_fg_color(liquid_volumes);
       auto bg_color = get_liquid_bg_color(liquid_volumes);
-      float y = 29 - r;
+      float y = static_cast<float>(29 - r);
       if (y <= pool_height)
         sh.write_buffer(str::rep_char('~', 80), r, 0, fg_color, bg_color);
     }
