@@ -17,9 +17,9 @@ void draw_hud(SpriteHandler<NR, NC>& sh,
     case 0: health_char = ""; break;
   }
   std::string life_str = "Health: ["
-    + str::rep_char('#', std::floor(health/3.f))
+    + str::rep_char('#', static_cast<int>(std::floor(health/3.f)))
     + health_char
-    + str::rep_char(' ', std::ceil(max_health/3.f) - std::ceil(health/3.f))
+    + str::rep_char(' ', static_cast<int>(std::ceil(max_health/3.f) - std::ceil(health/3.f)))
     + "]";
   sh.write_buffer(life_str, 0, hud_c, Color::Cyan);
   //sh.write_buffer(std::to_string(health), 5, 5, Color::Black);
@@ -34,9 +34,9 @@ void draw_hud(SpriteHandler<NR, NC>& sh,
     case 0: blood_char = ""; break;
   }
   std::string blood_str = "Blood: ["
-    + str::rep_char('#', std::floor(blood/3.f))
+    + str::rep_char('#', static_cast<int>(std::floor(blood/3.f)))
     + blood_char
-    + str::rep_char(' ', std::ceil(max_blood/3.f) - std::ceil(blood/3.f))
+    + str::rep_char(' ', static_cast<int>(std::ceil(max_blood/3.f) - std::ceil(blood/3.f)))
     + "]";
   sh.write_buffer(blood_str, 0, hud_c, Color::Cyan);
   hud_c += 1 + blood_str.size();
