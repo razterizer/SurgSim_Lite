@@ -33,6 +33,13 @@ jobs:
           cd SurgSim_Lite
           ./build.sh
         continue-on-error: false # Ensure errors are not bypassed
+
+      # Run program
+      - name: Run program
+        if: false
+        run: |
+             cd SurgSim_Lite
+             ./bin/surgsim_lite
   
   build-program-with-locked-dependencies:
     runs-on: ubuntu-latest
