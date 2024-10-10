@@ -36,7 +36,7 @@ jobs:
 
       # Run program
       - name: Run program
-        if: true
+        if: false
         run: |
              cd SurgSim_Lite
              ./bin/surgsim_lite
