@@ -9,7 +9,7 @@
 // R( \____/\____/\_/\_\\____\\____/\_/\_/  \|  \____/\_/ \_/ \____\ )
 
 template<int NR, int NC>
-void draw_instructions(SpriteHandler<NR, NC>& sh, int max_health, const ASCII_Fonts::FontDataColl& font_data, const ASCII_Fonts::ColorScheme& font_colors, const std::string& exe_folder)
+void draw_instructions(ScreenHandler<NR, NC>& sh, int max_health, const ASCII_Fonts::FontDataColl& font_data, const ASCII_Fonts::ColorScheme& font_colors, const std::string& exe_folder)
 {
   std::vector<std::string> lines;
   if (TextIO::read_file(folder::join_file_path({ exe_folder, "title.txt" }), lines) && !lines.empty())

@@ -102,7 +102,7 @@ void update_instruments(Key key,
 
 
 template<int NR, int NC>
-void draw_instruments(SpriteHandler<NR, NC>& sh, InstrumentSide side,
+void draw_instruments(ScreenHandler<NR, NC>& sh, InstrumentSide side,
                       float ang_rad, float shaft_z,
                       ToolType tool_type, int anim_idx,
                       const InstrumentData& instr_data,

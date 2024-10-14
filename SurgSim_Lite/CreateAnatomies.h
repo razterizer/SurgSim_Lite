@@ -276,7 +276,7 @@ void create_hepatoduodenal_ligament(std::vector<AnatomyLineData>& hd_ligament_te
 }
 
 template<int NR, int NC>
-void draw_ground(SpriteHandler<NR, NC>& sh)
+void draw_ground(ScreenHandler<NR, NC>& sh)
 {
   auto fg_color = Color::DarkYellow;
   auto bg_color = Color::Magenta;

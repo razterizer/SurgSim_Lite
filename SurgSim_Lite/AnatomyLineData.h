@@ -4,7 +4,7 @@
 #include <Termin8or/Pixel.h>
 #include <Termin8or/RC.h>
 #include <Core/StringHelper.h>
-#include <Termin8or/SpriteHandler.h>
+#include <Termin8or/ScreenHandler.h>
 #include "Enums.h"
 #include "TexLineCharIdx.h"
 
@@ -153,7 +153,7 @@ void create_texture_row_tube(std::vector<AnatomyLineData>& texture,
 }
 
 template<int NR, int NC>
-void draw_opaque_anatomy(SpriteHandler<NR, NC>& sh, const std::vector<AnatomyLineData>& texture)
+void draw_opaque_anatomy(ScreenHandler<NR, NC>& sh, const std::vector<AnatomyLineData>& texture)
 {
   for (const auto& line : texture)
     for (const auto& pixel : line.get_pixels())
@@ -161,7 +161,7 @@ void draw_opaque_anatomy(SpriteHandler<NR, NC>& sh, const std::vector<AnatomyLin
 }
 
 template<int NR, int NC>
-void draw_anatomy(SpriteHandler<NR, NC>& sh, const std::vector<AnatomyLineData>& texture)
+void draw_anatomy(ScreenHandler<NR, NC>& sh, const std::vector<AnatomyLineData>& texture)
 {
   for (const auto& line : texture)
     for (const auto& pixel : line.get_pixels())

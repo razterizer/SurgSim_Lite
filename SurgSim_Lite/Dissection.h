@@ -200,7 +200,7 @@ void update_burn(float dt, Key curr_key,
 }
 
 template<int NR, int NC>
-void generate_sparks(SpriteHandler<NR, NC>& sh, Key curr_key,
+void generate_sparks(ScreenHandler<NR, NC>& sh, Key curr_key,
                      const RC& tcp_rc_left, const RC& tcp_rc_right,
                      ToolType tool_type_left, ToolType tool_type_right,
                      int anim_ctr)
@@ -226,7 +226,7 @@ void generate_sparks(SpriteHandler<NR, NC>& sh, Key curr_key,
 }
 
 template<int NR, int NC>
-void generate_smoke(SpriteHandler<NR, NC>& sh, Key curr_key,
+void generate_smoke(ScreenHandler<NR, NC>& sh, Key curr_key,
                     const RC& tcp_rc_left, const RC& tcp_rc_right,
                     ToolType tool_type_left, ToolType tool_type_right,
                     float dt, float time)

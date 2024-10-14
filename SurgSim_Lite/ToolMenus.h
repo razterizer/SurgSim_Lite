@@ -3,7 +3,7 @@
 #include "icon_data.h"
 
 template<int NR, int NC>
-void draw_tool_menu(SpriteHandler<NR, NC>& sh, InstrumentSide side, int sel_idx)
+void draw_tool_menu(ScreenHandler<NR, NC>& sh, InstrumentSide side, int sel_idx)
 {
   auto draw_icon = [&](ToolType tool_type, int r, int c, bool selected)
   {

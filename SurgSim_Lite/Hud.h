@@ -1,7 +1,7 @@
 #pragma once
 
 template<int NR, int NC>
-void draw_hud(SpriteHandler<NR, NC>& sh,
+void draw_hud(ScreenHandler<NR, NC>& sh,
               int health, int max_health,
               int blood, int max_blood,
               int score)

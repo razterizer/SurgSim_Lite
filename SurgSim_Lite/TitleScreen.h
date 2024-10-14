@@ -1,5 +1,5 @@
 #pragma once
-#include <Termin8or/SpriteHandler.h>
+#include <Termin8or/ScreenHandler.h>
 #include <Termin8or/ASCII_Fonts.h>
 #include <Core/TextIO.h>
 
@@ -147,7 +147,7 @@
 //29//                                                                 (c) 2022       |
 //30//--------------------------------------------------------------------------------+
 template<int NR, int NC>
-void draw_title(SpriteHandler<NR, NC>& sh, const ASCII_Fonts::FontDataColl& font_data, const std::vector<ASCII_Fonts::ColorScheme>& font_colors, const std::string& exe_folder)
+void draw_title(ScreenHandler<NR, NC>& sh, const ASCII_Fonts::FontDataColl& font_data, const std::vector<ASCII_Fonts::ColorScheme>& font_colors, const std::string& exe_folder)
 {
   //const auto wht = Color::White;
   //const auto lgry = Color::LightGray;

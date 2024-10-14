@@ -145,7 +145,7 @@ namespace liquids
   }
 
   template<int NR, int NC>
-  void update_profuse_liquids(SpriteHandler<NR, NC>& sh,
+  void update_profuse_liquids(ScreenHandler<NR, NC>& sh,
                               Key curr_key,
                               const RC& tcp_rc_left, const RC& tcp_rc_right,
                               ToolType tool_type_left, ToolType tool_type_right,
