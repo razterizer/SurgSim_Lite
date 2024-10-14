@@ -10,7 +10,7 @@
 #include "LiquidVolumes.h"
 #include "ParticleSystem.h"
 #include <Termin8or/Gradient.h>
-#include <Termin8or/Screen.h>
+#include <Termin8or/ScreenUtils.h>
 #include <optional>
 
 namespace liquids

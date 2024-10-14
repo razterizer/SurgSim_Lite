@@ -11,7 +11,7 @@
 #include "Hud.h"
 #include "Grasping.h"
 
-#include <Termin8or/Screen.h>
+#include <Termin8or/ScreenUtils.h>
 #include <Core/Delay.h>
 #include <Termin8or/GameEngine.h>
 #include <Termin8or/ASCII_Fonts.h>
