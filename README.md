@@ -7,6 +7,7 @@
 [![build windows](https://github.com/razterizer/SurgSim_Lite/actions/workflows/build-windows.yml/badge.svg)](https://github.com/razterizer/SurgSim_Lite/actions/workflows/build-windows.yml)
 
 ![Top Languages](https://img.shields.io/github/languages/top/razterizer/SurgSim_Lite)
+![GitHub repo size](https://img.shields.io/github/repo-size/razterizer/SurgSim_Lite)
 ![Goto](https://img.shields.io/github/search/razterizer/SurgSim_Lite/goto)
 ![Commit Activity](https://img.shields.io/github/commit-activity/t/razterizer/SurgSim_Lite)
 ![Last Commit](https://img.shields.io/github/last-commit/razterizer/SurgSim_Lite?color=blue)
