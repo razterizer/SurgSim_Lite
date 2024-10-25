@@ -20,6 +20,8 @@
 <img width="567" alt="image" src="https://github.com/razterizer/SurgSim_Lite/assets/32767250/47cf2c18-c9cf-46a5-9787-bfd3ad69540a">
 <img width="567" alt="image" src="https://github.com/razterizer/SurgSim_Lite/assets/32767250/443646ef-9819-41e2-a370-28ab5ee10231">
 
+![ubuntu_lffeb5yfso_360](https://github.com/user-attachments/assets/96302a4b-1359-40ce-87e4-01c79c6af759)
+
 ## Build & Run Instructions
 
 There are two options on dealing with repo dependencies:
