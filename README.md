@@ -1,6 +1,7 @@
 # SurgSim Lite
 
 ![GitHub License](https://img.shields.io/github/license/razterizer/SurgSim_Lite?color=blue)
+![Static Badge](https://img.shields.io/badge/C%2B%2B-20-yellow)
 
 [![build ubuntu](https://github.com/razterizer/SurgSim_Lite/actions/workflows/build-ubuntu.yml/badge.svg)](https://github.com/razterizer/SurgSim_Lite/actions/workflows/build-ubuntu.yml)
 [![build macos](https://github.com/razterizer/SurgSim_Lite/actions/workflows/build-macos.yml/badge.svg)](https://github.com/razterizer/SurgSim_Lite/actions/workflows/build-macos.yml)
