@@ -85,7 +85,8 @@ public:
     , instr_data_left(InstrumentSide::Left, shaft_len, shaft_z_left, ang_left_rad, pix_ar)
     , instr_data_right(InstrumentSide::Right, shaft_len, shaft_z_right, ang_right_rad, pix_ar)
   {
-    GameEngine::set_sim_delay_us(200'000.f);
+    GameEngine::set_sim_delay_us(100'000.f);
+    GameEngine::set_anim_rate(0, 3);
     if (argc >= 2)
       GameEngine::set_sim_delay_us(static_cast<float>(atoi(argv[1])));
 
@@ -133,144 +134,144 @@ public:
 private:
   virtual void update() override
   {
-    Key curr_special_key = register_keypresses(kpd);
-
-      trg_tool_left = anim_idx_curr_left == 1 && anim_idx_prev_left == 0;
-      trg_tool_right = anim_idx_curr_right == 1 && anim_idx_prev_right == 0;
-      anim_idx_prev_left = anim_idx_curr_left;
-      anim_idx_prev_right = anim_idx_curr_right;
-
-      RC tcp_rc_left, tcp_rc_right;
-
-      draw_hud(sh, health, max_health, blood, max_blood, GameEngine::ref_score());
-
-      draw_frame(sh, Color::Black);
-
-      if (health <= 0 || blood >= max_blood)
-        GameEngine::set_state_game_over();
-      else if (health_states.is_exercise_completed())
-        GameEngine::set_state_you_won();
-
-      handle_injuries(sh, msg_handler, health_states,
-        health, blood, max_blood, GameEngine::ref_score(),
-        get_sim_time_s());
-      if (GameEngine::ref_score() < 0)
-        GameEngine::ref_score() = 0;
-
-      health_states.check_visibility(all_textures, TextureType::HD_LIG, GameEngine::ref_score());
-      health_states.check_correct_artery_division(all_textures, GameEngine::ref_score());
-      health_states.check_correct_duct_division(all_textures, GameEngine::ref_score());
-      health_states.check_liquid_pool_empty(GameEngine::ref_score());
-
-      if (curr_special_key == Key::Menu)
-        show_menus = !show_menus;
-      if (show_menus)
+    auto curr_special_key = register_keypresses(kpdp);
+    
+    trg_tool_left = anim_idx_curr_left == 1 && anim_idx_prev_left == 0;
+    trg_tool_right = anim_idx_curr_right == 1 && anim_idx_prev_right == 0;
+    anim_idx_prev_left = anim_idx_curr_left;
+    anim_idx_prev_right = anim_idx_curr_right;
+    
+    RC tcp_rc_left, tcp_rc_right;
+    
+    draw_hud(sh, health, max_health, blood, max_blood, GameEngine::ref_score());
+    
+    draw_frame(sh, Color::Black);
+    
+    if (health <= 0 || blood >= max_blood)
+      GameEngine::set_state_game_over();
+    else if (health_states.is_exercise_completed())
+      GameEngine::set_state_you_won();
+    
+    handle_injuries(sh, msg_handler, health_states,
+                    health, blood, max_blood, GameEngine::ref_score(),
+                    get_sim_time_s());
+    if (GameEngine::ref_score() < 0)
+      GameEngine::ref_score() = 0;
+    
+    health_states.check_visibility(all_textures, TextureType::HD_LIG, GameEngine::ref_score());
+    health_states.check_correct_artery_division(all_textures, GameEngine::ref_score());
+    health_states.check_correct_duct_division(all_textures, GameEngine::ref_score());
+    health_states.check_liquid_pool_empty(GameEngine::ref_score());
+    
+    if (curr_special_key == Key::Menu)
+      show_menus = !show_menus;
+    if (show_menus)
+    {
+      draw_tool_menu(sh, InstrumentSide::Left, static_cast<int>(tool_type_left));
+      draw_tool_menu(sh, InstrumentSide::Right, static_cast<int>(tool_type_right));
+      
+      auto step_tool = [](ToolType& tool_type, int step)
       {
-        draw_tool_menu(sh, InstrumentSide::Left, static_cast<int>(tool_type_left));
-        draw_tool_menu(sh, InstrumentSide::Right, static_cast<int>(tool_type_right));
-
-        auto step_tool = [](ToolType& tool_type, int step)
-          {
-            int idx = static_cast<int>(tool_type);
-            idx += step;
-            if (step > 0 && idx == icon_data::num_tool_types)
-              idx = 0;
-            else if (step < 0 && idx == -1)
-              idx = icon_data::num_tool_types - 1;
-            tool_type = static_cast<ToolType>(idx);
-          };
-        switch (curr_special_key)
-        {
-          case Key::LI_Up:   step_tool(tool_type_left, -1); break;
-          case Key::LI_Down: step_tool(tool_type_left, +1); break;
-          case Key::RI_Up:   step_tool(tool_type_right, -1); break;
-          case Key::RI_Down: step_tool(tool_type_right, +1); break;
-          default: break;
-        }
-
-        anim_idx_curr_left = 0;
-        anim_idx_curr_right = 0;
-      }
-      else
+        int idx = static_cast<int>(tool_type);
+        idx += step;
+        if (step > 0 && idx == icon_data::num_tool_types)
+          idx = 0;
+        else if (step < 0 && idx == -1)
+          idx = icon_data::num_tool_types - 1;
+        tool_type = static_cast<ToolType>(idx);
+      };
+      switch (curr_special_key)
       {
-        // #HACK
-        //if (anim_ctr == 1 || anim_ctr == 5)
-        //  curr_key = Key::LI_Trigger;
-        //else if (anim_ctr == 3)
-        //  curr_key = Key::None;
-        //curr_key = Key::Coag; // #HACK
-        update_instruments(curr_special_key,
-          tool_type_left, tool_type_right,
-          anim_idx_curr_left, anim_idx_curr_right,
-          instr_data_left, instr_data_right,
-          get_sim_time_s(), pix_ar);
+        case Key::LI_Up:   step_tool(tool_type_left, -1); break;
+        case Key::LI_Down: step_tool(tool_type_left, +1); break;
+        case Key::RI_Up:   step_tool(tool_type_right, -1); break;
+        case Key::RI_Down: step_tool(tool_type_right, +1); break;
+        default: break;
       }
-
-      //tcp_rc_left = { 20, 43 }; // (cystic artery) #HACK
-      //tcp_rc_left = { 12, 45 }; // (gallbladder) #HACK
-      //instr_data_left.set(InstrumentSide::Left, tcp_rc_left); // #HACK
-      grasp::handle_grasping(instr_data_left, instr_data_right,
-        tool_type_left, tool_type_right,
-        trg_tool_left, trg_tool_right,
-        anim_idx_curr_left, anim_idx_curr_right,
-        all_textures);
-      tcp_rc_left = instr_data_left.get_tcp();
-      tcp_rc_right = instr_data_right.get_tcp();
-
-      draw_instruments(sh, InstrumentSide::Left,
-        ang_left_rad,
-        shaft_z_left,
-        tool_type_left,
-        anim_idx_curr_left,
-        instr_data_left,
-        pix_ar);
-      draw_instruments(sh, InstrumentSide::Right,
-        ang_right_rad,
-        shaft_z_right,
-        tool_type_right,
-        anim_idx_curr_right,
-        instr_data_right,
-        pix_ar);
-
-      generate_sparks(sh, curr_special_key,
-        tcp_rc_left, tcp_rc_right,
-        tool_type_left, tool_type_right,
-        anim_ctr);
-      generate_smoke(sh, curr_special_key,
-        tcp_rc_left, tcp_rc_right,
-        tool_type_left, tool_type_right,
-        get_sim_dt_s(), get_sim_time_s());
-
-      std::vector<RC> fluid_sources;
-      liquids::update_profuse_liquids(sh,
-        curr_special_key,
-        tcp_rc_left, tcp_rc_right,
-        tool_type_left, tool_type_right,
-        all_textures,
-        liquid_volumes, liquid_flow, fluid_sources,
-        get_sim_time_s(), get_sim_dt_s());
-      health_states.register_fluids(liquid_volumes, liquid_flow, fluid_sources);
-
-      draw_anatomy(sh, all_textures[static_cast<size_t>(TextureType::HD_LIG)]);
-      draw_anatomy(sh, all_textures[static_cast<size_t>(TextureType::ARTERY_TREE)]);
-      draw_anatomy(sh, all_textures[static_cast<size_t>(TextureType::DUCT_TREE)]);
-      draw_opaque_anatomy(sh, all_textures[static_cast<size_t>(TextureType::GALLBLADDER)]);
-      draw_opaque_anatomy(sh, all_textures[static_cast<size_t>(TextureType::LIVER)]);
-      draw_ground(sh);
-
-      update_burn(get_sim_dt_s(), curr_special_key,
-        tcp_rc_left, tcp_rc_right,
-        tool_type_left, tool_type_right,
-        trg_tool_left, trg_tool_right,
-        all_textures,
-        health_states);
-
-      handle_clip_applying(curr_special_key,
-        tcp_rc_left, tcp_rc_right,
-        tool_type_left, tool_type_right,
-        trg_tool_left, trg_tool_right,
-        all_textures,
-        health_states);
+      
+      anim_idx_curr_left = 0;
+      anim_idx_curr_right = 0;
+    }
+    else
+    {
+      // #HACK
+      //if (anim_ctr == 1 || anim_ctr == 5)
+      //  curr_key = Key::LI_Trigger;
+      //else if (anim_ctr == 3)
+      //  curr_key = Key::None;
+      //curr_key = Key::Coag; // #HACK
+      update_instruments(curr_special_key,
+                         tool_type_left, tool_type_right,
+                         anim_idx_curr_left, anim_idx_curr_right,
+                         instr_data_left, instr_data_right,
+                         get_sim_time_s(), pix_ar);
+    }
+    
+    //tcp_rc_left = { 20, 43 }; // (cystic artery) #HACK
+    //tcp_rc_left = { 12, 45 }; // (gallbladder) #HACK
+    //instr_data_left.set(InstrumentSide::Left, tcp_rc_left); // #HACK
+    grasp::handle_grasping(instr_data_left, instr_data_right,
+                           tool_type_left, tool_type_right,
+                           trg_tool_left, trg_tool_right,
+                           anim_idx_curr_left, anim_idx_curr_right,
+                           all_textures);
+    tcp_rc_left = instr_data_left.get_tcp();
+    tcp_rc_right = instr_data_right.get_tcp();
+    
+    draw_instruments(sh, InstrumentSide::Left,
+                     ang_left_rad,
+                     shaft_z_left,
+                     tool_type_left,
+                     anim_idx_curr_left,
+                     instr_data_left,
+                     pix_ar);
+    draw_instruments(sh, InstrumentSide::Right,
+                     ang_right_rad,
+                     shaft_z_right,
+                     tool_type_right,
+                     anim_idx_curr_right,
+                     instr_data_right,
+                     pix_ar);
+    
+    generate_sparks(sh, curr_special_key,
+                    tcp_rc_left, tcp_rc_right,
+                    tool_type_left, tool_type_right,
+                    get_anim_count(0));
+    generate_smoke(sh, curr_special_key,
+                   tcp_rc_left, tcp_rc_right,
+                   tool_type_left, tool_type_right,
+                   get_sim_dt_s(), get_sim_time_s());
+    
+    std::vector<RC> fluid_sources;
+    liquids::update_profuse_liquids(sh,
+                                    curr_special_key,
+                                    tcp_rc_left, tcp_rc_right,
+                                    tool_type_left, tool_type_right,
+                                    all_textures,
+                                    liquid_volumes, liquid_flow, fluid_sources,
+                                    get_sim_time_s(), get_sim_dt_s());
+    health_states.register_fluids(liquid_volumes, liquid_flow, fluid_sources);
+    
+    draw_anatomy(sh, all_textures[static_cast<size_t>(TextureType::HD_LIG)]);
+    draw_anatomy(sh, all_textures[static_cast<size_t>(TextureType::ARTERY_TREE)]);
+    draw_anatomy(sh, all_textures[static_cast<size_t>(TextureType::DUCT_TREE)]);
+    draw_opaque_anatomy(sh, all_textures[static_cast<size_t>(TextureType::GALLBLADDER)]);
+    draw_opaque_anatomy(sh, all_textures[static_cast<size_t>(TextureType::LIVER)]);
+    draw_ground(sh);
+    
+    update_burn(get_sim_dt_s(), curr_special_key,
+                tcp_rc_left, tcp_rc_right,
+                tool_type_left, tool_type_right,
+                trg_tool_left, trg_tool_right,
+                all_textures,
+                health_states);
+    
+    handle_clip_applying(curr_special_key,
+                         tcp_rc_left, tcp_rc_right,
+                         tool_type_left, tool_type_right,
+                         trg_tool_left, trg_tool_right,
+                         all_textures,
+                         health_states);
     ///
   }
   

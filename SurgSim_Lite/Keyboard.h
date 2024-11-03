@@ -1,11 +1,11 @@
 #pragma once
 #include <Termin8or/Keyboard.h>
 
-Key register_keypresses(const keyboard::KeyPressData& kpd)
+Key register_keypresses(const keyboard::KeyPressDataPair& kpdp)
 {
   Key curr_special_key = Key::None;
-  auto key = keyboard::get_char_key(kpd);
-  auto special_key = keyboard::get_special_key(kpd);
+  auto key = keyboard::get_char_key(kpdp.transient);
+  auto special_key = keyboard::get_special_key(kpdp.transient);
 
   if (special_key == keyboard::SpecialKey::Left)
     curr_special_key = Key::RI_Left;

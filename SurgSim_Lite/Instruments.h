@@ -25,7 +25,8 @@ void update_instruments(Key key,
   const float min_close_time = 0.2f;
   curr_trg_left = false;
   curr_trg_right = false;
-  switch (key) {
+  switch (key)
+  {
     case Key::LI_Left:
       instr_data_left.step_angle(+ang_step_rad);
       break;
