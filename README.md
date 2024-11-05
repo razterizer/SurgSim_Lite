@@ -9,7 +9,7 @@
 
 ![Top Languages](https://img.shields.io/github/languages/top/razterizer/SurgSim_Lite)
 ![GitHub repo size](https://img.shields.io/github/repo-size/razterizer/SurgSim_Lite)
-![Goto](https://img.shields.io/github/search/razterizer/SurgSim_Lite/goto)
+<!-- ![Goto](https://img.shields.io/github/search/razterizer/SurgSim_Lite/goto) -->
 ![Commit Activity](https://img.shields.io/github/commit-activity/t/razterizer/SurgSim_Lite)
 ![Last Commit](https://img.shields.io/github/last-commit/razterizer/SurgSim_Lite?color=blue)
 ![Contributors](https://img.shields.io/github/contributors/razterizer/SurgSim_Lite?color=blue)
