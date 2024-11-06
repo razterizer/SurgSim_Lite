@@ -53,6 +53,9 @@ These repos are not guaranteed to all the time work with the latest version of `
 
 Then just open `<my_source_code_dir>/SurgSim_Lite/SurgSim_Lite/SurgSim_Lite.sln` and build and run. That's it!
 
+You can also build it by going to `<my_source_code_dir>/SurgSim_Lite/SurgSim_Lite/` and build with `build.bat`.
+Then you run by typing `x64\Release\surgsim_lite`.
+
 ### MacOS
 
 Goto `<my_source_code_dir>/SurgSim_Lite/SurgSim_Lite/` and build with `./build.sh`.
