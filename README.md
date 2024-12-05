@@ -28,7 +28,7 @@ There are two options on dealing with repo dependencies:
 
 Run the following command from `<my_source_code_dir>`.
 ```sh
-./SurgSim_Lite/fetch-dependencies ./SurgSim_Lite/dependencies
+./SurgSim_Lite/fetch-dependencies.py ./SurgSim_Lite/dependencies
 ```
 This will make sure you are running the latest stable versions that work with `SurgSim_Lite`.
 
