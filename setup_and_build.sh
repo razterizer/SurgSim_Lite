@@ -1,6 +1,6 @@
 #!/bin/bash
 
-REPO_DIR="TextUR"
+REPO_DIR="SurgSim_Lite"
 
 cd ..
 

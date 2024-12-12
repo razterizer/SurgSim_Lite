@@ -1,6 +1,6 @@
 @echo off
 
-set REPO_DIR=TextUR
+set REPO_DIR=SurgSim_Lite
 
 REM Change directory
 cd ..
