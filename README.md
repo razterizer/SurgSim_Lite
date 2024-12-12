@@ -24,19 +24,39 @@
 ## Build & Run Instructions
 
 There are two options on dealing with repo dependencies:
+
 ### Repo Dependencies Option 1
 
-Run the following command from `<my_source_code_dir>`.
-```sh
-./SurgSim_Lite/fetch-dependencies.py ./SurgSim_Lite/dependencies
-```
-This will make sure you are running the latest stable versions that work with `SurgSim_Lite`.
+This method will ensure that you are running the latest stable versions of the dependencies that work with `SurgSim_Lite`.
 
-This script was created by [Thibaut Buchert](https://github.com/thibautbuchert).
+The script `fetch-dependencies.py` used for this was created by [Thibaut Buchert](https://github.com/thibautbuchert).
+`fetch-dependencies.py` is used in the following scripts below:
+
+After a successful build, the scripts will then prompt you with the question if you want to run the program.
+
+When the script has been successfully run for the first time, you can then go to sub-folder `SurgSim_Lite` and use the `build.sh` / `build.bat` script instead, and after you have built, just run the `run.sh` or `run.bat` script.
+
+#### Windows
+
+Run the following script:
+```sh
+setup_and_build.bat
+```
+
+#### MacOS / Linux
+
+Run the following script:
+```sh
+setup_and_build.sh
+```
 
 ### Repo Dependencies Option 2
 
-You need the following header-only libraries that I've made:
+In this method we basically outline the things done in the `setup_and_build`-scripts in Option 1.
+
+This method is more suitable for development as we're not necessarily working with "locked" dependencies.
+
+You need the following header-only libraries:
 * https://github.com/razterizer/Core
 * https://github.com/razterizer/Termin8or
 
@@ -54,16 +74,10 @@ These repos are not guaranteed to all the time work with the latest version of `
 Then just open `<my_source_code_dir>/SurgSim_Lite/SurgSim_Lite/SurgSim_Lite.sln` and build and run. That's it!
 
 You can also build it by going to `<my_source_code_dir>/SurgSim_Lite/SurgSim_Lite/` and build with `build.bat`.
-Then you run by typing `x64\Release\surgsim_lite`.
+Then you run by typing `run.bat`.
 
-### MacOS
+### MacOS / Linux
 
-Goto `<my_source_code_dir>/SurgSim_Lite/SurgSim_Lite/` and build with `./build.sh`.
+Then goto `<my_source_code_dir>/SurgSim_Lite/SurgSim_Lite/` and build with `./build.sh`.
 
-Then run by typing `./bin/surgsim_lite`.
-
-### Linux (Ubuntu)
-
-Goto `<my_source_code_dir>/SurgSim_Lite/SurgSim_Lite/` and build with `./build.sh`.
-
-Then run by typing `./bin/surgsim_lite`.
+Then run by typing `./run.sh`.
