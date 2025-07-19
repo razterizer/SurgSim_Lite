@@ -1,0 +1,374 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		07E6EAA62C0B6BD5007BBC6B /* surgsim_lite.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 07E6EA9D2C0B6BD4007BBC6B /* surgsim_lite.cpp */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		07E6EA832C0B6B35007BBC6B /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		072AE7E82D08B9E7004F92D3 /* fetch-dependencies.py */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.python; path = "fetch-dependencies.py"; sourceTree = SOURCE_ROOT; };
+		072AE7E92D08B9F2004F92D3 /* dependencies */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = dependencies; sourceTree = SOURCE_ROOT; };
+		072AE7F72D0ACA05004F92D3 /* run.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = run.sh; sourceTree = "<group>"; };
+		072AE7F82D0ACA05004F92D3 /* run.bat */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = run.bat; sourceTree = "<group>"; };
+		072AE7F92D0ACA17004F92D3 /* setup_and_build.bat */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = setup_and_build.bat; sourceTree = SOURCE_ROOT; };
+		072AE7FA2D0ACA17004F92D3 /* setup_and_build.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = setup_and_build.sh; sourceTree = SOURCE_ROOT; };
+		075C651D2C40104500B15451 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = SOURCE_ROOT; };
+		075C651E2C40104500B15451 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = SOURCE_ROOT; };
+		076AB0632C9E2F4200531419 /* build.bat */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = build.bat; sourceTree = "<group>"; };
+		076AB0652C9E2FE700531419 /* build-ubuntu.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.yaml; name = "build-ubuntu.yml"; path = ".github/workflows/build-ubuntu.yml"; sourceTree = SOURCE_ROOT; };
+		076AB0662C9E317100531419 /* build-macos.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.yaml; name = "build-macos.yml"; path = ".github/workflows/build-macos.yml"; sourceTree = SOURCE_ROOT; };
+		076AB0672C9E318900531419 /* build-windows.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.yaml; name = "build-windows.yml"; path = ".github/workflows/build-windows.yml"; sourceTree = SOURCE_ROOT; };
+		07E6EA852C0B6B35007BBC6B /* SurgSim_Lite */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = SurgSim_Lite; sourceTree = BUILT_PRODUCTS_DIR; };
+		07E6EA8F2C0B6BD4007BBC6B /* Liquids.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Liquids.h; sourceTree = "<group>"; };
+		07E6EA912C0B6BD4007BBC6B /* ParticleSystem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ParticleSystem.h; sourceTree = "<group>"; };
+		07E6EA922C0B6BD4007BBC6B /* title.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = title.txt; sourceTree = "<group>"; };
+		07E6EA932C0B6BD4007BBC6B /* Grasping.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Grasping.h; sourceTree = "<group>"; };
+		07E6EA942C0B6BD4007BBC6B /* icon_data.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = icon_data.h; sourceTree = "<group>"; };
+		07E6EA952C0B6BD4007BBC6B /* LiquidVolumes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LiquidVolumes.h; sourceTree = "<group>"; };
+		07E6EA962C0B6BD4007BBC6B /* TexLineCharIdx.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TexLineCharIdx.h; sourceTree = "<group>"; };
+		07E6EA972C0B6BD4007BBC6B /* ToolMenus.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ToolMenus.h; sourceTree = "<group>"; };
+		07E6EA982C0B6BD4007BBC6B /* build.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = build.sh; sourceTree = "<group>"; };
+		07E6EA992C0B6BD4007BBC6B /* TubeTopology.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TubeTopology.h; sourceTree = "<group>"; };
+		07E6EA9A2C0B6BD4007BBC6B /* Enums.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Enums.h; sourceTree = "<group>"; };
+		07E6EA9B2C0B6BD4007BBC6B /* AnatomyLineData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnatomyLineData.h; sourceTree = "<group>"; };
+		07E6EA9C2C0B6BD4007BBC6B /* Dissection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Dissection.h; sourceTree = "<group>"; };
+		07E6EA9D2C0B6BD4007BBC6B /* surgsim_lite.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = surgsim_lite.cpp; sourceTree = "<group>"; };
+		07E6EA9E2C0B6BD5007BBC6B /* TitleScreen.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TitleScreen.h; sourceTree = "<group>"; };
+		07E6EA9F2C0B6BD5007BBC6B /* Hud.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Hud.h; sourceTree = "<group>"; };
+		07E6EAA02C0B6BD5007BBC6B /* HealthStates.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HealthStates.h; sourceTree = "<group>"; };
+		07E6EAA12C0B6BD5007BBC6B /* Instruments.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Instruments.h; sourceTree = "<group>"; };
+		07E6EAA22C0B6BD5007BBC6B /* CreateAnatomies.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CreateAnatomies.h; sourceTree = "<group>"; };
+		07E6EAA32C0B6BD5007BBC6B /* InstructionsScreen.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InstructionsScreen.h; sourceTree = "<group>"; };
+		07E6EAA42C0B6BD5007BBC6B /* InstrumentData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InstrumentData.h; sourceTree = "<group>"; };
+		07E6EAA52C0B6BD5007BBC6B /* Keyboard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Keyboard.h; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		07E6EA822C0B6B35007BBC6B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		072AE7E72D08B9AF004F92D3 /* scripts */ = {
+			isa = PBXGroup;
+			children = (
+				072AE7F92D0ACA17004F92D3 /* setup_and_build.bat */,
+				072AE7FA2D0ACA17004F92D3 /* setup_and_build.sh */,
+				072AE7E82D08B9E7004F92D3 /* fetch-dependencies.py */,
+				072AE7E92D08B9F2004F92D3 /* dependencies */,
+				076AB0632C9E2F4200531419 /* build.bat */,
+				07E6EA982C0B6BD4007BBC6B /* build.sh */,
+				072AE7F82D0ACA05004F92D3 /* run.bat */,
+				072AE7F72D0ACA05004F92D3 /* run.sh */,
+			);
+			name = scripts;
+			sourceTree = "<group>";
+		};
+		076AB0642C9E2FB300531419 /* workflows */ = {
+			isa = PBXGroup;
+			children = (
+				076AB0662C9E317100531419 /* build-macos.yml */,
+				076AB0652C9E2FE700531419 /* build-ubuntu.yml */,
+				076AB0672C9E318900531419 /* build-windows.yml */,
+			);
+			name = workflows;
+			sourceTree = "<group>";
+		};
+		07E6EA7C2C0B6B35007BBC6B = {
+			isa = PBXGroup;
+			children = (
+				075C651E2C40104500B15451 /* LICENSE */,
+				075C651D2C40104500B15451 /* README.md */,
+				07E6EA872C0B6B35007BBC6B /* SurgSim_Lite */,
+				07E6EA862C0B6B35007BBC6B /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		07E6EA862C0B6B35007BBC6B /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				07E6EA852C0B6B35007BBC6B /* SurgSim_Lite */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		07E6EA872C0B6B35007BBC6B /* SurgSim_Lite */ = {
+			isa = PBXGroup;
+			children = (
+				072AE7E72D08B9AF004F92D3 /* scripts */,
+				076AB0642C9E2FB300531419 /* workflows */,
+				07E6EA9D2C0B6BD4007BBC6B /* surgsim_lite.cpp */,
+				07E6EA9B2C0B6BD4007BBC6B /* AnatomyLineData.h */,
+				07E6EAA22C0B6BD5007BBC6B /* CreateAnatomies.h */,
+				07E6EA9C2C0B6BD4007BBC6B /* Dissection.h */,
+				07E6EA9A2C0B6BD4007BBC6B /* Enums.h */,
+				07E6EA932C0B6BD4007BBC6B /* Grasping.h */,
+				07E6EAA02C0B6BD5007BBC6B /* HealthStates.h */,
+				07E6EA9F2C0B6BD5007BBC6B /* Hud.h */,
+				07E6EA942C0B6BD4007BBC6B /* icon_data.h */,
+				07E6EAA32C0B6BD5007BBC6B /* InstructionsScreen.h */,
+				07E6EAA42C0B6BD5007BBC6B /* InstrumentData.h */,
+				07E6EAA12C0B6BD5007BBC6B /* Instruments.h */,
+				07E6EAA52C0B6BD5007BBC6B /* Keyboard.h */,
+				07E6EA8F2C0B6BD4007BBC6B /* Liquids.h */,
+				07E6EA952C0B6BD4007BBC6B /* LiquidVolumes.h */,
+				07E6EA912C0B6BD4007BBC6B /* ParticleSystem.h */,
+				07E6EA962C0B6BD4007BBC6B /* TexLineCharIdx.h */,
+				07E6EA9E2C0B6BD5007BBC6B /* TitleScreen.h */,
+				07E6EA972C0B6BD4007BBC6B /* ToolMenus.h */,
+				07E6EA992C0B6BD4007BBC6B /* TubeTopology.h */,
+				07E6EA922C0B6BD4007BBC6B /* title.txt */,
+			);
+			path = SurgSim_Lite;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		07E6EA842C0B6B35007BBC6B /* SurgSim_Lite */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 07E6EA8C2C0B6B35007BBC6B /* Build configuration list for PBXNativeTarget "SurgSim_Lite" */;
+			buildPhases = (
+				07E6EA812C0B6B35007BBC6B /* Sources */,
+				07E6EA822C0B6B35007BBC6B /* Frameworks */,
+				07E6EA832C0B6B35007BBC6B /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SurgSim_Lite;
+			productName = SurgSim_Lite;
+			productReference = 07E6EA852C0B6B35007BBC6B /* SurgSim_Lite */;
+			productType = "com.apple.product-type.tool";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		07E6EA7D2C0B6B35007BBC6B /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastUpgradeCheck = 1540;
+				TargetAttributes = {
+					07E6EA842C0B6B35007BBC6B = {
+						CreatedOnToolsVersion = 15.4;
+					};
+				};
+			};
+			buildConfigurationList = 07E6EA802C0B6B35007BBC6B /* Build configuration list for PBXProject "SurgSim_Lite" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 07E6EA7C2C0B6B35007BBC6B;
+			productRefGroup = 07E6EA862C0B6B35007BBC6B /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				07E6EA842C0B6B35007BBC6B /* SurgSim_Lite */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		07E6EA812C0B6B35007BBC6B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				07E6EAA62C0B6BD5007BBC6B /* surgsim_lite.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		07E6EA8A2C0B6B35007BBC6B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MACOSX_DEPLOYMENT_TARGET = 14.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		07E6EA8B2C0B6B35007BBC6B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MACOSX_DEPLOYMENT_TARGET = 14.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		07E6EA8D2C0B6B35007BBC6B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "c++20";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = HFL2Q84SZB;
+				ENABLE_HARDENED_RUNTIME = YES;
+				HEADER_SEARCH_PATHS = ../lib/;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		07E6EA8E2C0B6B35007BBC6B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "c++20";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = HFL2Q84SZB;
+				ENABLE_HARDENED_RUNTIME = YES;
+				HEADER_SEARCH_PATHS = ../lib/;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		07E6EA802C0B6B35007BBC6B /* Build configuration list for PBXProject "SurgSim_Lite" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				07E6EA8A2C0B6B35007BBC6B /* Debug */,
+				07E6EA8B2C0B6B35007BBC6B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		07E6EA8C2C0B6B35007BBC6B /* Build configuration list for PBXNativeTarget "SurgSim_Lite" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				07E6EA8D2C0B6B35007BBC6B /* Debug */,
+				07E6EA8E2C0B6B35007BBC6B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 07E6EA7D2C0B6B35007BBC6B /* Project object */;
+}
