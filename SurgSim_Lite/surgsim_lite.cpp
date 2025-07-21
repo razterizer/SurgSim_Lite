@@ -87,14 +87,6 @@ public:
   {
     GameEngine::set_sim_delay_us(100'000.f);
     GameEngine::set_anim_rate(0, 3);
-    if (argc >= 2)
-      GameEngine::set_sim_delay_us(static_cast<float>(atoi(argv[1])));
-
-    if (argc >= 3)
-    {
-      //int alt_km = atoi(argv[2]);
-      //y_pos = -alt_km*1e3/pix_to_m + ground_level + 13*pix_ar;
-    }
 
     game_over_timer = 40;
   }
@@ -325,23 +317,32 @@ private:
 
 int main(int argc, char** argv)
 {
-  //initscr();
-  //noecho();
-  //cbreak();
-  //keypad(stdscr, true);
-
-  if (argc >= 2 && strcmp(argv[1], "--help") == 0)
-  {
-    std::cout << "surgsim_lite (\"--help\" | [<frame-delay-us> [<nåt-här>]])" << std::endl;
-    return EXIT_SUCCESS;
-  }
-  
   GameEngineParams params;
   params.screen_bg_color_default = Color::DarkMagenta;
   params.screen_bg_color_title = Color::LightGray;
   params.screen_bg_color_instructions = Color::Black;
-
-  //nodelay(stdscr, TRUE);
+  
+  for (int i = 1; i < argc; ++i)
+  {
+    if (strcmp(argv[i], "--help") == 0)
+    {
+      std::cout << "demo --help | (--log_mode (record | replay)) | --suppress_tty_output | --suppress_tty_input" << std::endl;
+      return EXIT_SUCCESS;
+    }
+    
+    if (strcmp(argv[i],  "--suppress_tty_output") == 0)
+      params.suppress_tty_output = true;
+    else if (strcmp(argv[i], "--suppress_tty_input") == 0)
+      params.suppress_tty_input = true;
+    else if (i + 1 < argc && strcmp(argv[i], "--log_mode") == 0)
+    {
+      if (strcmp(argv[i + 1], "record") == 0)
+        params.log_mode = LogMode::Record;
+      else if (strcmp(argv[i + 1], "replay") == 0)
+        params.log_mode = LogMode::Replay;
+      params.xcode_log_filepath = "../../../../../../../../Documents/xcode/lib/DungGine/demo";
+    }
+  }
   
   Game game(argc, argv, params);
   game.init();
