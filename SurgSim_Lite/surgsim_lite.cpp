@@ -89,12 +89,6 @@ public:
     GameEngine::set_anim_rate(0, 3);
 
     game_over_timer = 40;
-    
-    for (int i = 1; i < argc; ++i)
-    {
-      if (i + 1 < argc && strcmp(argv[i], "--set_fps") == 0)
-        GameEngine::set_real_fps(atof(argv[i + 1]));
-    }
   }
 
   virtual void generate_data() override
