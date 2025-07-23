@@ -31,3 +31,8 @@ x86/
 ### External Tools ###
 
 .aider*
+
+### Misc Files ###
+
+rec*.txt
+!rec_valgrind.txt
