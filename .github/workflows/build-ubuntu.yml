@@ -34,12 +34,19 @@ jobs:
           ./build.sh
         continue-on-error: false # Ensure errors are not bypassed
 
-      # Run program
+      # Step 4: Run program
       - name: Run program
         if: false
         run: |
              cd SurgSim_Lite
              ./bin/surgsim_lite
+             
+      # Step 5: Upload executable for valgrind.
+      - name: Upload binary artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: program-binary
+          path: SurgSim_Lite/bin
   
   build-program-with-locked-dependencies:
     runs-on: ubuntu-latest
@@ -61,13 +68,6 @@ jobs:
           cd SurgSim_Lite
           ./build.sh
         continue-on-error: false # Ensure errors are not bypassed
-        
-      # Step 4: Upload executable for valgrind.
-      - name: Upload binary artifact
-        uses: actions/upload-artifact@v4
-        with:
-          name: program-binary
-          path: SurgSim_Lite/bin
 
   valgrind-check:
     runs-on: ubuntu-latest
