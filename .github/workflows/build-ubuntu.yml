@@ -213,7 +213,7 @@ jobs:
             COLOR="e05d44"
           fi
 
-          LABEL="Memory leaks"
+          LABEL="memory leaks"
           VALUE="$STATUS"
           LABEL_LEN=${#LABEL}
           VALUE_LEN=${#VALUE}
