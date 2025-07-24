@@ -92,14 +92,15 @@ jobs:
           # rm rec.txt # remove if any checked in.
           cp rec_valgrind.txt rec.txt
           chmod +x bin/surgsim_lite
-          valgrind --leak-check=full --show-leak-kinds=all --track-origins=yes ./bin/surgsim_lite --log_mode replay --suppress_tty_input --suppress_tty_output 2>&1 | tee ../../valgrind.log
+          mkdir -p valgrind-output
+          valgrind --leak-check=full --show-leak-kinds=all --track-origins=yes ./bin/surgsim_lite --log_mode replay --suppress_tty_input --suppress_tty_output 2>&1 | tee valgrind-output/valgrind.log
       
       - name: Generate Valgrind status
         run: |
-          if grep -q "definitely lost: 0 bytes" valgrind.log && grep -q "indirectly lost: 0 bytes" valgrind.log; then
-            echo "status: passing" > valgrind-status.yml
+          if grep -q "definitely lost: 0 bytes" valgrind-output/valgrind.log && grep -q "indirectly lost: 0 bytes" valgrind-output/valgrind.log; then
+            echo "status: passing" > valgrind-output/valgrind-status.yml
           else
-            echo "status: failing" > valgrind-status.yml
+            echo "status: failing" > valgrind-output/valgrind-status.yml
           fi
           
       - name: Upload Valgrind status
@@ -107,8 +108,9 @@ jobs:
         with:
           name: valgrind-status
           path: |
-            valgrind-status.yml
-            valgrind.log
+            valgrind-output/valgrind-status.yml
+            valgrind-output/valgrind.log
+
 
   generate-loc-badge:
     runs-on: ubuntu-latest
