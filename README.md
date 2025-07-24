@@ -6,11 +6,11 @@
 [![build ubuntu](https://github.com/razterizer/SurgSim_Lite/actions/workflows/build-ubuntu.yml/badge.svg)](https://github.com/razterizer/SurgSim_Lite/actions/workflows/build-ubuntu.yml)
 [![build macos](https://github.com/razterizer/SurgSim_Lite/actions/workflows/build-macos.yml/badge.svg)](https://github.com/razterizer/SurgSim_Lite/actions/workflows/build-macos.yml)
 [![build windows](https://github.com/razterizer/SurgSim_Lite/actions/workflows/build-windows.yml/badge.svg)](https://github.com/razterizer/SurgSim_Lite/actions/workflows/build-windows.yml)
+![Valgrind Status](https://raw.githubusercontent.com/razterizer/SurgSim_Lite/badges/valgrind-badge.svg)
 
 ![Top Languages](https://img.shields.io/github/languages/top/razterizer/SurgSim_Lite)
 ![GitHub repo size](https://img.shields.io/github/repo-size/razterizer/SurgSim_Lite)
 ![C++ LOC](https://raw.githubusercontent.com/razterizer/SurgSim_Lite/badges/loc-badge.svg)
-![Valgrind Status](https://raw.githubusercontent.com/razterizer/SurgSim_Lite/badges/valgrind-badge.svg)
 ![Commit Activity](https://img.shields.io/github/commit-activity/t/razterizer/SurgSim_Lite)
 ![Last Commit](https://img.shields.io/github/last-commit/razterizer/SurgSim_Lite?color=blue)
 ![Contributors](https://img.shields.io/github/contributors/razterizer/SurgSim_Lite?color=blue)
