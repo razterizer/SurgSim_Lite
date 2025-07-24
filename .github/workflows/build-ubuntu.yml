@@ -94,7 +94,7 @@ jobs:
 
       - name: Run Valgrind
         run: |
-          cd demo
+          cd SurgSim_Lite
           # rm rec.txt # remove if any checked in.
           cp rec_valgrind.txt rec.txt
           chmod +x bin/surgsim_lite
