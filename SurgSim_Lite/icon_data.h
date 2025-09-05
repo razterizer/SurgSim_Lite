@@ -1,6 +1,9 @@
 #pragma once
 #include <Termin8or/LineData.h>
 
+using LineData = t8x::drawing::LineData;
+
+
 namespace icon_data
 {
   const auto blk = Color::Black;

@@ -334,11 +334,13 @@ public:
 ///
 
 template<int NR, int NC>
-void handle_injuries(ScreenHandler<NR, NC>& sh, MessageHandler& mh,
+void handle_injuries(ScreenHandler<NR, NC>& sh, t8x::ui::MessageHandler& mh,
                      HealthStates& health_states,
                      int& health, int& blood, const int max_blood, int& score,
                      float time)
 {
+  using MessageHandler = t8x::ui::MessageHandler;
+
   if (!mh.has_message(time))
   {
     // Most severe states last.

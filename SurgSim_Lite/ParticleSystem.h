@@ -3,7 +3,7 @@
 #include <Termin8or/ParticleSystem.h>
 
 
-struct ParticleFluidHandler : ParticleHandler
+struct ParticleFluidHandler : t8x::physics::ParticleHandler
 {
   ParticleFluidHandler(size_t N_particles)
     : ParticleHandler(N_particles) {}

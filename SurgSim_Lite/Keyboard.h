@@ -1,19 +1,21 @@
 #pragma once
 #include <Termin8or/Keyboard.h>
 
-Key register_keypresses(const keyboard::KeyPressDataPair& kpdp)
+Key register_keypresses(const t8::input::KeyPressDataPair& kpdp)
 {
-  Key curr_special_key = Key::None;
-  auto key = keyboard::get_char_key(kpdp.transient);
-  auto special_key = keyboard::get_special_key(kpdp.transient);
+  using namespace t8::input;
 
-  if (special_key == keyboard::SpecialKey::Left)
+  Key curr_special_key = Key::None;
+  auto key = get_char_key(kpdp.transient);
+  auto special_key = get_special_key(kpdp.transient);
+
+  if (special_key == SpecialKey::Left)
     curr_special_key = Key::RI_Left;
-  else if (special_key == keyboard::SpecialKey::Right)
+  else if (special_key == SpecialKey::Right)
     curr_special_key = Key::RI_Right;
-  else if (special_key == keyboard::SpecialKey::Down)
+  else if (special_key == SpecialKey::Down)
     curr_special_key = Key::RI_Down;
-  else if (special_key == keyboard::SpecialKey::Up)
+  else if (special_key == SpecialKey::Up)
     curr_special_key = Key::RI_Up;
   else if (str::to_lower(key) == 'a')
     curr_special_key = Key::LI_Left;

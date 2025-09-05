@@ -8,6 +8,13 @@
 #include "Enums.h"
 #include "TexLineCharIdx.h"
 
+using RC = t8::RC;
+using Color = t8::Color;
+template<typename T>
+using Gradient = t8x::drawing::Gradient<T>;
+using Pixel = t8x::drawing::Pixel;
+template<int NR, int NC>
+using ScreenHandler = t8::screen::ScreenHandler<NR, NC>;
 
 struct AnatomyLineData
 {
