@@ -1,7 +1,7 @@
 #pragma once
-#include <Termin8or/LineData.h>
+#include <Termin8or/drawing/LineData.h>
 
-using LineData = t8x::drawing::LineData;
+using LineData = t8x::LineData;
 
 
 namespace icon_data

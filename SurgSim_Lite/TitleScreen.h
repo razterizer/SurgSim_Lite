@@ -1,6 +1,6 @@
 #pragma once
-#include <Termin8or/ScreenHandler.h>
-#include <Termin8or/ASCII_Fonts.h>
+#include <Termin8or/screen/ScreenHandler.h>
+#include <Termin8or/title/ASCII_Fonts.h>
 #include <Core/TextIO.h>
 
 
@@ -147,7 +147,7 @@
 //29//                                                                 (c) 2022       |
 //30//--------------------------------------------------------------------------------+
 template<int NR, int NC>
-void draw_title(t8::screen::ScreenHandler<NR, NC>& sh, const t8x::fonts::FontDataColl& font_data, const std::vector<t8x::fonts::ColorScheme>& font_colors, const std::string& exe_folder)
+void draw_title(t8::ScreenHandler<NR, NC>& sh, const t8x::FontDataColl& font_data, const std::vector<t8x::ColorScheme>& font_colors, const std::string& exe_folder)
 {
   using Color = t8::Color;
 
@@ -171,14 +171,14 @@ void draw_title(t8::screen::ScreenHandler<NR, NC>& sh, const t8x::fonts::FontDat
   
   std::vector<std::string> lines;
   if (TextIO::read_file(folder::join_file_path({ exe_folder, "title.txt" }), lines) && !lines.empty())
-    t8x::fonts::draw_text(sh, font_data, font_colors[0], lines.back(), 1, 8, t8x::fonts::Font::Larry3D);
+    t8x::draw_text(sh, font_data, font_colors[0], lines.back(), 1, 8, t8x::Font::Larry3D);
   else
-    t8x::fonts::draw_text(sh, font_data, font_colors[0], "SurgSim", 1, 8, t8x::fonts::Font::Larry3D);
-  t8x::fonts::draw_text(sh, font_data, font_colors[1], "Lite", 11, 31, t8x::fonts::Font::Larry3D);
+    t8x::draw_text(sh, font_data, font_colors[0], "SurgSim", 1, 8, t8x::Font::Larry3D);
+  t8x::draw_text(sh, font_data, font_colors[1], "Lite", 11, 31, t8x::Font::Larry3D);
   
   // Cholecystectomy
-  t8x::fonts::draw_text(sh, font_data, font_colors[2], "Cholecystectomy", 19, 3, t8x::fonts::Font::SMSlant);
-  t8x::fonts::draw_text(sh, font_data, font_colors[2], "Edition", 24, 3, t8x::fonts::Font::SMSlant);
+  t8x::draw_text(sh, font_data, font_colors[2], "Cholecystectomy", 19, 3, t8x::Font::SMSlant);
+  t8x::draw_text(sh, font_data, font_colors[2], "Edition", 24, 3, t8x::Font::SMSlant);
   
 
   print("Press space-bar to continue...", 29, 24, dgry);

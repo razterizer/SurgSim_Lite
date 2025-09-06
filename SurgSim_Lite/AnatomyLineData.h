@@ -1,20 +1,20 @@
 #pragma once
-#include <Termin8or/Gradient.h>
+#include <Termin8or/drawing/Gradient.h>
 #include <Core/Physics.h>
-#include <Termin8or/Pixel.h>
-#include <Termin8or/RC.h>
+#include <Termin8or/drawing/Pixel.h>
+#include <Termin8or/geom/RC.h>
 #include <Core/StringHelper.h>
-#include <Termin8or/ScreenHandler.h>
+#include <Termin8or/screen/ScreenHandler.h>
 #include "Enums.h"
 #include "TexLineCharIdx.h"
 
 using RC = t8::RC;
 using Color = t8::Color;
 template<typename T>
-using Gradient = t8x::drawing::Gradient<T>;
-using Pixel = t8x::drawing::Pixel;
+using Gradient = t8x::Gradient<T>;
+using Pixel = t8x::Pixel;
 template<int NR, int NC>
-using ScreenHandler = t8::screen::ScreenHandler<NR, NC>;
+using ScreenHandler = t8::ScreenHandler<NR, NC>;
 
 struct AnatomyLineData
 {

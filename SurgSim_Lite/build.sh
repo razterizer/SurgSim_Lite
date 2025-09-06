@@ -24,4 +24,4 @@ fi
 cp title.txt bin/
 
 mkdir -p bin/fonts/
-cp ../../lib/Termin8or/fonts/* bin/fonts/
+cp ../../lib/Termin8or/title/fonts/* bin/fonts/

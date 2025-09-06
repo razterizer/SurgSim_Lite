@@ -1,8 +1,8 @@
 #pragma once
 #include "InstrumentData.h"
-#include <Termin8or/RC.h>
+#include <Termin8or/geom/RC.h>
 #include <Core/Math.h>
-#include <Termin8or/Drawing.h>
+#include <Termin8or/drawing/Drawing.h>
 #include "Enums.h"
 #include "icon_data.h"
 
@@ -119,7 +119,7 @@ void draw_instruments(ScreenHandler<NR, NC>& sh, InstrumentSide side,
   for (const auto& pixel : texture.get_pixels())
     sh.write_buffer(pixel.str, tcp.r, tcp.c++, pixel.fg_color, pixel.bg_color);
   
-  t8x::drawing::plot_line(sh,
+  t8x::plot_line(sh,
                        instr_data.get_pivot_y(), instr_data.get_pivot_x(),
                        instr_data.get_end_y(), instr_data.get_end_x(),
                        "#", fg_color_shaft, bg_color_shaft);

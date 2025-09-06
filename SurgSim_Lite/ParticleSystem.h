@@ -1,9 +1,9 @@
 #pragma once
 #include "LiquidVolumes.h"
-#include <Termin8or/ParticleSystem.h>
+#include <Termin8or/physics/ParticleSystem.h>
 
 
-struct ParticleFluidHandler : t8x::physics::ParticleHandler
+struct ParticleFluidHandler : t8x::ParticleHandler
 {
   ParticleFluidHandler(size_t N_particles)
     : ParticleHandler(N_particles) {}

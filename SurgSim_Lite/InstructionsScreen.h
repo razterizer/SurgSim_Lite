@@ -9,15 +9,15 @@
 // R( \____/\____/\_/\_\\____\\____/\_/\_/  \|  \____/\_/ \_/ \____\ )
 
 template<int NR, int NC>
-void draw_instructions(t8::screen::ScreenHandler<NR, NC>& sh, int max_health, const t8x::fonts::FontDataColl& font_data, const t8x::fonts::ColorScheme& font_colors, const std::string& exe_folder)
+void draw_instructions(t8::ScreenHandler<NR, NC>& sh, int max_health, const t8x::FontDataColl& font_data, const t8x::ColorScheme& font_colors, const std::string& exe_folder)
 {
   using Color = t8::Color;
 
   std::vector<std::string> lines;
   if (TextIO::read_file(folder::join_file_path({ exe_folder, "title.txt" }), lines) && !lines.empty())
-    t8x::fonts::draw_text(sh, font_data, font_colors, lines.back() + " Lite", 1, 8, t8x::fonts::Font::Avatar);
+    t8x::draw_text(sh, font_data, font_colors, lines.back() + " Lite", 1, 8, t8x::Font::Avatar);
   else
-    t8x::fonts::draw_text(sh, font_data, font_colors, "SurgSim Lite", 1, 8, t8x::fonts::Font::Avatar);
+    t8x::draw_text(sh, font_data, font_colors, "SurgSim Lite", 1, 8, t8x::Font::Avatar);
 
   sh.write_buffer("The objective of this game is to complete the operation by ", 7, 2, Color::White);
   sh.write_buffer(" properly sealing the cystic artery and the cystic duct and ", 8, 2, Color::White);

@@ -5,7 +5,7 @@
 #include <Core/Math.h>
 #include <Core/FlankDetector.h>
 #include <Core/OneShot.h>
-#include <Termin8or/MessageHandler.h>
+#include <Termin8or/ui/MessageHandler.h>
 
 class HealthStates
 {
@@ -334,12 +334,12 @@ public:
 ///
 
 template<int NR, int NC>
-void handle_injuries(ScreenHandler<NR, NC>& sh, t8x::ui::MessageHandler& mh,
+void handle_injuries(ScreenHandler<NR, NC>& sh, t8x::MessageHandler& mh,
                      HealthStates& health_states,
                      int& health, int& blood, const int max_blood, int& score,
                      float time)
 {
-  using MessageHandler = t8x::ui::MessageHandler;
+  using MessageHandler = t8x::MessageHandler;
 
   if (!mh.has_message(time))
   {

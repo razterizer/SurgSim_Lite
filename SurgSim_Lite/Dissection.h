@@ -1,5 +1,5 @@
 #pragma once
-#include <Termin8or/RC.h>
+#include <Termin8or/geom/RC.h>
 #include "AnatomyLineData.h"
 #include "TexLineCharIdx.h"
 #include "HealthStates.h"
@@ -7,7 +7,7 @@
 
 namespace smoke
 {
-  t8x::physics::ParticleHandler smoke_left(500), smoke_right(500);
+  t8x::ParticleHandler smoke_left(500), smoke_right(500);
 }
 
 void cut(HealthStates& health_states,

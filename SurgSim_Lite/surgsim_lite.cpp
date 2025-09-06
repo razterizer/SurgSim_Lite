@@ -11,10 +11,10 @@
 #include "Hud.h"
 #include "Grasping.h"
 
-#include <Termin8or/ScreenUtils.h>
+#include <Termin8or/screen/ScreenUtils.h>
 #include <Core/Delay.h>
-#include <Termin8or/GameEngine.h>
-#include <Termin8or/ASCII_Fonts.h>
+#include <Termin8or/sys/GameEngine.h>
+#include <Termin8or/title/ASCII_Fonts.h>
 
 #include <iostream>
 
@@ -82,13 +82,13 @@ class Game : public t8x::GameEngine<>
 public:
   Game(int argc, char** argv, const t8x::GameEngineParams& params)
     : GameEngine(argv[0], params)
-    , instr_data_left(InstrumentSide::Left, shaft_len, shaft_z_left, ang_left_rad, t8::screen::pix_ar)
-    , instr_data_right(InstrumentSide::Right, shaft_len, shaft_z_right, ang_right_rad, t8::screen::pix_ar)
+    , instr_data_left(InstrumentSide::Left, shaft_len, shaft_z_left, ang_left_rad, t8::pix_ar)
+    , instr_data_right(InstrumentSide::Right, shaft_len, shaft_z_right, ang_right_rad, t8::pix_ar)
   {
     GameEngine::set_sim_delay_us(100'000.f);
     GameEngine::set_anim_rate(0, 3);
 
-    t8::screen::game_over_timer = 40;
+    t8::game_over_timer = 40;
   }
 
   virtual void generate_data() override
@@ -104,7 +104,7 @@ public:
 
     health_states.set_critical_blood_vol(12 * 80);
     
-    std::string font_data_path = t8x::fonts::get_path_to_font_data(get_exe_folder());
+    std::string font_data_path = t8x::get_path_to_font_data(get_exe_folder());
     std::cout << font_data_path << std::endl;
     
     color_schemes.emplace_back();
@@ -120,7 +120,7 @@ public:
     cs3.internal.fg_color = Color::White;
     cs3.internal.bg_color = Color::Transparent;
     
-    font_data = t8x::fonts::load_font_data(font_data_path);
+    font_data = t8x::load_font_data(font_data_path);
   }
 
 private:
@@ -196,7 +196,7 @@ private:
                          tool_type_left, tool_type_right,
                          anim_idx_curr_left, anim_idx_curr_right,
                          instr_data_left, instr_data_right,
-                         get_sim_time_s(), t8::screen::pix_ar);
+                         get_sim_time_s(), t8::pix_ar);
     }
     
     //tcp_rc_left = { 20, 43 }; // (cystic artery) #HACK
@@ -216,14 +216,14 @@ private:
                      tool_type_left,
                      anim_idx_curr_left,
                      instr_data_left,
-                     t8::screen::pix_ar);
+                     t8::pix_ar);
     draw_instruments(sh, InstrumentSide::Right,
                      ang_right_rad,
                      shaft_z_right,
                      tool_type_right,
                      anim_idx_curr_right,
                      instr_data_right,
-                     t8::screen::pix_ar);
+                     t8::pix_ar);
     
     generate_sparks(sh, curr_special_key,
                     tcp_rc_left, tcp_rc_right,
@@ -304,13 +304,13 @@ private:
   // States for messages and health penalty.
   HealthStates health_states;
 
-  t8x::ui::MessageHandler msg_handler;
+  t8x::MessageHandler msg_handler;
 
   liquids::LiquidVolumes liquid_volumes;
   liquids::LiquidFlow liquid_flow;
   
-  std::vector<t8x::fonts::ColorScheme> color_schemes;
-  t8x::fonts::FontDataColl font_data;
+  std::vector<t8x::ColorScheme> color_schemes;
+  t8x::FontDataColl font_data;
 };
 
 //////////////////////////////////////////////////////////////////////////
