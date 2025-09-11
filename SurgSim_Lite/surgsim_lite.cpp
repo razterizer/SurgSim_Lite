@@ -82,13 +82,13 @@ class Game : public t8x::GameEngine<>
 public:
   Game(int argc, char** argv, const t8x::GameEngineParams& params)
     : GameEngine(argv[0], params)
-    , instr_data_left(InstrumentSide::Left, shaft_len, shaft_z_left, ang_left_rad, t8::pix_ar)
-    , instr_data_right(InstrumentSide::Right, shaft_len, shaft_z_right, ang_right_rad, t8::pix_ar)
+    , instr_data_left(InstrumentSide::Left, shaft_len, shaft_z_left, ang_left_rad, t8x::pix_ar)
+    , instr_data_right(InstrumentSide::Right, shaft_len, shaft_z_right, ang_right_rad, t8x::pix_ar)
   {
     GameEngine::set_sim_delay_us(100'000.f);
     GameEngine::set_anim_rate(0, 3);
 
-    t8::game_over_timer = 40;
+    t8x::game_over_timer = 40;
   }
 
   virtual void generate_data() override
@@ -196,7 +196,7 @@ private:
                          tool_type_left, tool_type_right,
                          anim_idx_curr_left, anim_idx_curr_right,
                          instr_data_left, instr_data_right,
-                         get_sim_time_s(), t8::pix_ar);
+                         get_sim_time_s(), t8x::pix_ar);
     }
     
     //tcp_rc_left = { 20, 43 }; // (cystic artery) #HACK
@@ -216,14 +216,14 @@ private:
                      tool_type_left,
                      anim_idx_curr_left,
                      instr_data_left,
-                     t8::pix_ar);
+                     t8x::pix_ar);
     draw_instruments(sh, InstrumentSide::Right,
                      ang_right_rad,
                      shaft_z_right,
                      tool_type_right,
                      anim_idx_curr_right,
                      instr_data_right,
-                     t8::pix_ar);
+                     t8x::pix_ar);
     
     generate_sparks(sh, curr_special_key,
                     tcp_rc_left, tcp_rc_right,
