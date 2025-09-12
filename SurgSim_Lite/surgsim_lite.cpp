@@ -334,7 +334,7 @@ int main(int argc, char** argv)
         params.log_mode = LogMode::Record;
       else if (std::strcmp(argv[i + 1], "replay") == 0)
         params.log_mode = LogMode::Replay;
-      params.xcode_log_path = "../../../../../../../../Documents/xcode/SurgSim_Lite/SurgSim_Lite";
+      params.xcode_log_path = "../../../../../../../../Documents/xcode/SurgSim_Lite/SurgSim_Lite/bin/";
     }
   }
   
