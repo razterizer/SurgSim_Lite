@@ -3,9 +3,11 @@
 os_name=$(uname)
 
 if [[ $os_name == *"Darwin"* ]]; then
-  additional_flags="-I../../lib"
+  additional_flags="-I../../lib \
+    -I../../lib/Termin8or/include"
 else
-  additional_flags="-I../../lib"
+  additional_flags="-I../../lib \
+    -I../../lib/Termin8or/include"
   # export BUILD_PKG_CONFIG_MODULES='openal'
 fi
 
@@ -24,4 +26,4 @@ fi
 cp title.txt bin/
 
 mkdir -p bin/fonts/
-cp ../../lib/Termin8or/title/fonts/* bin/fonts/
+cp ../../lib/Termin8or/include/Termin8or/title/fonts/* bin/fonts/
