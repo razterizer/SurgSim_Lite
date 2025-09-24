@@ -15,6 +15,9 @@
 ![Last Commit](https://img.shields.io/github/last-commit/razterizer/SurgSim_Lite?color=blue)
 ![Contributors](https://img.shields.io/github/contributors/razterizer/SurgSim_Lite?color=blue)
 
+![GitHub Downloads (all assets, all releases)](https://img.shields.io/github/downloads/razterizer/SurgSim_Lite/total)
+
+
 <img width="568" alt="image" src="https://github.com/razterizer/SurgSim_Lite/assets/32767250/2d356a54-6117-4d6b-aeca-4a025e8ae372">
 <img width="568" alt="image" src="https://github.com/razterizer/SurgSim_Lite/assets/32767250/1cf2f435-88b3-4c41-bafd-a7cabd30ca75">
 <img width="567" alt="image" src="https://github.com/razterizer/SurgSim_Lite/assets/32767250/0c7f3528-00d8-492c-9609-9bef63f8e797">
