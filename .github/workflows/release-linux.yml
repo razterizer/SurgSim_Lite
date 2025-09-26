@@ -103,6 +103,11 @@ jobs:
           echo "- surgsim_lite-glibc2.35: for legacy systems (WSL, Ubuntu 22.04)" >> surgsim_lite-${{ github.ref_name }}/README.txt
           echo "" >> surgsim_lite-${{ github.ref_name }}/README.txt
           echo "Run the binary that matches your system's glibc version." >> surgsim_lite-${{ github.ref_name }}/README.txt
+          echo "" >> surgsim_lite-${{ github.ref_name }}/README.txt
+          echo "To run either executable, you might have to first do:" >> surgsim_lite-${{ github.ref_name }}/README.txt
+          echo "  chmod ugo+x surgsim_lite-glibc2.38" >> surgsim_lite-${{ github.ref_name }}/README.txt
+          echo " or:" >> surgsim_lite-${{ github.ref_name }}/README.txt
+          echo "  chmod ugo+x surgsim_lite-glibc2.35" >> surgsim_lite-${{ github.ref_name }}/README.txt
           tar -czf surgsim_lite-${{ github.ref_name }}-linux.tar.gz surgsim_lite-${{ github.ref_name }}/
 
       - name: Upload Linux package to release
