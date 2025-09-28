@@ -86,3 +86,48 @@ Then you run by typing `run.bat`.
 Then goto `<my_source_code_dir>/SurgSim_Lite/SurgSim_Lite/` and build with `./build.sh`.
 
 Then run by typing `./run.sh`.
+
+## Make New Release
+
+Trigger new release. For example:
+```sh
+git tag release-1.0.0.0
+git push origin release-1.0.0.0
+```
+
+If release workflow failed, you can delete the tag and add it again which then retriggers the release workflow. For example::
+```sh
+# Delete local tag
+git tag -d release-1.0.0.0
+
+# Delete remote tag
+git push --delete origin release-1.0.0.0
+
+# Re-create the tag locally
+git tag release-1.0.0.0
+
+# Push the tag again (this retriggers the workflow)
+git push origin release-1.0.0.0
+```
+
+But it is best to use the script `retag_release.sh` for such tasks. E.g.:
+```sh
+./retag_release bump patch "Some tag message."
+```
+or e.g.:
+```sh
+./retag_release 1.1.5.7 "Some tag message."
+```
+
+Note that the tag message is currently not used as release notes, but the last commit message is. I will change this in the future.
+
+## Running from a Release
+
+When you download a MacOS release then you need to tell the gatekeeper unblock the executable (here: `surgsim_lite`), but only if you trust the program of course (check source code + release workflow if you're unsure).
+When you feel ready, you can allow the binary to be run by going to the release folder and type the following:
+
+```sh
+xattr -dr com.apple.quarantine surgsim_lite
+```
+
+On Windows, you might have to unblock the exe by right-clicking the exe-file and check the `Unblock` checkbox.
