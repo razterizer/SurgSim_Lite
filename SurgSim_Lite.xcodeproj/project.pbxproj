@@ -29,6 +29,7 @@
 		072AE7F82D0ACA05004F92D3 /* run.bat */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = run.bat; sourceTree = "<group>"; };
 		072AE7F92D0ACA17004F92D3 /* setup_and_build.bat */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = setup_and_build.bat; sourceTree = SOURCE_ROOT; };
 		072AE7FA2D0ACA17004F92D3 /* setup_and_build.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = setup_and_build.sh; sourceTree = SOURCE_ROOT; };
+		0733A5F12EBFB6F90045BCFD /* RELEASE_NOTES.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = RELEASE_NOTES.md; sourceTree = "<group>"; };
 		075C651D2C40104500B15451 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = SOURCE_ROOT; };
 		075C651E2C40104500B15451 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = SOURCE_ROOT; };
 		076AB0632C9E2F4200531419 /* build.bat */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = build.bat; sourceTree = "<group>"; };
@@ -109,6 +110,7 @@
 			children = (
 				075C651E2C40104500B15451 /* LICENSE */,
 				075C651D2C40104500B15451 /* README.md */,
+				0733A5F12EBFB6F90045BCFD /* RELEASE_NOTES.md */,
 				07E6EA872C0B6B35007BBC6B /* SurgSim_Lite */,
 				07E6EA862C0B6B35007BBC6B /* Products */,
 			);
