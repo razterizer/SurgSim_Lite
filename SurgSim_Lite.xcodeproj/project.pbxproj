@@ -39,7 +39,7 @@
 		07980B992E83CA50007A0EB4 /* release-linux.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; name = "release-linux.yml"; path = ".github/workflows/release-linux.yml"; sourceTree = SOURCE_ROOT; };
 		07980B9A2E83CA50007A0EB4 /* release-macos.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; name = "release-macos.yml"; path = ".github/workflows/release-macos.yml"; sourceTree = SOURCE_ROOT; };
 		07980B9B2E83CA50007A0EB4 /* release-windows.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; name = "release-windows.yml"; path = ".github/workflows/release-windows.yml"; sourceTree = SOURCE_ROOT; };
-		07980B9C2E83CC6B007A0EB4 /* retag_release.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = retag_release.sh; sourceTree = SOURCE_ROOT; };
+		07980B9C2E83CC6B007A0EB4 /* tag_release.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = tag_release.sh; sourceTree = SOURCE_ROOT; };
 		07E6EA852C0B6B35007BBC6B /* SurgSim_Lite */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = SurgSim_Lite; sourceTree = BUILT_PRODUCTS_DIR; };
 		07E6EA8F2C0B6BD4007BBC6B /* Liquids.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Liquids.h; sourceTree = "<group>"; };
 		07E6EA912C0B6BD4007BBC6B /* ParticleSystem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ParticleSystem.h; sourceTree = "<group>"; };
@@ -79,7 +79,7 @@
 		072AE7E72D08B9AF004F92D3 /* scripts */ = {
 			isa = PBXGroup;
 			children = (
-				07980B9C2E83CC6B007A0EB4 /* retag_release.sh */,
+				07980B9C2E83CC6B007A0EB4 /* tag_release.sh */,
 				072AE7F92D0ACA17004F92D3 /* setup_and_build.bat */,
 				072AE7FA2D0ACA17004F92D3 /* setup_and_build.sh */,
 				072AE7E82D08B9E7004F92D3 /* fetch-dependencies.py */,
