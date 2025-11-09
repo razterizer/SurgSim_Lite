@@ -2,6 +2,7 @@
 
 ## 1.1.2.4
 - Fixes the --help argument so that it doesn't display audio settings on top of the help text, which seems a little out of place.
+- Indenting --help text.
 
 ## 1.1.1.3
 - Added unblocking instructions in readme for macos and windows and added additional chmodding instructions in readme for linux.
