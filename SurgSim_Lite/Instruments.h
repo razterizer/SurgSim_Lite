@@ -1,7 +1,7 @@
 #pragma once
 #include "InstrumentData.h"
 #include <Termin8or/geom/RC.h>
-#include <Core/Math.h>
+#include <Core/MathUtils.h>
 #include <Termin8or/drawing/Drawing.h>
 #include "Enums.h"
 #include "icon_data.h"

@@ -2,7 +2,7 @@
 #include "Enums.h"
 #include "AnatomyLineData.h"
 #include "Liquids.h"
-#include <Core/Math.h>
+#include <Core/MathUtils.h>
 #include <Core/FlankDetector.h>
 #include <Core/OneShot.h>
 #include <Termin8or/ui/MessageHandler.h>
