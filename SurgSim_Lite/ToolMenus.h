@@ -20,9 +20,9 @@ void draw_tool_menu(ScreenHandler<NR, NC>& sh, InstrumentSide side, int sel_idx)
         cc++;
       }
       if (selected)
-        sh.write_buffer(str::rep_char(' ', 9), rr, c, Color::Default, Color::Blue);
+        sh.write_buffer(str::rep_char(' ', 9), rr, c, Color16::Default, Color16::Blue);
       else
-        sh.write_buffer(str::rep_char(' ', 9), rr, c, Color::Default, Color::Magenta);
+        sh.write_buffer(str::rep_char(' ', 9), rr, c, Color16::Default, Color16::Magenta);
       rr++;
     }
   };
@@ -37,7 +37,7 @@ void draw_tool_menu(ScreenHandler<NR, NC>& sh, InstrumentSide side, int sel_idx)
       cc -= static_cast<int>(label.str.size());
     for (const auto& pixel : label.get_pixels())
     {
-      auto bg_color = selected ? Color::Cyan : Color::DarkCyan; //pixel.bg_color;
+      auto bg_color = selected ? Color16::Cyan : Color16::DarkCyan; //pixel.bg_color;
       sh.write_buffer(pixel.str, rr, cc, pixel.fg_color, bg_color);
       cc++;
     }
@@ -45,7 +45,7 @@ void draw_tool_menu(ScreenHandler<NR, NC>& sh, InstrumentSide side, int sel_idx)
   
   auto draw_icon_border = [&sh](int r, int c)
   {
-    const auto blk = Color::Black;
+    const auto blk = Color16::Black;
     sh.write_buffer("+--------+", r+0, c, blk);
     sh.write_buffer("|        |", r+1, c, blk);
     sh.write_buffer("|        |", r+2, c, blk);

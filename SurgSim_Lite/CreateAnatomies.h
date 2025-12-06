@@ -38,17 +38,17 @@ const float coag_sufficient = 0.8f;
 
 void create_liver(std::vector<AnatomyLineData>& liver_texture)
 {
-  auto fg_color = Color::Red;
-  auto fg_cut_color = Color::DarkGray;
+  auto fg_color = Color16::Red;
+  auto fg_cut_color = Color16::DarkGray;
   Gradient<Color> bg_color_gradient
   {
     {
-      { 0.f, Color::Red },
-      { 0.4f, Color::Magenta },
-      { coag_sufficient, Color::White },
-      { 0.9f, Color::LightGray },
-      { 0.95f, Color::DarkGray },
-      { 1.f, Color::Black }
+      { 0.f, Color16::Red },
+      { 0.4f, Color16::Magenta },
+      { coag_sufficient, Color16::White },
+      { 0.9f, Color16::LightGray },
+      { 0.95f, Color16::DarkGray },
+      { 1.f, Color16::Black }
     }
   };
 
@@ -110,15 +110,15 @@ void create_liver(std::vector<AnatomyLineData>& liver_texture)
 
 void create_gallbladder(std::vector<AnatomyLineData>& gallbladder_texture)
 {
-  auto fg_color = Color::DarkCyan;
-  auto fg_cut_color = Color::DarkGray;
+  auto fg_color = Color16::DarkCyan;
+  auto fg_cut_color = Color16::DarkGray;
   Gradient<Color> bg_color_gradient
   {
     {
-      { 0.f, Color::LightGray },
-      { coag_sufficient, Color::White },
-      { 0.9f, Color::DarkGray },
-      { 1.f, Color::Black }
+      { 0.f, Color16::LightGray },
+      { coag_sufficient, Color16::White },
+      { 0.9f, Color16::DarkGray },
+      { 1.f, Color16::Black }
     }
   };
   
@@ -172,17 +172,17 @@ void create_gallbladder(std::vector<AnatomyLineData>& gallbladder_texture)
 
 void create_artery_tree(std::vector<AnatomyLineData>& artery_tree_texture)
 {
-  auto fg_color = Color::Magenta;//Color::Magenta;
-  //auto bg_color = Color::DarkMagenta;
+  auto fg_color = Color16::Magenta;//Color16::Magenta;
+  //auto bg_color = Color16::DarkMagenta;
   Gradient<Color> bg_color_gradient
   {
     {
-      { 0.f, Color::DarkMagenta },
-      { 0.4f, Color::Magenta },
-      { coag_sufficient, Color::White },
-      { 0.9f, Color::LightGray },
-      { 0.95f, Color::DarkGray },
-      { 1.f, Color::Black }
+      { 0.f, Color16::DarkMagenta },
+      { 0.4f, Color16::Magenta },
+      { coag_sufficient, Color16::White },
+      { 0.9f, Color16::LightGray },
+      { 0.95f, Color16::DarkGray },
+      { 1.f, Color16::Black }
     }
   };
   
@@ -196,17 +196,17 @@ void create_artery_tree(std::vector<AnatomyLineData>& artery_tree_texture)
 
 void create_duct_tree(std::vector<AnatomyLineData>& duct_tree_texture)
 {
-  auto fg_color = Color::LightGray;
-  //auto bg_color = Color::DarkMagenta;
+  auto fg_color = Color16::LightGray;
+  //auto bg_color = Color16::DarkMagenta;
   Gradient<Color> bg_color_gradient
   {
     {
-      { 0.f, Color::Yellow },
-      //{ 0.4f, Color::Yellow },
-      { coag_sufficient, Color::White },
-      { 0.9f, Color::LightGray },
-      { 0.95f, Color::DarkGray },
-      { 1.f, Color::Black }
+      { 0.f, Color16::Yellow },
+      //{ 0.4f, Color16::Yellow },
+      { coag_sufficient, Color16::White },
+      { 0.9f, Color16::LightGray },
+      { 0.95f, Color16::DarkGray },
+      { 1.f, Color16::Black }
     }
   };
   
@@ -253,17 +253,17 @@ void create_duct_tree(std::vector<AnatomyLineData>& duct_tree_texture)
 
 void create_hepatoduodenal_ligament(std::vector<AnatomyLineData>& hd_ligament_texture)
 {
-  auto fg_color = Color::Yellow;
-  auto fg_cut_color = Color::Yellow;
+  auto fg_color = Color16::Yellow;
+  auto fg_cut_color = Color16::Yellow;
   Gradient<Color> bg_color_gradient
   {
     {
-      { 0.f, Color::DarkYellow },
-      { 0.5f, Color::Yellow },
-      { coag_sufficient, Color::White },
-      { 0.9f, Color::LightGray },
-      { 0.95f, Color::DarkGray },
-      { 1.f, Color::Black }
+      { 0.f, Color16::DarkYellow },
+      { 0.5f, Color16::Yellow },
+      { coag_sufficient, Color16::White },
+      { 0.9f, Color16::LightGray },
+      { 0.95f, Color16::DarkGray },
+      { 1.f, Color16::Black }
     }
   };
   
@@ -278,8 +278,8 @@ void create_hepatoduodenal_ligament(std::vector<AnatomyLineData>& hd_ligament_te
 template<int NR, int NC>
 void draw_ground(ScreenHandler<NR, NC>& sh)
 {
-  auto fg_color = Color::DarkYellow;
-  auto bg_color = Color::Magenta;
+  auto fg_color = Color16::DarkYellow;
+  auto bg_color = Color16::Magenta;
   for (int r = 21; r < 29; ++r)
     sh.write_buffer(str::rep_char('#', 78), r, 1, fg_color, bg_color);
 }

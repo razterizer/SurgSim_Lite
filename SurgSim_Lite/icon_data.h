@@ -6,12 +6,12 @@ using LineData = t8x::LineData;
 
 namespace icon_data
 {
-  const auto blk = Color::Black;
-  const auto dgr = Color::DarkGray;
-  const auto lgr = Color::LightGray;
-  const auto wht = Color::White;
-  const auto cyn = Color::Cyan;
-  const auto tr2 = Color::Transparent2;
+  const auto blk = Color16::Black;
+  const auto dgr = Color16::DarkGray;
+  const auto lgr = Color16::LightGray;
+  const auto wht = Color16::White;
+  const auto cyn = Color16::Cyan;
+  const auto tr2 = Color16::Transparent2;
   const auto num_tool_types = static_cast<int>(ToolType::NUM_ITEMS);
   const auto num_tool_icon_lines = 4;
 

@@ -109,8 +109,8 @@ void draw_instruments(ScreenHandler<NR, NC>& sh, InstrumentSide side,
                       const InstrumentData& instr_data,
                       const float pix_ar)
 {
-  const auto fg_color_shaft = Color::Black;
-  const auto bg_color_shaft = Color::DarkGray;
+  const auto fg_color_shaft = Color16::Black;
+  const auto bg_color_shaft = Color16::DarkGray;
   
   const auto& texture = icon_data::side_anim_tool_textures[static_cast<int>(side)][anim_idx][static_cast<int>(tool_type)];
   auto tcp = instr_data.get_tcp();

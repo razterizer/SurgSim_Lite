@@ -149,19 +149,20 @@
 template<int NR, int NC>
 void draw_title(t8::ScreenHandler<NR, NC>& sh, const t8x::FontDataColl& font_data, const std::vector<t8x::ColorScheme>& font_colors, const std::string& exe_folder)
 {
+  using Color16 = t8::Color16;
   using Color = t8::Color;
 
-  //const auto wht = Color::White;
-  //const auto lgry = Color::LightGray;
-  const auto dgry = Color::DarkGray;
-  //const auto blk = Color::Black;
-  const auto red = Color::Red;
-  //const auto dred = Color::DarkRed;
-  //const auto cyn = Color::Cyan;
-  const auto trp = Color::Transparent;
+  //const auto wht = Color16::White;
+  //const auto lgry = Color16::LightGray;
+  const auto dgry = Color16::DarkGray;
+  //const auto blk = Color16::Black;
+  const auto red = Color16::Red;
+  //const auto dred = Color16::DarkRed;
+  //const auto cyn = Color16::Cyan;
+  const auto trp = Color16::Transparent;
   
   // Simplifies typing.
-  auto print = [&sh](const std::string& str, int r, int c, Color fg_color, Color bg_color = Color::Transparent)
+  auto print = [&sh](const std::string& str, int r, int c, Color fg_color, Color bg_color = Color16::Transparent)
   {
     sh.write_buffer(str, r, c, fg_color, bg_color);
   };

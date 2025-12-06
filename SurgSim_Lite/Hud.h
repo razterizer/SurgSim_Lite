@@ -21,8 +21,8 @@ void draw_hud(ScreenHandler<NR, NC>& sh,
     + health_char
     + str::rep_char(' ', static_cast<int>(std::ceil(max_health/3.f) - std::ceil(health/3.f)))
     + "]";
-  sh.write_buffer(life_str, 0, hud_c, Color::Cyan);
-  //sh.write_buffer(std::to_string(health), 5, 5, Color::Black);
+  sh.write_buffer(life_str, 0, hud_c, Color16::Cyan);
+  //sh.write_buffer(std::to_string(health), 5, 5, Color16::Black);
   hud_c += 1 + static_cast<int>(life_str.size());
   if (blood > max_blood)
     blood = max_blood;
@@ -38,9 +38,9 @@ void draw_hud(ScreenHandler<NR, NC>& sh,
     + blood_char
     + str::rep_char(' ', static_cast<int>(std::ceil(max_blood/3.f) - std::ceil(blood/3.f)))
     + "]";
-  sh.write_buffer(blood_str, 0, hud_c, Color::Cyan);
+  sh.write_buffer(blood_str, 0, hud_c, Color16::Cyan);
   hud_c += 1 + static_cast<int>(blood_str.size());
   std::string score_str = "Score: ";
   score_str += std::to_string(score);
-  sh.write_buffer(score_str, 0, hud_c, Color::Cyan);
+  sh.write_buffer(score_str, 0, hud_c, Color16::Cyan);
 }

@@ -9,6 +9,7 @@
 #include "TexLineCharIdx.h"
 
 using RC = t8::RC;
+using Color16 = t8::Color16;
 using Color = t8::Color;
 template<typename T>
 using Gradient = t8x::Gradient<T>;
@@ -101,9 +102,9 @@ struct AnatomyLineData
       }
       if (clip[i] == 1 && active)
       {
-        fg_color = Color::LightGray;
-        if (bg_color == Color::Magenta || bg_color == Color::LightGray || bg_color == Color::White || bg_color == Color::Yellow)
-          fg_color = Color::DarkGray;
+        fg_color = Color16::LightGray;
+        if (bg_color == Color16::Magenta || bg_color == Color16::LightGray || bg_color == Color16::White || bg_color == Color16::Yellow)
+          fg_color = Color16::DarkGray;
         ch = '/';
       }
       pixels.emplace_back(ch, fg_color, bg_color, r, c[i], line_idx, static_cast<int>(i), active);

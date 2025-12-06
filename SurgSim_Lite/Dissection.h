@@ -209,20 +209,20 @@ void generate_sparks(ScreenHandler<NR, NC>& sh, Key curr_key,
   auto trig_left = trig && tool_type_left == ToolType::Hook;
   auto trig_right = trig && tool_type_right == ToolType::Hook;
   int anim = anim_ctr % 6;
-  auto bg_color = Color::White;
+  auto bg_color = Color16::White;
   switch (anim)
   {
     case 4:
     case 2:
-    case 0: bg_color = Color::White; break;
-    case 1: bg_color = Color::Yellow; break;
-    case 3: bg_color = Color::Magenta; break;
-    case 5: bg_color = Color::DarkYellow; break;
+    case 0: bg_color = Color16::White; break;
+    case 1: bg_color = Color16::Yellow; break;
+    case 3: bg_color = Color16::Magenta; break;
+    case 5: bg_color = Color16::DarkYellow; break;
   }
   if (trig_left)
-    sh.write_buffer(" ", tcp_rc_left.r, tcp_rc_left.c, Color::Default, bg_color);
+    sh.write_buffer(" ", tcp_rc_left.r, tcp_rc_left.c, Color16::Default, bg_color);
   if (trig_right)
-    sh.write_buffer(" ", tcp_rc_right.r, tcp_rc_right.c, Color::Default, bg_color);
+    sh.write_buffer(" ", tcp_rc_right.r, tcp_rc_right.c, Color16::Default, bg_color);
 }
 
 template<int NR, int NC>
@@ -238,8 +238,8 @@ void generate_smoke(ScreenHandler<NR, NC>& sh, Key curr_key,
   const int cluster_size = 10;
   smoke::smoke_left.update(tcp_rc_left, trig_left, vel_r, vel_c, acc, spread, life_time, cluster_size, dt, time);
   smoke::smoke_right.update(tcp_rc_right, trig_right, vel_r, vel_c, acc, spread, life_time, cluster_size, dt, time);
-  smoke::smoke_left.draw(sh, "&", Color::LightGray, Color::DarkGray, time);
-  smoke::smoke_right.draw(sh, "&", Color::LightGray, Color::DarkGray, time);
+  smoke::smoke_left.draw(sh, "&", Color16::LightGray, Color16::DarkGray, time);
+  smoke::smoke_right.draw(sh, "&", Color16::LightGray, Color16::DarkGray, time);
 }
 
 

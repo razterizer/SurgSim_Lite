@@ -109,16 +109,16 @@ public:
     
     color_schemes.emplace_back();
     auto& cs1 = color_schemes.emplace_back();
-    cs1.internal.bg_color = Color::Red;
-    cs1.side_h.bg_color = Color::DarkRed;
-    cs1.dot_internal.bg_color = Color::DarkGray;
-    cs1.dot_side_h.bg_color = Color::Black;
+    cs1.internal.bg_color = Color16::Red;
+    cs1.side_h.bg_color = Color16::DarkRed;
+    cs1.dot_internal.bg_color = Color16::DarkGray;
+    cs1.dot_side_h.bg_color = Color16::Black;
     auto& cs2 = color_schemes.emplace_back();
-    cs2.dot_internal.bg_color = Color::DarkGray;
-    cs2.dot_side_h.bg_color = Color::DarkGray;
+    cs2.dot_internal.bg_color = Color16::DarkGray;
+    cs2.dot_side_h.bg_color = Color16::DarkGray;
     auto& cs3 = color_schemes.emplace_back();
-    cs3.internal.fg_color = Color::White;
-    cs3.internal.bg_color = Color::Transparent;
+    cs3.internal.fg_color = Color16::White;
+    cs3.internal.bg_color = Color16::Transparent;
     
     font_data = t8x::load_font_data(font_data_path);
   }
@@ -137,7 +137,7 @@ private:
     
     draw_hud(sh, health, max_health, blood, max_blood, GameEngine::ref_score());
     
-    draw_frame(sh, Color::Black);
+    draw_frame(sh, Color16::Black);
     
     if (health <= 0 || blood >= max_blood)
       GameEngine::set_state_game_over();
@@ -318,9 +318,9 @@ private:
 int main(int argc, char** argv)
 {
   t8x::GameEngineParams params;
-  params.screen_bg_color_default = Color::DarkMagenta;
-  params.screen_bg_color_title = Color::LightGray;
-  params.screen_bg_color_instructions = Color::Black;
+  params.screen_bg_color_default = Color16::DarkMagenta;
+  params.screen_bg_color_title = Color16::LightGray;
+  params.screen_bg_color_instructions = Color16::Black;
   
   bool show_help = false;
   
