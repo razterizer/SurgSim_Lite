@@ -119,9 +119,11 @@ void draw_instruments(ScreenHandler<NR, NC>& sh, InstrumentSide side,
   for (const auto& pixel : texture.get_pixels())
     sh.write_buffer(pixel.str, tcp.r, tcp.c++, pixel.fg_color, pixel.bg_color);
   
+  using namespace t8::literals;
+  
   t8x::plot_line(sh,
-                       instr_data.get_pivot_y(), instr_data.get_pivot_x(),
-                       instr_data.get_end_y(), instr_data.get_end_x(),
-                       "#", fg_color_shaft, bg_color_shaft);
+                 instr_data.get_pivot_y(), instr_data.get_pivot_x(),
+                 instr_data.get_end_y(), instr_data.get_end_x(),
+                 "#"_gs, fg_color_shaft, bg_color_shaft);
 }
 
