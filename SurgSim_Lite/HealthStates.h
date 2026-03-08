@@ -339,93 +339,91 @@ void handle_injuries(ScreenHandler<NR, NC>& sh, t8x::MessageHandler& mh,
                      int& health, int& blood, const int max_blood, int& score,
                      float time)
 {
-  using MessageHandler = t8x::MessageHandler;
-
   if (!mh.has_message(time))
   {
     // Most severe states last.
     if (health_states.display_pool_message()) // #FIXME: Fix repeat-message bug.
     {
-      mh.add_message(time, "Please use the Rinsing and Suction Device to drain the fluids.", MessageHandler::Level::Guide);
+      mh.add_message(time, "Please use the Rinsing and Suction Device to drain the fluids.", t8x::Level::Guide);
     }
     if (health_states.artery_tree_leaking_trans())
     {
-      mh.add_message(time, "Stop the bleeding!", MessageHandler::Level::Warning);
+      mh.add_message(time, "Stop the bleeding!", t8x::Level::Warning);
       score -= 50;
     }
     if (health_states.duct_tree_leaking_trans())
     {
-      mh.add_message(time, "The Bile Duct is leaking!", MessageHandler::Level::Warning);
+      mh.add_message(time, "The Bile Duct is leaking!", t8x::Level::Warning);
       score -= 50;
     }
     if (health_states.cut_transient_gallbladder())
     {
-      mh.add_message(time, "You cut on the Gallbladder!", MessageHandler::Level::Warning);
+      mh.add_message(time, "You cut on the Gallbladder!", t8x::Level::Warning);
       health--;
       score -= 100;
     }
     if (health_states.clipped_transient_gallbladder())
     {
-      mh.add_message(time, "You clipped the Gallbladder!", MessageHandler::Level::Warning);
+      mh.add_message(time, "You clipped the Gallbladder!", t8x::Level::Warning);
       health--;
       score -= 100;
     }
     if (health_states.bleeding_critical_trans())
     {
-      mh.add_message(time, "Bleeding is critical!", MessageHandler::Level::Fatal);
+      mh.add_message(time, "Bleeding is critical!", t8x::Level::Fatal);
       score -= 300;
     }
     if (health_states.burned_transient_liver())
     {
-      mh.add_message(time, "You burned on the Liver!", MessageHandler::Level::Fatal);
+      mh.add_message(time, "You burned on the Liver!", t8x::Level::Fatal);
       health -= 6;
       score -= 300;
     }
     if (health_states.cut_transient_liver())
     {
-      mh.add_message(time, "You cut on the Liver!", MessageHandler::Level::Fatal);
+      mh.add_message(time, "You cut on the Liver!", t8x::Level::Fatal);
       health -= 6;
       score -= 300;
     }
     if (health_states.clipped_transient_liver())
     {
-      mh.add_message(time, "You clipped the Liver!", MessageHandler::Level::Fatal);
+      mh.add_message(time, "You clipped the Liver!", t8x::Level::Fatal);
       health -= 3;
       score -= 300;
     }
     if (health_states.duct_root_damaged_transient())
     {
-      mh.add_message(time, "Duct Root damaged! Unrecoverable injury!", MessageHandler::Level::Fatal);
+      mh.add_message(time, "Duct Root damaged! Unrecoverable injury!", t8x::Level::Fatal);
       health = 0;
       score -= 1000;
     }
     if (health_states.leaky_arteria_hepatica_transient())
     {
-      mh.add_message(time, "You damaged Arteria Hepatica!", MessageHandler::Level::Fatal);
+      mh.add_message(time, "You damaged Arteria Hepatica!", t8x::Level::Fatal);
       health = 0;
       score -= 1000;
     }
     if (health_states.leaky_ductus_hepaticus_transient())
     {
-      mh.add_message(time, "You damaged Ductus Hepaticus!", MessageHandler::Level::Fatal);
+      mh.add_message(time, "You damaged Ductus Hepaticus!", t8x::Level::Fatal);
       health = 0;
       score -= 1000;
     }
     if (health_states.leaky_arteria_gastroduodenalis_transient())
     {
-      mh.add_message(time, "You damaged Arteria Gastroduodenalis!", MessageHandler::Level::Fatal);
+      mh.add_message(time, "You damaged Arteria Gastroduodenalis!", t8x::Level::Fatal);
       health = 0;
       score -= 1000;
     }
     if (health_states.leaky_ductus_choledochus_transient())
     {
-      mh.add_message(time, "You damaged Ductus Choledochus!", MessageHandler::Level::Fatal);
+      mh.add_message(time, "You damaged Ductus Choledochus!", t8x::Level::Fatal);
       health = 0;
       score -= 1000;
     }
     if (health_states.burned_transient_gallbladder())
     {
-      mh.add_message(time, "You burned on the Gallbladder!", MessageHandler::Level::Warning);
+      mh.add_message(time, "You burned on the Gallbladder!", t8x::Level::Warning);
       health--;
       score -= 100;
     }
