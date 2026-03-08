@@ -304,7 +304,7 @@ private:
   // States for messages and health penalty.
   HealthStates health_states;
 
-  t8x::MessageHandler msg_handler;
+  t8x::MessageHandler<std::string> msg_handler;
 
   liquids::LiquidVolumes liquid_volumes;
   liquids::LiquidFlow liquid_flow;

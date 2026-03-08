@@ -334,7 +334,7 @@ public:
 ///
 
 template<int NR, int NC>
-void handle_injuries(ScreenHandler<NR, NC>& sh, t8x::MessageHandler& mh,
+void handle_injuries(ScreenHandler<NR, NC>& sh, t8x::MessageHandler<std::string>& mh,
                      HealthStates& health_states,
                      int& health, int& blood, const int max_blood, int& score,
                      float time)
