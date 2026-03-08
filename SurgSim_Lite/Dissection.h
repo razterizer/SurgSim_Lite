@@ -256,13 +256,11 @@ void handle_clip_applying(Key curr_key,
   
   TexLineCharIdx tlc_idx_left, tlc_idx_right;
   
-  if (tool_type_left == ToolType::ClipApplier
-      && trg_tool_left)
+  if (tool_type_left == ToolType::ClipApplier && trg_tool_left)
   {
     tlc_idx_left = find_top_pixel(textures, tcp_rc_left, only_active, orig_space);
   }
-  else if (curr_key == Key::RI_Trigger && tool_type_right == ToolType::ClipApplier
-           && trg_tool_right)
+  else if (tool_type_right == ToolType::ClipApplier && trg_tool_right)
   {
     tlc_idx_right = find_top_pixel(textures, tcp_rc_right, only_active, orig_space);
   }
