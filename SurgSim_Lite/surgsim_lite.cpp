@@ -104,7 +104,7 @@ public:
 
     health_states.set_critical_blood_vol(12 * 80);
     
-    std::string font_data_path = t8x::get_path_to_font_data(get_exe_folder());
+    std::string font_data_path = folder::join_path({ get_exe_folder(), "fonts" });
     std::cout << font_data_path << std::endl;
     
     color_schemes.emplace_back();
@@ -336,7 +336,6 @@ int main(int argc, char** argv)
         params.log_mode = LogMode::Record;
       else if (std::strcmp(argv[i + 1], "replay") == 0)
         params.log_mode = LogMode::Replay;
-      params.xcode_log_path = "../../../../../../../../Documents/xcode/SurgSim_Lite/SurgSim_Lite/bin/";
     }
     else if (std::strcmp(argv[i], "--help") == 0)
       show_help = true;

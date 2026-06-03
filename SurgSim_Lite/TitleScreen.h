@@ -171,11 +171,6 @@ void draw_title(t8::ScreenHandler<NR, NC>& sh, const t8x::FontDataColl& font_dat
   print("Presents:", 1, 57, red, trp);
   
   auto title_path = exe_folder;
-#ifndef _WIN32
-  const char* xcode_env = std::getenv("RUNNING_FROM_XCODE");
-  if (xcode_env != nullptr)
-    title_path = "../../../../../../../../Documents/xcode/SurgSim_Lite/SurgSim_Lite"; // #FIXME: Find a better solution!
-#endif
   std::vector<std::string> lines;
   if (TextIO::read_file(folder::join_file_path({ title_path, "title.txt" }), lines) && !lines.empty())
     t8x::draw_text(sh, font_data, font_colors[0], lines.back(), 1, 8, t8x::Font::Larry3D);
