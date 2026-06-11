@@ -14,6 +14,7 @@
 ![Commit Activity](https://img.shields.io/github/commit-activity/t/razterizer/SurgSim_Lite)
 ![Last Commit](https://img.shields.io/github/last-commit/razterizer/SurgSim_Lite?color=blue)
 ![Contributors](https://img.shields.io/github/contributors/razterizer/SurgSim_Lite?color=blue)
+![Static Badge](https://img.shields.io/badge/ai_usage-none-lightblue)
 
 ![GitHub Downloads (all assets, all releases)](https://img.shields.io/github/downloads/razterizer/SurgSim_Lite/total)
 
